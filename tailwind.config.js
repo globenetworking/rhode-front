@@ -9,24 +9,30 @@ module.exports = {
         mytheme: {
         
           "primary": "#131129",
+
+          "primary-light": "#1D1933",
                   
           "secondary": "#6f4ef2",
 
-          "texent": "#e3ddfc",
+          "twhite": "#fff",
+
+          "tcream": "#e3d7ef",
+
+          "tgray": "#6d7e7e",
+        },
+        anodatheme: {
+        
+          "primary": "#131129",
+
+          "primary-light": "#1D1933",
                   
-          "accent": "#1D1933",
-                  
-          "neutral": "#3D4451",
-                  
-          "base-100": "#FFFFFF",
-                  
-          "info": "#3ABFF8",
-                  
-          "success": "#36D399",
-                  
-          "warning": "#FBBD23",
-                  
-          "error": "#F87272",
+          "secondary": "#6f4ef2",
+
+          "twhite": "#fff",
+
+          "tcream": "#e3d7ef",
+
+          "tgray": "#6d7e7e",
         },
       },
     ],
