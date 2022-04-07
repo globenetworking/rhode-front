@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { FiSun } from 'react-icons/fi';
 import { Link } from "react-router-dom";
+import { GiAngelWings } from 'react-icons/gi';
+
+const grad = 'bg-gradient-to-r from-pink-300 via-secondary to-secondary'
+const gradText = `${grad} text-black bg-clip-text stroke-transparent fill-black stroke-2 `
 
 export default function LandingNav() {
   return (
-    <div class="navbar pr-3 px-0 lg:pr-0 text-secondary">
+    <div class="navbar pr-3 px-0 lg:pr-0 bg-primary">
   <div class="navbar-start">
     <div class="dropdown">
      <div class="flex items-center">
-     <label tabindex="0" class="btn btn-ghost btn-circle">
+      <div><GiAngelWings size={35}  className="mx-3 text-secondary"/></div>
+     {/* <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-      </label>
+      </label> */}
       <span class="uppercase text-lg font-bold">CoolS</span>
      </div>
       
