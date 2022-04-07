@@ -10,7 +10,9 @@ module.exports = {
         
           "primary": "#131129",
 
-          "primary-light": "#1D1933",
+          "primary-light": "#7d1733",
+
+          "rope": "#7d1733",
                   
           "secondary": "#6f4ef2",
 
@@ -19,6 +21,8 @@ module.exports = {
           "tcream": "#e3d7ef",
 
           "tgray": "#6d7e7e",
+
+          "tblack": "#FFF"
         },
         anodatheme: {
         
