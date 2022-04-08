@@ -10,7 +10,7 @@ const gradText = `${grad} text-black bg-clip-text stroke-transparent fill-black 
 const Home = () => {
  
   return (
-    <div className=" bg-primary text-white lg:px-16">
+    <div className=" bg-primary text-white lg:px-16 h-screen">
       <div className="flex flex-col lg:flex-row py-2  justify-between items-center ">
       
         <span className="mb-3 text-xs lg:text-base" > <Zoom cascade>Discover, find and buy extraordinary NFT with us.</Zoom></span>

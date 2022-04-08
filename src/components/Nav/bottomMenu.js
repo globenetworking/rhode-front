@@ -11,8 +11,10 @@ import { Link } from "react-router-dom";
 
 export default function bottomMenu() {
   return (
-    <div  className="flex justify-around h items-center bg-accent h-12 w-full text-tcream bottom-0 z-10 lg:relative lg:left-0 lg:w-36 lg:h-screen lg:flex-col fixed">
-      <GiAngelWings size={21} />
+    <div  className="flex justify-around  items-center bg-accent h-12 w-full text-tcream bottom-0 z-50 lg:fixed lg:left-0 lg:w-20 lg:h-screen lg:flex-col fixed">
+      
+      
+      <div className="lg:text-6xl lg:mb-6 text-secondary"><GiAngelWings/></div>
       <FiSun size={21} />
       <BsWallet2 size={21} /> <FiSun size={21} />  <FiSun size={21} /> <FiSettings size={21} /> <AiOutlinePoweroff size={21} />
     </div>

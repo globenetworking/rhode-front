@@ -14,8 +14,9 @@ import BottomMenu from "./components/Nav/bottomMenu";
 
 const App = () => {
   return (
-    <div className="flex flex-col lg:flex-row relative" data-theme="myTheme">
+    <div className="flex flex-col lg:flex-row relative bg-primary h-screen overflow-scroll" data-theme="myTheme">
        <BottomMenu/>
+       <div className="hidden lg:block w-20 mb-24"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="about" element={<About />} /> */}
