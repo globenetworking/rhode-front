@@ -5,7 +5,7 @@ import clock from "../../images/icon-clock.svg"
 import avatar from "../../images/image-avatar.png"
 
 const NftCard = () => {
-    return (<section className="bg-rope p-5 mx-5 rounded-xl max-w-xs shadow-2xl" >
+    return (<section className="bg-rope p-5 mx-5 rounded-xl max-w-xs shadow-2xl bg-accent" >
     <a href="#" className="group block relative rounded-md overflow-hidden">
       <div className="invisible group-hover:visible absolute inset-0 bg-cyan/50">
         <img

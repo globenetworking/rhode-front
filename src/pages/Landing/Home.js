@@ -13,15 +13,15 @@ const Home = () => {
     <div className=" bg-primary text-white lg:px-16">
       <div className="flex flex-col lg:flex-row py-2  justify-between items-center ">
       
-        <span className="mb-3 text-xs lg:text-base" > <Zoom cascade>Discover, find and sell extraordinary NFT with us.</Zoom></span>
+        <span className="mb-3 text-xs lg:text-base" > <Zoom cascade>Discover, find and buy extraordinary NFT with us.</Zoom></span>
         <span className={`btn btn-xs loading max-w-md btn-secondary text-white py-0 min-h-min`}>BUY NFT</span>
       </div>
     <LandingNav/>
     <div className="lg:flex lg:pt-0">
     <div className="px-2 "> <img src={apes}/></div>
     <div className="flex flex-col mt-16 px-4 lg:px-16 items-center">
-      <span className={`text-4xl mb-6 lg:text-6xl  lg:leading-snug font-semibold`} style={{WebkitTextStroke: "3px transparent"}}>Trade  Crypto. Discover, Collect & <div className={`${gradText} `}> Sell NFTs</div> </span>
-      <span>The Crypto Monkey is a high-quality collection of 100 unique monkeys on the NFTMart marketplace.</span>
+      <span className={`text-4xl mb-6 lg:text-6xl  lg:leading-snug font-semibold`} style={{WebkitTextStroke: "3px transparent"}}>Trade  Crypto. Discover, Collect & <div className={`${gradText} `}> Buy NFTs</div> </span>
+      <span>The Crypto Monkey is a high-quality collection of 100 unique monkeys on the NFT marketplace.</span>
       <span className={`btn  max-w-md mt-6 self-start text-md mb-6 btn-secondary`}>Discover</span>
     </div>
     
