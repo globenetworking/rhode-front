@@ -9,7 +9,7 @@ const gradText = `${grad} text-black bg-clip-text stroke-transparent fill-black 
 
 const Home = () => {
   return (
-    <div className=" bg-primary text-white lg:px-16 h-screen">
+    <div className="bg-primary text-white lg:px-16 h-screen">
       <div className="flex flex-col lg:flex-row py-2  justify-between items-center ">
         <span className="mb-3 text-xs lg:text-base">
           {' '}
@@ -25,7 +25,7 @@ const Home = () => {
       <div className="lg:flex lg:pt-0">
         <div className="px-2 ">
           {' '}
-          <img src={apes} />
+          <img src={apes} alt="apes" />
         </div>
         <div className="flex flex-col mt-16 px-4 lg:px-16 items-center">
           <span
@@ -47,7 +47,7 @@ const Home = () => {
         </div>
       </div>
       {/* section */}
-      <div className="flex flex-col items-center mt-10">
+      <div className="flex flex-col items-center mt-10 pb-20">
         <div className="capitalize font-semibold text-xl ">Top Sellers</div>
         <div className="grid grid-cols-1 lg:grid-col-4">
           <NftCard />
@@ -101,7 +101,10 @@ const Home = () => {
             <div class="stat-figure text-secondary">
               <div class="avatar online">
                 <div class="w-16 rounded-full">
-                  <img src="https://api.lorem.space/image/face?w=128&h=128" />
+                  <img
+                    src="https://api.lorem.space/image/face?w=128&h=128"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
