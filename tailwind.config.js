@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
       strokeWidth: {
@@ -13,7 +13,7 @@ module.exports = {
         mytheme: {
         
           "primary": "#131129",
-          
+
           "accent": "#1d1933",
                   
           "secondary": "#6f4ef2",

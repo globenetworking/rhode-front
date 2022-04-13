@@ -3,8 +3,9 @@ import { Routes, Route, Link } from "react-router-dom";
 // import Login from "./Pages/Landing/Login";
 // import User from "./Pages/User";
 import Home from "./pages/Landing/Home";
+import Signup from "./pages/Landing/Signup";
+import SignIn from "./pages/Landing/SignIn";
 import BottomMenu from "./components/Nav/bottomMenu";
-// import Register from "./Pages/Landing/Register";
 // import About from "./Pages/Landing/About";
 // import Contact from "./Pages/Landing/Contact";
 // import Owner from "./Pages/Owner";
@@ -19,15 +20,8 @@ const App = () => {
        <div className="hidden lg:block w-20 mb-24"></div>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="about" element={<About />} /> */}
-         {/* <Route path="/about" exact component={About} />
-        <Route path="/contact-us" exact component={Contact} />
-        <Route path="/faqs" exact component={Faqs} />
-        <Route path="/terms" exact component={Terms} />
-        <Route path="/register" exact component={Register} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/user" component={User} />
-        <Route path="/admin" component={Owner} /> */}
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<Signup />} />
       </Routes>
       
     </div>
