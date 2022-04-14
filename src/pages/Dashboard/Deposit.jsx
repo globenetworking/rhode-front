@@ -68,6 +68,7 @@ const Deposit = () => {
           <p className="text-sm font-bold">Your balance</p>
           <p>{`$112000`}</p>
         </div>
+
       </div>
 
       <section className="flex lg:flex-row flex-col justify-between gap-x-10">
@@ -158,11 +159,11 @@ const Deposit = () => {
                 <div className="text-sm lg:text-lg">
                   BTC equivalent: {btc ? btc : 0}{' '}
                   <span className="text-yellow-500 text-sm font-bold">BTC</span>
+
                 </div>
                 <input
-                  className="flex text-center text-black w-full px-2"
-                  value={barcode}
-                  disabled
+                  className="flex text-center text-gray-300 w-full px-2"
+                  value='3FXKbTeem...Rc3H4QM'
                 />
               </div>
               <CopyToClipboard text={barcode} onCopy={onCopy}>
