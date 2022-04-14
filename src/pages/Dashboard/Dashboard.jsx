@@ -2,10 +2,17 @@ import React from 'react';
 
 const DashboardHome = () => {
   return (
-    <div className="lg:px-16 px-4 h-screen">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold pb-3">Wallet</h1>
-        <p className="text-sm">Welcome to the Dashboard</p>
+    <div className="lg:px-16 px-4 h-full pt-0 mockup-window">
+      <div className="mb-10 flex justify-between">
+        <div><h1 className="text-4xl font-bold pb-3">Wallet</h1>
+        <p className="text-sm">Welcome to the Dashboard</p></div>
+{/* 
+        <div class="avatar online">
+  <div class="w-14 h-14 rounded-full">
+    <img src="https://api.lorem.space/image/face?hash=28212" />
+  </div>
+</div> */}
+
       </div>
 
       <section className="flex lg:flex-row flex-col justify-between gap-10">

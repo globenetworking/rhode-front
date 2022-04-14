@@ -54,7 +54,7 @@ const Home = () => {
         </div>
 
         {/* section */}
-        <div class="stats mt-12 shadow flex flex-col lg:flex-row py-1 bg-primary px-4 text-tcream">
+        <div class="stats mt-12 shadow flex flex-col lg:flex-row py-1 bg-primary px-4 w-11/12 text-tcream">
           <div class="stat">
             <div class="stat-figure text-primary">
               <svg

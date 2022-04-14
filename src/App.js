@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Landing/Home';
 import Menu from './components/Nav/Menu';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Deposit from './pages/Dashboard/Deposit';
 import Signup from "./pages/Landing/Signup";
 import SignIn from "./pages/Landing/SignIn";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/deposit" element={<Deposit />} />
           <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<Signup />} />
         </Routes>

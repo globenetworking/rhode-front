@@ -15,26 +15,10 @@ export default function LandingNav() {
             <div className="lg:hidden">
               <GiAngelWings size={35} className="mx-3 text-secondary" />
             </div>
-            {/* <label tabindex="0" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-      </label> */}
             <span class="uppercase text-lg font-bold">CoolS</span>
           </div>
 
-          {/* <ul
-            tabindex="0"
-            class="menu bg-neutral text-white menu-compact dropdown-content mt-3 p-2 shadowrounded-box w-52"
-          >
-            <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
-          </ul> */}
+          
         </div>
       </div>
       <div class="navbar-center">
