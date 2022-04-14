@@ -1,51 +1,50 @@
 import React from 'react';
+import DashboardHeader from '../../components/DashboardHeader';
 
 const DashboardHome = () => {
   return (
-    <div className="lg:px-16 px-4 h-full pt-0 mockup-window">
-      <div className="mb-10 flex justify-between">
-        <div><h1 className="text-4xl font-bold pb-3">Wallet</h1>
-        <p className="text-sm">Welcome to the Dashboard</p></div>
-{/* 
-        <div class="avatar online">
-  <div class="w-14 h-14 rounded-full">
-    <img src="https://api.lorem.space/image/face?hash=28212" />
-  </div>
-</div> */}
-
+    <div className="lg:px-16 md:px-8 px-2 h-full">
+      <DashboardHeader />
+      <div className="my-8 flex justify-between">
+        <div>
+          <h1 className="text-4xl font-bold pb-3 text-white">Wallet</h1>
+          <p className="text-sm text-white">Welcome to the Dashboard</p>
+        </div>
       </div>
 
-      <section className="flex lg:flex-row flex-col justify-between gap-10">
+      <section className="flex lg:flex-row flex-col justify-between lg:gap-10 gap-16">
         <div className="w-full">
-          <h2 className="text-2xl font-semibold pb-6">Balance details</h2>
+          <h2 className="text-2xl font-semibold pb-6 text-white">
+            Balance details
+          </h2>
           <div class="card shadow-xl bg-accent">
             <div class="card-body">
-              <h2 class="card-title text-base">Total balance</h2>
-              <p className="text-3xl font-bold">$221,567</p>
+              <h2 class="card-title text-base text-white">Total balance</h2>
+              <p className="text-3xl font-bold text-white">$221,567</p>
 
-              <div className="grid grid-cols-2 mt-5 gap-5">
-                <div class="card bg-primary">
+              <div className="grid md:grid-cols-2 mt-5 gap-5">
+                <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Last Month</p>
-                    <h3 className="font-bold text-xl">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
-                <div class="card bg-secondary">
+                <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Last Month</p>
-                    <h3 className="font-bold text-xl">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
-                <div class="card bg-primary">
+                <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Last Month</p>
-                    <h3 className="font-bold text-xl">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
-                <div class="card bg-primary">
+                <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Last Month</p>
-                    <h3 className="font-bold text-xl">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
               </div>
@@ -54,25 +53,27 @@ const DashboardHome = () => {
         </div>
 
         <div class="w-full">
-          <h2 className="text-2xl font-semibold pb-6">Latest transactions</h2>
+          <h2 className="text-2xl font-semibold pb-6 text-white">
+            Latest transactions
+          </h2>
 
           <div className="flex flex-col gap-10">
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
-                <p>Last Month</p>
-                <h3>$42,678</h3>
+                <p className="text-white">Last Month</p>
+                <h3 className="text-secondary">$42,678</h3>
               </div>
             </div>
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
-                <p>Last Month</p>
-                <h3>$42,678</h3>
+                <p className="text-white">Last Month</p>
+                <h3 className="text-secondary">$42,678</h3>
               </div>
             </div>
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
-                <p>Last Month</p>
-                <h3>$42,678</h3>
+                <p className="text-white">Last Month</p>
+                <h3 className="text-secondary">$42,678</h3>
               </div>
             </div>
           </div>
