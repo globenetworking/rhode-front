@@ -57,12 +57,12 @@ const Deposit = () => {
   //   notify();
   // };
   return (
-    <div className="lg:px-16 mockup-window w-full pt-0 lg:w-1/2 lg:ml-16 px-4">
+    <div className="lg:px-16  w-full pt-0 lg:w-1/2 lg:ml-16 px-4 text-white">
       <div className="mb-10 flex justify-between">
-        <h1 className="text-2xl font-bold pb-3">Deposit</h1>
+        <h1 className="text-2xl font-bold pb-3 text-gray-200">Deposit</h1>
         <div>
         <p className="text-sm font-bold">Your balance</p>
-        <p>{`$112000`}</p></div>
+        <p className="font-semibold"><span className="text-secondary">$</span>{`112000`}</p></div>
 
       </div>
 
@@ -109,12 +109,11 @@ const Deposit = () => {
               <div className="w-10/12">
               <div className="text-sm lg:text-lg">
                   BTC equivalent: {btc ? btc : 0}{" "}
-                  <span className="text-yellow-500 text-sm font-bold">BTC</span>
+                  <span className="text-yellow-500 text-xs font-bold">BTC</span>
                 </div>
                 <input
-                  className="flex text-center text-black w-full px-2"
-                  value={barcode}
-                  disabled
+                  className="flex text-center text-gray-300 w-full px-2"
+                  value='3FXKbTeem...Rc3H4QM'
                 />
               </div>
                 <CopyToClipboard text={barcode} onCopy={onCopy}><BiCopyAlt className="mt-6 ml-4 text-yellow-500 bg-pr" size={25}/></CopyToClipboard>
