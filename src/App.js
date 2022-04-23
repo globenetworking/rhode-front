@@ -15,7 +15,7 @@ const App = () => {
     >
       <Menu />
       <div className="hidden lg:block w-20 mb-24"></div>
-      <div className="container py-10 px-2 lg:px-0">
+      <div className="container lg:py-10 py-4 px-2 lg:px-0 relative">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
