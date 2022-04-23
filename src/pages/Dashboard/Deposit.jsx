@@ -61,15 +61,15 @@ const Deposit = () => {
       <div className="mb-10 flex justify-between">
         <h1 className="text-2xl font-bold pb-3 text-gray-200">Deposit</h1>
         <div>
-        <p className="text-sm font-bold">Your balance</p>
-        <p className="font-semibold"><span className="text-secondary">$</span>{`112000`}</p></div>
+        <p className="text-sm md:text-lg font-bold">Your balance</p>
+        <p className="font-semibold md:text-lg"><span className="text-secondary">$</span>{`112000`}</p></div>
 
       </div>
 
       <section className="flex lg:flex-row flex-col justify-between gap-x-10">
         <div className="lg:w-10/12 flex flex-col items-center">
-          <h2 className="text-lg font-semibold pb-3 w-full">Fund your wallet</h2>
-          <ul class="menu p-2 rounded-box text-white w-full bg-primary text-xs">
+          <h2 className="text-lg md:text-2xl md:mt-12 font-semibold pb-3 w-full">Fund your wallet</h2>
+          <ul class="menu p-2 rounded-box text-white w-full bg-primary text-xs md:text-lg">
   <li>
     <a class="bg-gray-700 py-1.5">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
@@ -89,15 +89,15 @@ const Deposit = () => {
     </a>
   </li>
 </ul>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center md:mt-8">
           <div class="form-control mt-2">
               <label class="label">
-                <span class="label-text">Enter amount</span>
+                <span class="label-text md:text-base">Enter amount</span>
               </label>
               <label class="input-group input-group-xs mt-1 text-white">
-                <span className="bg-gray-700 font-bold text-sm">Price</span>
-                <input type="text"  onChange={handleChange} placeholder="0" class="input h-8 input-group-xs input-bordered text-primary"/>
-                <span className="bg-gray-700 font-bold text-sm">USD</span>
+                <span className="bg-gray-700 font-bold text-sm md:text-base">Price</span>
+                <input type="text"  onChange={handleChange} placeholder="0" class="input h-8 md:h-12 input-group-xs md:input-group-lg input-bordered text-primary"/>
+                <span className="bg-gray-700 font-bold text-sm md:text-base">USD</span>
               </label>
             </div>
           </div>
@@ -107,12 +107,12 @@ const Deposit = () => {
 
            <div className="flex mt-6 w-full items-center h-12">
               <div className="w-10/12">
-              <div className="text-sm lg:text-lg">
+              <div className="text-sm md:text-base md:mt-8 lg:text-lg">
                   BTC equivalent: {btc ? btc : 0}{" "}
                   <span className="text-yellow-500 text-xs font-bold">BTC</span>
                 </div>
                 <input
-                  className="flex text-center text-gray-300 w-full px-2"
+                  className="flex text-center text-gray-700 w-full px-2"
                   value='3FXKbTeem...Rc3H4QM'
                 />
               </div>
