@@ -3,7 +3,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { BiCopyAlt } from 'react-icons/bi';
 import DashboardHeader from '../../components/DashboardHeader';
 
-
 const Deposit = () => {
   const [barcode, setBarcode] = useState('3FXKbTieemhEtv25Q9mSiAxP7HaRc3H4QM');
   const [amt, setAmt] = useState(0);
@@ -59,7 +58,8 @@ const Deposit = () => {
   //   notify();
   // };
   return (
-    <div className="lg:px-16 md:px-8 w-full pt-0 lg:w-1/2 lg:ml-16 px-4">
+    // <div className="lg:px-16 md:px-8 w-full pt-0 lg:w-1/2 lg:ml-16 px-4">
+    <div className="lg:px-16 md:px-8 px-2 h-full w-5/6 mx-auto">
       <DashboardHeader />
 
       <div className="my-8 flex justify-between">
