@@ -15,6 +15,12 @@ module.exports = {
           "primary": "#131129",
 
           "accent": "#1d1933",
+
+          "xred": "#AD343E",
+
+          "xyellow": "#F2AF29",
+
+          "egg": "#F2AF29",
                   
           "secondary": "#6f4ef2",
 
