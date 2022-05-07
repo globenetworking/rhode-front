@@ -5,6 +5,8 @@ import Menu from './components/Nav/Menu';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Deposit from './pages/Dashboard/Deposit';
 import Profile from "./pages/Dashboard/Profile"
+import Withdrawal from './pages/Dashboard/Withdrawal';
+import Wallet from './pages/Dashboard/Wallet';
 import Signup from "./pages/Landing/Signup";
 import SignIn from "./pages/Landing/SignIn";
 
@@ -23,11 +25,14 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/deposit" element={<Deposit />} />
           <Route path="/user/profile" element={<Profile/>} />
+          <Route path="/withdrawal" element={<Withdrawal />} />
+          <Route path="/wallet" element={<Wallet />} />
           <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<Signup />} />
+          <Route path="/sign-up" element={<Signup />} />
         </Routes>
       </div>
-    </div>)
-  }
+    </div>
+  );
+};
 
 export default App;
