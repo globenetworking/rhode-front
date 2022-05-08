@@ -30,7 +30,7 @@ export default function Menu() {
       <Link to="/Withdrawal" class="text-white">
         <GiReceiveMoney size={21} />
       </Link>
-      <Link to="/" class="">
+      <Link to="/user/profile" class="">
         <FiSettings size={21} />
       </Link>
       <Link to="/" class="">

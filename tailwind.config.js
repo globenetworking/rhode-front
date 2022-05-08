@@ -16,7 +16,7 @@ module.exports = {
 
           "accent": "#1d1933",
 
-          "xred": "#AD343E",
+          "xred": "#ad343e",
 
           "xyellow": "#F2AF29",
 

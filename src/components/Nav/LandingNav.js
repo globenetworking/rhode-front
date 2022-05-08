@@ -31,7 +31,7 @@ export default function LandingNav() {
 
           {/* <!-- sun icon --> */}
           <svg
-            class="swap-on fill-current w-10 h-10"
+            class="swap-on fill-current w-10 h-10 bg-xyellow"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -40,7 +40,7 @@ export default function LandingNav() {
 
           {/* <!-- moon icon --> */}
           <svg
-            class="swap-off fill-current w-10 h-10"
+            class="swap-off fill-current w-10 h-10 bg-egg"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

@@ -65,18 +65,18 @@ const Deposit = () => {
       <div className="my-8 flex justify-between">
         <h1 className="text-2xl font-bold pb-3">Deposit</h1>
         <div>
-          <p className="text-sm font-bold">Your balance</p>
-          <p>{`$112000`}</p>
+          <p className="text-sm font-bold md:text-lg">Your balance</p>
+          <p><span className='text-secondary'>$</span>{`112000`}</p>
         </div>
 
       </div>
 
-      <section className="flex lg:flex-row flex-col justify-between gap-x-10">
+      <section className="flex lg:flex-row flex-col lg:mt-12 justify-between gap-x-10">
         <div className="lg:w-10/12 flex flex-col items-center">
-          <h2 className="text-lg font-semibold pb-3 w-full">
+          <h2 className="text-lg md:text-xl font-semibold pb-3 w-full">
             Fund your wallet
           </h2>
-          <ul class="menu p-2 rounded-box text-white w-full bg-primary text-xs">
+          <ul class="menu p-2 md:text-lg rounded-box text-white w-full bg-primary text-sm">
             <li>
               <a class="bg-gray-700 py-1.5">
                 <svg
@@ -116,7 +116,7 @@ const Deposit = () => {
               </a>
             </li>
             <li>
-              <a class="bg-gray-700 py-1.5">
+              <a class="bg-gray-700 py-1.5 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-white"
@@ -135,28 +135,28 @@ const Deposit = () => {
               </a>
             </li>
           </ul>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center md:mt-6">
             <div class="form-control mt-2">
               <label class="label">
-                <span class="label-text">Enter amount</span>
+                <span class="label-text md:text-base">Enter amount</span>
               </label>
               <label class="input-group input-group-xs mt-1 text-white">
-                <span className="bg-gray-700 font-bold text-sm">Price</span>
+                <span className="bg-gray-700 font-bold text-sm md:text-base">Price</span>
                 <input
                   type="text"
                   onChange={handleChange}
                   placeholder="0"
-                  class="input h-8 input-group-xs input-bordered text-primary"
+                  class="input h-8 input-group-xs md:input-group-lg input-bordered text-primary"
                 />
-                <span className="bg-gray-700 font-bold text-sm">USD</span>
+                <span className="bg-gray-700 font-bold text-sm md:text-base">USD</span>
               </label>
             </div>
           </div>
 
           <div className="w-full">
-            <div className="flex mt-6 w-full items-center h-12">
+            <div className="flex mt-6 w-full md:mt-12 items-center h-12">
               <div className="w-10/12">
-                <div className="text-sm lg:text-lg">
+                <div className="text-sm md:text-lg">
                   BTC equivalent: {btc ? btc : 0}{' '}
                   <span className="text-yellow-500 text-sm font-bold">BTC</span>
 
@@ -184,7 +184,7 @@ const Deposit = () => {
 
       <div className="lg:w-10/12">
         {' '}
-        <button class="btn btn-primary btn-square mx-0 text-white flex btn-block bg-secondary mt-6">
+        <button class="btn btn-primary btn-square mx-0 md:text-lg text-white flex btn-block bg-secondary mt-6">
           I have made payment
         </button>
       </div>
