@@ -4,7 +4,7 @@ import eth from '../images/icon-ethereum.svg';
 import clock from '../images/icon-clock.svg';
 import avatar from '../images/image-avatar.png';
 
-const NftCard = () => {
+const NftCard = ({img, name, desc, price, days, author}) => {
   return (
     <section className="bg-rope p-5 mx-5 rounded-xl max-w-xs shadow-2xl">
       <a href="#" className="group block relative rounded-md overflow-hidden">
@@ -15,7 +15,7 @@ const NftCard = () => {
             alt="eye icon"
           />
         </div>
-        <img src={eqb} alt="equilibrium" />
+        <img src={img} alt="equilibrium" />
       </a>
 
       <h1>
@@ -23,22 +23,22 @@ const NftCard = () => {
           href="#"
           className="block text-white my-4 font-semibold text-lg hover:text-cyan"
         >
-          Equilibrium #3429
+          {name}
         </a>
       </h1>
 
       <p className="text-soft-blue font-light">
-        Our Equilibrium collection promotes balance and calm.
+        {desc}
       </p>
 
       <div className="flex justify-between items-center mt-4">
         <div className="flex text-cyan space-x-2">
           <img src={eth} alt="ethereum icon" />
-          <p>0.041 ETH</p>
+          <p>{price} ETH</p>
         </div>
         <div className="flex items-center text-soft-blue space-x-2 whitespace-nowrap">
           <img src={clock} alt="clock icon" />
-          <p>3 days left</p>
+          <p>{days} days left</p>
         </div>
       </div>
 
@@ -49,11 +49,11 @@ const NftCard = () => {
         <p className="text-white">
           <span className="text-secondary">Creation of </span>
           <a href="#" className="hover:text-cyan">
-            Jules Wyvern
+            {author}
           </a>
         </p>
       </div>
-      <span className="btn btn-secondary btn-wide mt-6 font-bold text-md">
+      <span className="btn btn-secondary w-full mt-6 font-bold text-md">
         PLACE BID
       </span>
     </section>

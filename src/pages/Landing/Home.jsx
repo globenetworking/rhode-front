@@ -4,12 +4,16 @@ import NftCard from '../../components/NftCard';
 import apes from '../../images/apes.jpg';
 import Zoom from 'react-reveal/Zoom';
 
+import nftArr from './nfts';
+
+
 const grad = 'bg-gradient-to-r from-pink-300 via-secondary to-secondary';
 const gradText = `${grad} text-black bg-clip-text stroke-transparent fill-black stroke-2 `;
 
+
 const Home = () => {
   return (
-    <div className="bg-primary text-white lg:px-16 h-screen">
+    <div className="bg-primary text-white lg:px-16 h-screen w-full">
       <div className="flex flex-col lg:flex-row py-2  justify-between items-center ">
         <span className="mb-3 text-xs lg:text-base">
           {' '}
@@ -27,6 +31,9 @@ const Home = () => {
           {' '}
           <img src={apes} alt="apes" />
         </div>
+        <div className=' md:hidden mt-10 bg-primary'>
+     <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#131129"  font-color="#FFF" locale="en"></coingecko-coin-price-marquee-widget>
+      </div>
         <div className="flex flex-col mt-16 px-4 lg:px-16 items-center">
           <span
             className={`text-4xl mb-6 lg:text-6xl  lg:leading-snug font-semibold`}
@@ -46,15 +53,17 @@ const Home = () => {
           </span>
         </div>
       </div>
-      {/* section */}
-      <div className="flex flex-col items-center mt-10 pb-20">
-        <div className="capitalize font-semibold text-xl ">Top Sellers</div>
-        <div className="grid grid-cols-1 lg:grid-col-4">
-          <NftCard />
-        </div>
-
-        {/* section */}
-        <div class="stats mt-12 shadow flex flex-col lg:flex-row py-1 bg-primary px-4 w-11/12 text-tcream">
+      <div className='hidden md:block'>
+      <coingecko-coin-price-marquee-widget
+        currency="usd"
+        background-color="#131129"  font-color="#FFF" 
+        coin-ids="bitcoin,ethereum,eos,ripple,litecoin"
+        locale="en"
+        vce-ready=""
+      ></coingecko-coin-price-marquee-widget>
+      </div>
+       {/* section */}
+       <div class="stats mt-12 shadow flex flex-col lg:flex-row py-1 bg-primary px-4 w-11/12 text-tcream">
           <div class="stat">
             <div class="stat-figure text-primary">
               <svg
@@ -113,6 +122,21 @@ const Home = () => {
             <div class="stat-desc text-secondary">31 tasks remaining</div>
           </div>
         </div>
+
+      {/* section */}
+      <div className="flex flex-col items-center mt-10 pb-20">
+        <div className="capitalize font-semibold text-xl md:text-2xl mb-6 mt-6 lg:text-4xl">Top Sellers</div>
+        <div className="hidden  w-full md:grid grid-cols-1 lg:grid-cols-4 ">
+         { nftArr.map(({img, name, desc, price, days, author})=><NftCard img={img} name={name} desc={desc} price={price} days={days} author={author} />)
+          }
+        </div>
+
+        <div className="md:hidden  w-full grid grid-cols-1 ">
+         { nftArr.slice(3).map(({img, name, desc, price, days, author})=><NftCard img={img} name={name} desc={desc} price={price} days={days} author={author} />)
+          }
+        </div>
+
+       
       </div>
     </div>
   );

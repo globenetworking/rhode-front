@@ -53,81 +53,39 @@ const Profile = () => {
       </div>
 
       <section>
-        {/* <!-- component --> */}
-        <div class="w-full lg:w-11/12 space-y-8 p-10 rounded-xl shadow-lg z-10 bg-accent">
-          <div class="grid  gap-8 grid-cols-1">
-            <div class="flex flex-col ">
-              <div class="flex flex-col sm:flex-row items-center">
-                <h2 class="font-semibold text-lg mr-auto text-white">
-                  Edit your details here
-                </h2>
-                <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
-              </div>
-              <div class="mt-5">
-                <div class="form">
-                  <div class="md:flex flex-row md:space-x-4 w-full text-xs">
-                    <div class="mb-3 space-y-2 w-full text-xs">
-                      <label class="font-semibold text-gray-100 py-2">
-                        First Name <abbr title="required">*</abbr>
-                      </label>
-                      <input
-                        placeholder="Company Name"
-                        class="bg-primary appearance-none block w-full bg-grey-lighter text-grey-darker  rounded-lg h-10 px-4"
-                        required="required"
-                        type="text"
-                        name="integration[shop_name]"
-                        id="integration_shop_name"
-                      />
-                      <p class="text-red text-xs hidden">
-                        Please fill out this field.
-                      </p>
-                    </div>
-                    <div class="mb-3 space-y-2 w-full text-xs">
-                      <label class="font-semibold text-gray-100 py-2">
-                        Last Miene <abbr title="required">*</abbr>
-                      </label>
-                      <input
-                        placeholder="Email ID"
-                        class="bg-primary appearance-none block w-full bg-grey-lighter text-grey-darker  rounded-lg h-10 px-4"
-                        required="required"
-                        type="text"
-                        name="integration[shop_name]"
-                        id="integration_shop_name"
-                      />
-                      <p class="text-red text-xs hidden">
-                        Please fill out this field.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mb-3 space-y-2 w-full text-xs">
-                    <label class=" font-semibold text-gray-100 py-2">
-                      Phone number
-                    </label>
-                    <div class="flex flex-wrap items-stretch w-full mb-4 relative">
-                      <div class="flex">
-                        <span class="flex leading-normal rounded-r-none border border-r-0 border-blue-300 px-3 whitespace-no-wrap text-grey-dark text-sm w-12 h-10 bg-yellow-500 justify-center items-center  lg:text-xl rounded-lg text-black">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                            ></path>
-                          </svg>
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        class="bg-primary flex-shrink flex-grow flex-auto leading-normal w-px  border border-l-0 h-10 border-grey-light rounded-lg rounded-l-none px-3 relative focus:border-blue focus:shadow"
-                        placeholder=""
-                      />
-                    </div>
+      {/* <!-- component --> */}
+      <div class="w-full lg:w-11/12 space-y-8 p-10 rounded-xl shadow-lg z-10 bg-accent">
+	<div class="grid  gap-8 grid-cols-1">
+	<div class="flex flex-col ">
+			<div class="flex flex-col sm:flex-row items-center">
+				<h2 class="font-semibold text-lg mr-auto text-white">Edit your details here</h2>
+				<div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
+			</div>
+			<div class="mt-5">
+				<div class="form">
+						<div class="md:flex flex-row md:space-x-4 w-full text-xs">
+							<div class="mb-3 space-y-2 w-full text-xs">
+								<label class="font-semibold text-gray-100 py-2">First Name <abbr title="required">*</abbr></label>
+								<input placeholder="Company Name" class="bg-primary appearance-none block w-full bg-grey-lighter text-grey-darker  rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name"/>
+								<p class="text-red text-xs hidden">Please fill out this field.</p>
+							</div>
+							<div class="mb-3 space-y-2 w-full text-xs">
+								<label class="font-semibold text-gray-100 py-2">Last Name <abbr title="required">*</abbr></label>
+								<input placeholder="Email ID" class="bg-primary appearance-none block w-full bg-grey-lighter text-grey-darker  rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name"/>
+								<p class="text-red text-xs hidden">Please fill out this field.</p>
+							</div>
+						</div>
+						<div class="mb-3 space-y-2 w-full text-xs">
+							<label class=" font-semibold text-gray-100 py-2">Phone number</label>
+							<div class="flex flex-wrap items-stretch w-full mb-4 relative">
+								<div class="flex">
+									<span class="flex items-center leading-normal rounded-r-none border border-r-0 border-blue-300 px-3 whitespace-no-wrap text-grey-dark text-sm w-12 h-10 bg-yellow-500 justify-center items-center  text-xl rounded-lg text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                   </span>
+								</div>
+								<input type="text" class="bg-primary flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-0 h-10 border-grey-light rounded-lg rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder=""/>
                   </div>
 
                   <div class="mb-3 space-y-2 w-full text-xs">
@@ -210,6 +168,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
+		</div>
       </section>
     </div>
   );
