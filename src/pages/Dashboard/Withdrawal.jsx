@@ -13,22 +13,18 @@ const Withdrawal = () => {
       <DashboardHeader />
       <div className="my-8 flex justify-between">
         <h1 className="text-2xl font-bold pb-3">Withdrawal</h1>
-        {/* <div>
-          <p className="text-sm font-bold">Your balance</p>
-          <p>{`$112000`}</p>
-        </div> */}
       </div>
 
       <section className="flex flex-col justify-between gap-x-10">
         <div class="stats bg-accent text-primary-content">
           <div class="stat">
             <div class="stat-title">Account balance</div>
-            <div class="md:stat-value stat-title">$89,400</div>
+            <div class="md:stat-value stat-title text-white">$89,400</div>
           </div>
 
           <div class="stat">
             <div class="stat-title">Current balance</div>
-            <div class="md:stat-value stat-title">$89,400</div>
+            <div class="md:stat-value stat-title text-white">$89,400</div>
           </div>
         </div>
 
