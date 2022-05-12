@@ -59,7 +59,7 @@ const Deposit = () => {
   // };
   return (
     // <div className="lg:px-16 md:px-8 w-full pt-0 lg:w-1/2 lg:ml-16 px-4">
-    <div className="lg:px-16 md:px-8 px-2 h-full w-5/6 mx-auto">
+    <div className="lg:px-16 md:px-8 px-4 lg:w-9/12 ">
       <DashboardHeader />
 
       <div className="my-8 flex justify-between">

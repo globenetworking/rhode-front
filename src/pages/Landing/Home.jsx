@@ -13,7 +13,7 @@ const gradText = `${grad} text-black bg-clip-text stroke-transparent fill-black 
 
 const Home = () => {
   return (
-    <div className="bg-primary text-white lg:px-16 h-screen w-full">
+    <div className="bg-primary text-white lg:px-24 h-screen">
       <div className="flex flex-col lg:flex-row py-2  justify-between items-center ">
         <span className="mb-3 text-xs lg:text-base">
           {' '}
@@ -27,16 +27,16 @@ const Home = () => {
       </div>
       <LandingNav />
       <div className="lg:flex lg:pt-0">
-        <div className="px-2 ">
+        <div className="px-2 md:w-6/12 ">
           {' '}
           <img src={apes} alt="apes" />
         </div>
-        <div className=' md:hidden mt-10 bg-primary'>
+        <div className='md:hidden mt-10 bg-primary'>
      <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#131129"  font-color="#FFF" locale="en"></coingecko-coin-price-marquee-widget>
       </div>
         <div className="flex flex-col mt-16 px-4 lg:px-16 items-center">
           <span
-            className={`text-4xl mb-6 lg:text-6xl  lg:leading-snug font-semibold`}
+            className={`text-4xl mb-6 lg:text-5xl  lg:leading-snug font-semibold`}
             style={{ WebkitTextStroke: '3px transparent' }}
           >
             Trade Crypto. Discover, Collect &{' '}
@@ -53,9 +53,10 @@ const Home = () => {
           </span>
         </div>
       </div>
-      <div className='hidden md:block'>
+      <div className='hidden md:flex md:mt-16 md:mb-12 justify-center'>
       <coingecko-coin-price-marquee-widget
         currency="usd"
+        width='1400'
         background-color="#131129"  font-color="#FFF" 
         coin-ids="bitcoin,ethereum,eos,ripple,litecoin"
         locale="en"
@@ -63,7 +64,7 @@ const Home = () => {
       ></coingecko-coin-price-marquee-widget>
       </div>
        {/* section */}
-       <div class="stats mt-12 shadow flex flex-col lg:flex-row py-1 bg-primary px-4 w-11/12 text-tcream">
+       <div class="stats mt-12 shadow flex flex-col lg:flex-row py-1 bg-primary px-4 w- text-tcream">
           <div class="stat">
             <div class="stat-figure text-primary">
               <svg
@@ -124,20 +125,24 @@ const Home = () => {
         </div>
 
       {/* section */}
-      <div className="flex flex-col items-center mt-10 pb-20">
+      <div className="flex flex-col lg:justify-center items-center mt-10 pb-20 ">
         <div className="capitalize font-semibold text-xl md:text-2xl mb-6 mt-6 lg:text-4xl">Top Sellers</div>
         <div className="hidden  w-full md:grid grid-cols-1 lg:grid-cols-4 ">
          { nftArr.map(({img, name, desc, price, days, author})=><NftCard img={img} name={name} desc={desc} price={price} days={days} author={author} />)
           }
         </div>
 
-        <div className="md:hidden  w-full grid grid-cols-1 ">
-         { nftArr.slice(3).map(({img, name, desc, price, days, author})=><NftCard img={img} name={name} desc={desc} price={price} days={days} author={author} />)
+        <div className="  w-full md:hidden flex flex-col items-center ">
+         { nftArr.slice(2).map(({img, name, desc, price, days, author})=><NftCard img={img} name={name} desc={desc} price={price} days={days} author={author} />)
           }
         </div>
 
-       
-      </div>
+        <div className='bg-green-300'>
+        <coingecko-coin-market-ticker-list-widget  coin-id="bitcoin" currency="usd" background-color="#131129"  font-color="#FFF" locale="en"></coingecko-coin-market-ticker-list-widget>
+
+        </div>
+        
+              </div>
     </div>
   );
 };

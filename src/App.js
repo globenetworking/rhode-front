@@ -14,12 +14,12 @@ import SignIn from "./pages/Landing/SignIn";
 const App = () => {
   return (
     <div
-      className="flex flex-col lg:flex-row relative bg-primary h-screen overflow-y-scroll overflow-x-hidden"
+      className="flex flex-col lg:flex-row relative right-0 bg-primary h-screen overflow-y-scroll"
       data-theme="myTheme"
     >
       <Menu />
       <div className="hidden lg:block w-20 mb-24"></div>
-      <div className="container lg:py-10 py-4 px-2 lg:px-0 relative">
+      <div className=" lg:py-10 py-4 px-2 lg:px-0 relative right-0 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
