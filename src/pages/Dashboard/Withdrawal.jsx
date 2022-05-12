@@ -19,12 +19,12 @@ const Withdrawal = () => {
         <div class="stats bg-accent text-primary-content">
           <div class="stat">
             <div class="stat-title">Account balance</div>
-            <div class="md:stat-value stat-title text-white">$89,400</div>
+            <div class="stat-value text-white">$89,400</div>
           </div>
 
-          <div class="stat">
+          <div class="stat md:block hidden">
             <div class="stat-title">Current balance</div>
-            <div class="md:stat-value stat-title text-white">$89,400</div>
+            <div class="stat-value text-white">$89,400</div>
           </div>
         </div>
 
