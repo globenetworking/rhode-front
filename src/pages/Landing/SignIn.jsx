@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from "react-router-dom";
 import { GiAngelWings } from 'react-icons/gi';
+import { setUserDetails, setToken } from "../../Redux/action";
+import { useDispatch } from "react-redux";
 
 const Signin = () => {
+  let navigate = useNavigate();
+  const dispatch = useDispatch()
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('')
   const [exists, setexists] = useState('');
   const [msg, setMsg] = useState({
     name: '',
@@ -25,8 +30,42 @@ const Signin = () => {
     setPassword(event.target.value);
   };
 
-  const onSignup = (event) => {
+  const login = (event) => {
     event.preventDefault();
+    console.log(`em ${email}   ${password}`)
+    setMsg({});
+    fetch("/login", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+       console.log('res', res)
+       if (res.msg) {
+        setError('incorrect login credentials')
+        setTimeout(()=>{
+          setError('')
+        },2000)
+        return
+      }
+
+      
+        const { token } = res;
+        const { user } = res;
+        dispatch(setToken(token));
+       
+       
+      
+        if (token != undefined) {        
+           dispatch(setUserDetails(user));
+           navigate("../user/dashboard", { replace: true });
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const inputStyle =
@@ -55,9 +94,9 @@ const Signin = () => {
                   <div className="text-left font-semibold pb-1 text-xs lg:text-base">
                     Email
                   </div>
-                  <input placeholder="jon@doe.com" className={inputStyle} />
+                  <input placeholder="jon@doe.com" className={inputStyle} onChange={onEmailChange}/>
                 </div>
-                <div className="text-center text-red-600 text-sm">{msg.id}</div>
+                <div className="text-center text-red-400 text-sm">{msg.id}</div>
 
                 <div className="mt-3">
                   <div className="text-left font-semibold pb-1 text-xs lg:text-base">
@@ -74,31 +113,14 @@ const Signin = () => {
                 <div className="text-center text-red-600 text-sm">
                   {msg.password}
                 </div>
-                {/* <div className="text-center text-red-600 text-sm">
+                <div className="text-center text-red-600 text-sm">
                 {error}
-              </div> */}
-
-                <div className="mt-7 flex">
-                  <label
-                    for="remember_me"
-                    className="inline-flex  w-full cursor-pointer "
-                  >
-                    <input
-                      id="certify"
-                      type="checkbox"
-                      className="rounded mt-1 border-gray-300 text-secondary shadow-sm focus:border-secondary focus:ring focus:secondary focus:ring-opacity-50"
-                      name="certify"
-                    />
-                    <span className="ml-2 text-xs font-semibold lg:font-bold">
-                      I certify that I am 18 years of age or older
-                    </span>
-                  </label>
-                </div>
+              </div>
 
                 <div className="mt-7">
-                  <span className="btn btn-secondary lg:btn-wide btn-sm h-9">
+                  <button onClick={login} className="btn btn-secondary lg:btn-wide btn-sm h-9">
                     Sign in
-                  </span>
+                  </button>
                 </div>
                 {/* {error ? <div>{error}</div> : null} */}
                 <div className="flex mt-4 items-center text-center">
@@ -116,7 +138,7 @@ const Signin = () => {
                       to="/sign-up"
                       className="ml-2 text-secondary font-bold"
                     >
-                      Sign in
+                      Sign up
                     </Link>
                   </div>
                 </div>
