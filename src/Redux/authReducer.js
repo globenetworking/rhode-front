@@ -9,10 +9,6 @@ const initialState = {
     joined: "",
     accbal: 0,
     phone: 0,
-    manual: 0,
-    auto: 0,
-    real: 0,
-    realearn: 0,
   },
   user: {},
 };

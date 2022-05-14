@@ -34,7 +34,7 @@ const Signin = () => {
 
   return (
     <div className="flex flex-col items-center h-full justify-center text-white bg-reed pt-6 lg:pt-12 text-center w-full mb-6">
-      <div className="mx-auto w-10/12 lg:w-10/12  px-6 lg:px-12">
+      <div className="lg:mx-auto  w-full lg:w-10/12  px-6 lg:px-12">
         <div class="flex items-center text-secondary justify-center ">
           <div className="">
             <GiAngelWings size={42} className="mx-3 " />

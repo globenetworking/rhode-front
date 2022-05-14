@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { Link  } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { GiAngelWings } from 'react-icons/gi';
+import { setUserDetails, setToken } from "../../Redux/action";
+import { useDispatch } from "react-redux";
 
 const Signup =  () => {
+  let navigate = useNavigate();
+  const dispatch = useDispatch()
     const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [terms, setTerms] = useState(true)
   const [password, setPassword] = useState("");
-  const [exists, setexists] = useState("");
   const [msg, setMsg] = useState({
     name: "",
     email: "",
@@ -26,6 +30,42 @@ const Signup =  () => {
   };
 
   const onSignup = (event) => {
+    event.preventDefault();
+    console.log('rer', terms)
+    if(!terms){
+      console.log('rerddddddddddd')
+      return
+    }
+    setMsg({});
+    fetch("/sign-up", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+       console.log('res', res)
+        const { token } = res;
+        const { user } = res;
+        dispatch(setToken(token));
+       
+        if (res.msg) {
+          setMsg(res.msg);
+          console.log("msg", msg);
+        }
+      
+        if (token != undefined) {        
+           dispatch(setUserDetails(res.user));
+           navigate("../user/dashboard", { replace: true });
+        }
+      })
+      .catch((err) => console.log(err));
+      
+
       event.preventDefault();
   };
 
@@ -33,15 +73,15 @@ const Signup =  () => {
 
 
 
-    return (<div className="flex flex-col items-center h-full justify-center text-white bg-reed pt-6 lg:pt-12 text-center w-full mb-6">
-    <div className="mx-auto w-10/12 lg:w-10/12  px-6 lg:px-12">
+    return (<div className=" flex flex-col items-center h-full justify-center text-white bg-reed pt-6 lg:pt-12 text-center w-full mb-6">
+    <div className="lg:mx-auto w-full lg:w-10/12  px-6 lg:px-12">
     <div class="flex items-center text-secondary justify-center ">
       <div className=""><GiAngelWings size={42}  className="mx-3 "/></div>
       <span class="uppercase text-lg font-bold">CoolS</span>
      </div>
       <div className=" w-full mx-auto pt-6 md:pt-0 max-h-screen  md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
-        <div className="sm:max-w-sm w-full">
-          <div className="w-full rounded-lg py-0 lg:py-20 px-6 pt-4 md:pt-12 md:pt-6 bg-accent text-white shadow-xl">
+        <form onSubmit={onSignup} className="sm:max-w-sm w-full">
+          <div className="w-full rounded-lg py-0 lg:py-20 px-6 pt-4 md:pt-6 bg-accent text-white shadow-xl">
             <label
               for=""
               className="block mt-3 text-base lg:text-xl uppercase font-bold -900 text-center"
@@ -52,12 +92,20 @@ const Signup =  () => {
             <div className="pb-3">
                 <div className="text-left font-semibold pb-1 text-xs lg:text-base">Fullname</div>
                 <input
+                  name="name"
+                  required
+                  onChange={onNameChange}
+                  value={name}
                   placeholder="Jon Doe"
                   className={inputStyle}                />
               </div>
               <div className="pb-3">
                 <div className="text-left font-semibold pb-1 text-xs lg:text-base">Email</div>
                 <input
+                  name=""
+                  required
+                  onChange={onEmailChange}
+                  value={email}
                   placeholder="jon@doe.com"
                   className={inputStyle}                />
               </div>
@@ -69,7 +117,10 @@ const Signup =  () => {
               <div className="text-left font-semibold pb-1 text-xs lg:text-base">Password</div>
                   
                 <input
+                  name="password"
                   type="password"
+                  minLength={6} required
+                  value={password}
                   onChange={onPasswordChange}
                   placeholder="password"
                   className={inputStyle}                />
@@ -77,6 +128,7 @@ const Signup =  () => {
               <div className="text-center text-red-600 text-sm">
                 {msg.password}
               </div>
+              
               {/* <div className="text-center text-red-600 text-sm">
                 {error}
               </div> */}
@@ -89,6 +141,8 @@ const Signup =  () => {
                   <input
                     id="certify"
                     type="checkbox"
+                    checked={terms}
+                    onClick={() => setTerms(!terms)}
                     className="rounded mt-1 border-gray-300 text-secondary shadow-sm focus:border-secondary focus:ring focus:secondary focus:ring-opacity-50"
                     name="certify"
                   />
@@ -99,9 +153,9 @@ const Signup =  () => {
 
                
               </div>
-
+              {!terms && <div className="text-xs my-3 text-red-400">You have not accepted our conditions</div>}
               <div className="mt-7">
-                <span className="btn btn-secondary lg:btn-wide btn-sm h-9">Sign </span>
+                <button onClick={onSignup} className="btn btn-secondary lg:btn-wide btn-sm h-9">Signn </button>
               </div>
               {/* {error ? <div>{error}</div> : null} */}
               <div className="flex mt-4 items-center text-center">
@@ -115,11 +169,12 @@ const Signup =  () => {
               <div className="flex mt-4 justify-center w-full">
 
                 <div className="font-semibold text-sm lg:text-base mb-6">Have an account? <Link to='/sign-in' className="ml-2 text-secondary font-bold">Sign in</Link></div>
+               
               </div>
 
             </form>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     {/* form starts here; */}

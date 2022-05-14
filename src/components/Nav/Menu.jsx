@@ -18,7 +18,7 @@ export default function Menu() {
       </Link>
 
       <Link
-        to="/dashboard"
+        to="/user/dashboard"
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
         <BsWallet2 size={21} />
@@ -27,7 +27,7 @@ export default function Menu() {
         </span>
       </Link>
       <Link
-        to="/Deposit"
+        to="/user/Deposit"
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
         <GiPayMoney size={21} />
@@ -42,7 +42,7 @@ export default function Menu() {
         <BsCollection size={21} />
       </Link>
       <Link
-        to="/withdrawal"
+        to="/user/withdrawal"
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
         <GiReceiveMoney size={21} />

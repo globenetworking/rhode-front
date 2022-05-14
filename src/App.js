@@ -21,11 +21,11 @@ const App = () => {
       <div className=" lg:py-10 py-4 px-2 lg:px-0 relative right-0 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/deposit" element={<Deposit />} />
+          <Route path="/user/dashboard" element={<Dashboard />} />
+          <Route path="/user/deposit" element={<Deposit />} />
           <Route path="/user/profile" element={<Profile />} />
-          <Route path="/withdrawal" element={<Withdrawal />} />
-          <Route path="/wallet" element={<Wallet />} />
+          <Route path="user/withdrawal" element={<Withdrawal />} />
+          <Route path="/user/wallet" element={<Wallet />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<Signup />} />
         </Routes>
