@@ -29,8 +29,9 @@ const Signup =  () => {
     setPassword(event.target.value);
   };
 
-  const onSignup = (event) => {
-    event.preventDefault();
+  const onSignup = (e) => {
+    e.preventDefault();
+
     console.log('rer', terms)
     if(!terms){
       console.log('rerddddddddddd')
@@ -59,14 +60,14 @@ const Signup =  () => {
         }
       
         if (token != undefined) {        
-           dispatch(setUserDetails(res.user));
+           dispatch(setUserDetails(user));
            navigate("../user/dashboard", { replace: true });
         }
       })
       .catch((err) => console.log(err));
       
 
-      event.preventDefault();
+     
   };
 
   const inputStyle = " pl-4 mt-1 block w-full border-none bg-primary placeholder-white text-sm h-11 focus:ring-0"
@@ -80,7 +81,7 @@ const Signup =  () => {
       <span class="uppercase text-lg font-bold">CoolS</span>
      </div>
       <div className=" w-full mx-auto pt-6 md:pt-0 max-h-screen  md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
-        <form onSubmit={onSignup} className="sm:max-w-sm w-full">
+        <form className="sm:max-w-sm w-full">
           <div className="w-full rounded-lg py-0 lg:py-20 px-6 pt-4 md:pt-6 bg-accent text-white shadow-xl">
             <label
               for=""
@@ -99,18 +100,22 @@ const Signup =  () => {
                   placeholder="Jon Doe"
                   className={inputStyle}                />
               </div>
+              <div className="text-center text-red-400 text-xs">
+                {msg.name}
+              </div>
               <div className="pb-3">
                 <div className="text-left font-semibold pb-1 text-xs lg:text-base">Email</div>
                 <input
                   name=""
                   required
+                  type="email"
                   onChange={onEmailChange}
                   value={email}
                   placeholder="jon@doe.com"
                   className={inputStyle}                />
               </div>
-              <div className="text-center text-red-600 text-sm">
-                {msg.id}
+              <div className="text-center text-red-400 text-xs">
+                {msg.email}
               </div>
 
               <div className="mt-3">
@@ -125,11 +130,11 @@ const Signup =  () => {
                   placeholder="password"
                   className={inputStyle}                />
               </div>
-              <div className="text-center text-red-600 text-sm">
+              <div className="text-center text-red-400 text-xs">
                 {msg.password}
               </div>
               
-              {/* <div className="text-center text-red-600 text-sm">
+              {/* <div className="text-center text-red-400 text-xs">
                 {error}
               </div> */}
 
@@ -155,7 +160,7 @@ const Signup =  () => {
               </div>
               {!terms && <div className="text-xs my-3 text-red-400">You have not accepted our conditions</div>}
               <div className="mt-7">
-                <button onClick={onSignup} className="btn btn-secondary lg:btn-wide btn-sm h-9">Signn </button>
+                <button onClick={onSignup} className="btn btn-secondary lg:btn-wide btn-sm h-9">Sign up </button>
               </div>
               {/* {error ? <div>{error}</div> : null} */}
               <div className="flex mt-4 items-center text-center">
