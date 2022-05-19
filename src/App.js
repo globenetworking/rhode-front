@@ -9,6 +9,7 @@ import Withdrawal from './pages/Dashboard/Withdrawal';
 import Wallet from './pages/Dashboard/Wallet';
 import Signup from './pages/Landing/Signup';
 import SignIn from './pages/Landing/SignIn';
+import Admin from './pages/Admin/';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/user/wallet" element={<Wallet />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<Signup />} />
+          <Route path="/admin/*" element={<Admin />} />
         </Routes>
       </div>
     </div>
