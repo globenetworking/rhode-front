@@ -32,7 +32,7 @@ const Userwdl = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("/wapprove", {
+      await fetch("https://sheltered-bastion-98583.herokuapp.com/wapprove", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
@@ -55,7 +55,7 @@ const Userwdl = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("/wdecline", {
+      await fetch("https://sheltered-bastion-98583.herokuapp.com/wdecline", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),

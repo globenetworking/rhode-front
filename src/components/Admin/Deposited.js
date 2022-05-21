@@ -15,7 +15,7 @@ const Withdrawal = () => {
   const [search, setSearch] = useState('')
 
   useEffect(()=>{
-    fetch("/deposited", {
+    fetch("https://sheltered-bastion-98583.herokuapp.com/deposited", {
       method: "get",
       headers: { "Content-Type": "application/json" }
     })

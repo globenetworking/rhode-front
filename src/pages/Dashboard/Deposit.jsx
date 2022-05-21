@@ -50,7 +50,7 @@ const Deposit = () => {
   };
 
   // const onDeposit = () => {
-  //   fetch("/deposit", {
+  //   fetch("https://sheltered-bastion-98583.herokuapp.com/deposit", {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify({ email, deposit: amt }),
