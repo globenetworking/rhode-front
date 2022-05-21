@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import { GiAngelWings } from 'react-icons/gi';
-import { setUserDetails, setToken } from "../../Redux/action";
-import { useDispatch } from "react-redux";
+import { setUserDetails, setToken } from '../../Redux/action';
+import { useDispatch } from 'react-redux';
 
 const Signin = () => {
   let navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
   const [exists, setexists] = useState('');
   const [msg, setMsg] = useState({
     name: '',
@@ -32,7 +32,7 @@ const Signin = () => {
 
   const login = (event) => {
     event.preventDefault();
-    console.log(`em ${email}   ${password}`)
+    console.log(`em ${email}   ${password}`);
     setMsg({});
     fetch("https://sheltered-bastion-98583.herokuapp.com/login", {
       method: "post",
@@ -44,25 +44,22 @@ const Signin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-       console.log('res', res)
-       if (res.msg) {
-        setError('incorrect login credentials')
-        setTimeout(()=>{
-          setError('')
-        },2000)
-        return
-      }
+        console.log('res', res);
+        if (res.msg) {
+          setError('incorrect login credentials');
+          setTimeout(() => {
+            setError('');
+          }, 2000);
+          return;
+        }
 
-      
         const { token } = res;
         const { user } = res;
         dispatch(setToken(token));
-       
-       
-      
-        if (token != undefined) {        
-           dispatch(setUserDetails(user));
-           navigate("../user/dashboard", { replace: true });
+
+        if (token != undefined) {
+          dispatch(setUserDetails(user));
+          navigate('../user/dashboard', { replace: true });
         }
       })
       .catch((err) => console.log(err));
@@ -94,7 +91,11 @@ const Signin = () => {
                   <div className="text-left font-semibold pb-1 text-xs lg:text-base">
                     Email
                   </div>
-                  <input placeholder="jon@doe.com" className={inputStyle} onChange={onEmailChange}/>
+                  <input
+                    placeholder="Enter your email"
+                    className={inputStyle}
+                    onChange={onEmailChange}
+                  />
                 </div>
                 <div className="text-center text-red-400 text-sm">{msg.id}</div>
 
@@ -106,19 +107,20 @@ const Signin = () => {
                   <input
                     type="password"
                     onChange={onPasswordChange}
-                    placeholder="password"
+                    placeholder="Enter your password"
                     className={inputStyle}
                   />
                 </div>
                 <div className="text-center text-red-600 text-sm">
                   {msg.password}
                 </div>
-                <div className="text-center text-red-600 text-sm">
-                {error}
-              </div>
+                <div className="text-center text-red-600 text-sm">{error}</div>
 
                 <div className="mt-7">
-                  <button onClick={login} className="btn btn-secondary lg:btn-wide btn-sm h-9">
+                  <button
+                    onClick={login}
+                    className="btn btn-secondary lg:btn-wide btn-sm h-9"
+                  >
                     Sign in
                   </button>
                 </div>
@@ -135,7 +137,7 @@ const Signin = () => {
                   <div className="font-semibold text-sm lg:text-base mb-6">
                     Don't have an account?{' '}
                     <Link
-                      to="/sign-up"
+                      to="/register"
                       className="ml-2 text-secondary font-bold"
                     >
                       Sign up
