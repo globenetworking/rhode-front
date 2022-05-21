@@ -3,7 +3,7 @@ import DashboardHeader from '../../components/DashboardHeader';
 
 const Wallet = () => {
   return (
-    <div className="lg:px-16 md:px-8 px-2 h-full w-[90%] mx-auto">
+    <div className="lg:px-16 md:px-8 px-2 h-full w-[95%] mx-auto">
       <DashboardHeader />
 
       <div className="my-8">
@@ -15,7 +15,7 @@ const Wallet = () => {
 
       <section className="mb-10 pb-20 pt-4">
         <div className="lg:w-5/6 w-full bg-accent rounded-lg p-3">
-          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-5">
+          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-3">
             <div className="flex items-center lg:gap-5 gap-2">
               <div className="avatar">
                 <div className="w-10 rounded">
@@ -25,7 +25,9 @@ const Wallet = () => {
                   />
                 </div>
               </div>
-              <p className="text-white font-bold">Metamask</p>
+              <p className="text-white font-bold text-sm lg:text-base">
+                Metamask
+              </p>
             </div>
             <div>
               <label
@@ -57,7 +59,7 @@ const Wallet = () => {
             </div>
           </div>
           <div className="divider"></div>
-          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-5">
+          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-3">
             <div className="flex items-center lg:gap-5 gap-2">
               <div className="avatar">
                 <div className="w-10 rounded">
@@ -67,7 +69,10 @@ const Wallet = () => {
                   />
                 </div>
               </div>
-              <p className="text-white font-bold"> Coinbase </p>
+              <p className="text-white font-bold text-sm lg:text-base">
+                {' '}
+                Coinbase{' '}
+              </p>
             </div>
             <div>
               <label
@@ -99,7 +104,7 @@ const Wallet = () => {
             </div>
           </div>
           <div className="divider"></div>
-          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-5">
+          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-3">
             <div className="flex items-center lg:gap-5 gap-2">
               <div className="avatar">
                 <div className="w-10 rounded">
@@ -109,7 +114,10 @@ const Wallet = () => {
                   />
                 </div>
               </div>
-              <p className="text-white font-bold"> WalletConnect</p>
+              <p className="text-white font-bold text-sm lg:text-base">
+                {' '}
+                WalletConnect
+              </p>
             </div>
             <div>
               <label
@@ -141,7 +149,7 @@ const Wallet = () => {
             </div>
           </div>
           <div className="divider"></div>
-          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-5">
+          <div className="flex flex-wrap gap-4 bg-primary rounded items-center justify-between p-3">
             <div className="flex items-center lg:gap-5 gap-2">
               <div className="avatar">
                 <div className="w-10 rounded">
@@ -152,7 +160,10 @@ const Wallet = () => {
                 </div>
               </div>
 
-              <p className="text-white font-bold"> Phantom</p>
+              <p className="text-white font-bold text-sm lg:text-base">
+                {' '}
+                Phantom
+              </p>
             </div>
             <div>
               <label
