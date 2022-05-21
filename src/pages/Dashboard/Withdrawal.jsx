@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import DashboardHeader from '../../components/DashboardHeader';
+import useProtectedUser from '../../hooks/useProtectedUser';
+import { suspend } from "suspend-react";
+
 
 const Withdrawal = () => {
+  suspend(useProtectedUser, ['withdrawal'])
   const [amt, setAmt] = useState(0);
 
   const handleChange = (e) => {

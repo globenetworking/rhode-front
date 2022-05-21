@@ -3,8 +3,12 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { BiCopyAlt } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import DashboardHeader from '../../components/DashboardHeader';
+import useProtectedUser from '../../hooks/useProtectedUser';
+import { suspend } from "suspend-react";
+
 
 const Profile = () => {
+  suspend(useProtectedUser, ['profile'])
   const user = useSelector(state => state.auth.user_details)
   let {email, name} = user
   name = name.split(' ')

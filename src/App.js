@@ -11,6 +11,12 @@ import Signup from './pages/Landing/Signup';
 import SignIn from './pages/Landing/SignIn';
 import Collections from './pages/Landing/Collections';
 import Admin from './pages/Admin/';
+import { Suspense } from 'react';
+import { Code, Instagram } from 'react-content-loader'
+import MyLoader from './loader';
+
+const MyInstagramLoader = () => <Instagram />
+
 
 const App = () => {
   return (
@@ -21,6 +27,7 @@ const App = () => {
       <Menu />
       <div className="hidden lg:block w-20 mb-24"></div>
       <div className=" lg:py-10 py-4 px-2 lg:px-0 relative right-0 w-full">
+      <Suspense fallback={<MyLoader/>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user/dashboard" element={<Dashboard />} />
@@ -33,6 +40,7 @@ const App = () => {
           <Route path="/register" element={<Signup />} />
           <Route path="/admin/*" element={<Admin />} />
         </Routes>
+        </Suspense>
       </div>
     </div>
   );
