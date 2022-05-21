@@ -9,6 +9,7 @@ import Withdrawal from './pages/Dashboard/Withdrawal';
 import Wallet from './pages/Dashboard/Wallet';
 import Signup from './pages/Landing/Signup';
 import SignIn from './pages/Landing/SignIn';
+import Collections from './pages/Landing/Collections';
 import Admin from './pages/Admin/';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/user/profile" element={<Profile />} />
           <Route path="user/withdrawal" element={<Withdrawal />} />
           <Route path="/user/wallet" element={<Wallet />} />
+          <Route path="/collections" element={<Collections />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<Signup />} />
           <Route path="/admin/*" element={<Admin />} />

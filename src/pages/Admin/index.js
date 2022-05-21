@@ -1,35 +1,34 @@
-import React, { useEffect } from "react";
-import { Switch, Route, Redirect, Link, Routes } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Switch, Route, Redirect, Link, Routes } from 'react-router-dom';
 
 // components
 
 // views
-import Header from "../../components/Admin/Header";
-import AllUsers from "../../components/Admin/Allusers";
+import Header from '../../components/Admin/Header';
+import AllUsers from '../../components/Admin/Allusers';
 // import Deposited from "../../components/Admin/Deposited";
-import EditUser from "../../components/Admin/EditUser";
-import Withdrawal from "../../components/Admin/Withdrawal";
-
+import EditUser from '../../components/Admin/EditUser';
+import Withdrawal from '../../components/Admin/Withdrawal';
 
 const Admin = () => {
-//   let { url } = useRouteMatch();
-    let url= 'admin'
+  //   let { url } = useRouteMatch();
+  let url = 'admin';
   return (
     <>
       <div className="">
         {/* Header */}
-        <Header/>
+        <Header />
         <div className="px-4 md:px-10 mx-auto w-full -m-24">
           <Routes>
-            <Route path="/users" element={<AllUsers/>} />
-            <Route path="/editUser" element={<EditUser/>}   />
-            <Route path="/withdrawals" element={<Withdrawal/>}   />
+            <Route path="/users" element={<AllUsers />} />
+            <Route path="/editUser" element={<EditUser />} />
+            <Route path="/withdrawals" element={<Withdrawal />} />
             {/* <Route path="/admin/" element={</>}   />
             <Route path="/admin/" element={</>}   />
             <Route path="/admin/" element={</>}   />
             <Route path="/admin/" element={</>}   />
             <Route path="/admin/" element={</>}   /> */}
-          {/* <Redirect from="/user" to="/user/dashboard" /> */}
+            {/* <Redirect from="/user" to="/user/dashboard" /> */}
           </Routes>
         </div>
       </div>
@@ -39,9 +38,8 @@ const Admin = () => {
 
 export default Admin;
 
-
-
-{/* <div className="flex justify-between mb-6 uppercase font-semibold text-sm pt-32">
+{
+  /* <div className="flex justify-between mb-6 uppercase font-semibold text-sm pt-32">
 <Link
   className="p-2 bg-secondary text-white"
   to={`${url}/withdrawal`}
@@ -60,4 +58,5 @@ export default Admin;
 >
   All Users
 </Link>
-</div> */}
+</div> */
+}

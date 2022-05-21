@@ -1,14 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import DashboardHeader from '../../components/DashboardHeader';
 
 const DashboardHome = () => {
+  const user = useSelector((state) => state.auth.user_details);
+
+  console.log(user);
+
+  const { balance, deposit, profits, withdrawal } = user;
+
   return (
-    <div className="lg:px-16 md:px-8 px-2 h-full">
+    <div className="lg:px-16 md:px-8 px-2 h-full w-[90%] mx-auto">
       <DashboardHeader />
       <div className="my-8 flex justify-between">
         <div>
           <h1 className="text-4xl font-bold pb-3 text-white">Wallet</h1>
-          <p className="text-sm text-white">Welcome to the Dashboard</p>
+          <p className="text-sm text-white">Welcome to your Dashboard</p>
         </div>
       </div>
 
@@ -19,31 +27,31 @@ const DashboardHome = () => {
           </h2>
           <div class="card shadow-xl bg-accent">
             <div class="card-body">
-              <h2 class="card-title text-base text-white">Total balance</h2>
+              <h2 class="card-title text-base text-white">Total Balance</h2>
               <p className="text-3xl font-bold text-white">$221,567</p>
 
               <div className="grid md:grid-cols-2 mt-5 gap-5">
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
-                    <p>Last Month</p>
+                    <p>Deposit</p>
                     <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
-                    <p>Last Month</p>
+                    <p>Withdrawal</p>
                     <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
-                    <p>Last Month</p>
+                    <p>Balance</p>
                     <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
-                    <p>Last Month</p>
+                    <p>Profits</p>
                     <h3 className="font-bold text-xl text-white">$42,678</h3>
                   </div>
                 </div>
@@ -60,19 +68,19 @@ const DashboardHome = () => {
           <div className="flex flex-col gap-10">
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
-                <p className="text-white">Last Month</p>
+                <p className="text-white">Withdrawal</p>
                 <h3 className="text-secondary">$42,678</h3>
               </div>
             </div>
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
-                <p className="text-white">Last Month</p>
+                <p className="text-white">Deposit</p>
                 <h3 className="text-secondary">$42,678</h3>
               </div>
             </div>
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
-                <p className="text-white">Last Month</p>
+                <p className="text-white">Deposit</p>
                 <h3 className="text-secondary">$42,678</h3>
               </div>
             </div>
