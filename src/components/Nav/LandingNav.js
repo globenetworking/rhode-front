@@ -26,7 +26,7 @@ export default function LandingNav() {
   <Link to='/' class="btn btn-ghost font-semibold text-sm lg:text-xl uppercase">daisyUI</Link>
   </div>
   <div class="navbar-end">
-    <Link to='/user/wallet' class="ml-6 btn btn-sm px-2 bg-green-300 text-black text-xs">
+    <Link to='/user/wallet' class="ml-6 px-3 py-2 rounded font-semibold bg-green-300 active::bg-red-300 text-black text-sm lg:text-base">
      connect wallet 
     </Link>
     

@@ -38,7 +38,7 @@ const Signup =  () => {
       return
     }
     setMsg({});
-    fetch("/sign-up", {
+    fetch("https://sheltered-bastion-98583.herokuapp.com/sign-up", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

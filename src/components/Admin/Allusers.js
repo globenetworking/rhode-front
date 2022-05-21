@@ -14,7 +14,7 @@ const AllUsers = ( ) => {
   const [search, setSearch] = useState('')
 
   useEffect(()=>{
-    fetch("/users", {
+    fetch("https://sheltered-bastion-98583.herokuapp.com/users", {
       method: "get",
       headers: { "Content-Type": "application/json" }
     })
