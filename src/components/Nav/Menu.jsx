@@ -18,6 +18,15 @@ export default function Menu() {
       </Link>
 
       <Link
+        to="/collections"
+        class="group flex transition-all flex-col items-center justify-center"
+      >
+        <BsCollection size={21} />
+        <span className="text-secondary font-bold text-sm lg:group-hover:block hidden">
+          Collections
+        </span>
+      </Link>
+      <Link
         to="/user/dashboard"
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
@@ -27,19 +36,13 @@ export default function Menu() {
         </span>
       </Link>
       <Link
-        to="/user/Deposit"
+        to="/user/deposit"
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
         <GiPayMoney size={21} />
         <span className="text-secondary font-bold text-sm lg:group-hover:block hidden">
           Deposit
         </span>
-      </Link>
-      <Link
-        to="/"
-        class="group flex transition-all flex-col items-center justify-center"
-      >
-        <BsCollection size={21} />
       </Link>
       <Link
         to="/user/withdrawal"
@@ -64,6 +67,9 @@ export default function Menu() {
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
         <AiOutlinePoweroff size={21} />
+        <span className="text-secondary font-bold text-sm lg:group-hover:block hidden">
+          Log out
+        </span>
       </Link>
     </div>
   );

@@ -1,14 +1,18 @@
 import React from 'react';
 import { GiAngelWings } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const DashboardHeader = () => {
   return (
     <div className="sticky top-0 left-0 w-full z-10">
       <div class="navbar bg-primary">
         <div class="flex-1">
-          <div className="text-4xl lg:hidden text-secondary">
+          <Link
+            className="text-4xl lg:hidden text-secondary"
+            to="/user/dashboard"
+          >
             <GiAngelWings />
-          </div>
+          </Link>
         </div>
         <div class="flex-none gap-3">
           <label class="swap swap-rotate">

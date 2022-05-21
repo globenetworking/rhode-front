@@ -3,7 +3,7 @@ import DashboardHeader from '../../components/DashboardHeader';
 
 const DashboardHome = () => {
   return (
-    <div className="lg:px-16 md:px-8 px-2 h-full">
+    <div className="lg:px-16 md:px-8 px-2 h-full w-[90%] mx-auto">
       <DashboardHeader />
       <div className="my-8 flex justify-between">
         <div>
