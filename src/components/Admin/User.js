@@ -14,6 +14,7 @@ const User = ({ user, notify }) => {
   const EditUser = () => {
     dispatch(setAdUser(user));
     navigate("/admin/editUser", { replace: true });
+    notify()
   };
 
   const onDel = async () => {

@@ -27,8 +27,8 @@ const App = () => {
           <Route path="/user/profile" element={<Profile />} />
           <Route path="user/withdrawal" element={<Withdrawal />} />
           <Route path="/user/wallet" element={<Wallet />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<Signup />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<Signup />} />
           <Route path="/admin/*" element={<Admin />} />
         </Routes>
       </div>

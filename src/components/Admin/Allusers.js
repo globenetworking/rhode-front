@@ -40,7 +40,6 @@ const AllUsers = ( ) => {
           className="mx-auto block py-2 rounded px-1 my-2"
           onChange={(event) => {
             setSearch(event.target.value)
-            console.log('ssssss',search)
           }}
         />
         <User key={1} user={{name:"jon",email:"test@test.com"}}/>
