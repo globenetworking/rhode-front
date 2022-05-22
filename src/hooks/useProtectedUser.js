@@ -23,7 +23,10 @@ const useProtectedUser = async () => {
         console.log({data});
 
         if (!data.user) {
-          navigate("/login", { replace: true });
+          console.log('heeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
+          navigate("/login", { replace: false });
+          
+          
         }
       });
   

@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import DashboardHeader from '../../components/DashboardHeader';
-import useProtectedUser from '../../hooks/useProtectedUser';
-import { suspend } from "suspend-react";
+import useRedirect from '../../hooks/useRedirect';
 
 
 const Withdrawal = () => {
-  suspend(useProtectedUser, ['withdrawal'])
+  useRedirect('withdrawal')
   const [amt, setAmt] = useState(0);
 
   const handleChange = (e) => {

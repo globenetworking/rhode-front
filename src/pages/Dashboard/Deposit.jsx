@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { BiCopyAlt } from 'react-icons/bi';
 import DashboardHeader from '../../components/DashboardHeader';
-import useProtectedUser from '../../hooks/useProtectedUser';
-import { suspend } from "suspend-react";
+import useRedirect from '../../hooks/useRedirect';
 
 const Deposit = () => {
-  suspend(useProtectedUser, ['deposit'])
+  useRedirect('deposit')
   const [barcode, setBarcode] = useState('3FXKbTieemhEtv25Q9mSiAxP7HaRc3H4QM');
   const [amt, setAmt] = useState(0);
   const [btc, setBtc] = useState(0.0);

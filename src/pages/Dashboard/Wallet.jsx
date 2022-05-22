@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardHeader from '../../components/DashboardHeader';
+import useRedirect from '../../hooks/useRedirect';
 
 const Wallet = () => {
   return (
