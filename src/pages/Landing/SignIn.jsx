@@ -66,10 +66,11 @@ const Signin = () => {
       
 
         if (token != undefined) {
+          console.log('signedIn', token)
           dispatch(setToken(token));
           dispatch(setUserDetails(user));
-          window.location.assign('http://enefti-six.vercel.app/user/dashboard')
-          // navigate('../user/dashboard', { replace: true });
+          // window.location.assign('http://enefti-six.vercel.app/user/dashboard')
+          navigate('/user/dashboard', { replace: true });
         }
       })
       .catch((err) => console.log(err));

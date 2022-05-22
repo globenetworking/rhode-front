@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate  } from "react-router-dom";
 
@@ -6,6 +6,8 @@ import { Link, useNavigate  } from "react-router-dom";
 
 
 const useProtectedUser = async () => {
+  const [st,setSt] = useState(true)
+  console.log('eeeeeeeeeeeeeee')
   const token = useSelector((state) => state.auth.token);
   console.log('redux toks......................................................',token)
     let res = await fetch("https://sheltered-bastion-98583.herokuapp.com/protected", {

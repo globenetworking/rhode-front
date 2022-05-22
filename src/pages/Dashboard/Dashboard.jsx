@@ -11,14 +11,6 @@ import useRedirect from '../../hooks/useRedirect';
 
 const DashboardHome = () => {
   useRedirect('dash')
-  // let navigate = useNavigate();
-  // const {decodedToken} = suspend(useProtectedUser, ['dash'])
-  // console.log({decodedToken})
-  // useEffect(() => {
-  // if(decodedToken == ''){
-  //     navigate("/login", { replace: false });
-  // } 
-  //})
  
 
   const user = useSelector((state) => state.auth.user_details);
