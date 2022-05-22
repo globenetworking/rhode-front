@@ -32,7 +32,7 @@ const Signin = () => {
 
   const login = (event) => {
     event.preventDefault();
-    console.log(`em ${email}   ${password}`);
+    //console.log(`em ${email}   ${password}`);
     setMsg({});
     fetch("https://sheltered-bastion-98583.herokuapp.com/login", {
       method: "post",
@@ -44,8 +44,16 @@ const Signin = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log('res', res);
+        // console.log('res', res);
         if (res.msg) {
+          setError('incorrect login credentials');
+          setTimeout(() => {
+            setError('');
+          }, 2000);
+          return;
+        }
+
+        if (res.error) {
           setError('incorrect login credentials');
           setTimeout(() => {
             setError('');
@@ -55,11 +63,13 @@ const Signin = () => {
 
         const { token } = res;
         const { user } = res;
-        dispatch(setToken(token));
+      
 
         if (token != undefined) {
+          dispatch(setToken(token));
           dispatch(setUserDetails(user));
-          navigate('../user/dashboard', { replace: true });
+          window.location.assign('http://enefti-six.vercel.app/user/dashboard')
+          // navigate('../user/dashboard', { replace: true });
         }
       })
       .catch((err) => console.log(err));

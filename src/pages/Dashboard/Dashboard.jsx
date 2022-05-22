@@ -1,24 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import DashboardHeader from '../../components/DashboardHeader';
 import useProtectedUser from '../../hooks/useProtectedUser';
 import { suspend } from "suspend-react";
 import { useNavigate } from 'react-router-dom';
+import useRedirect from '../../hooks/useRedirect';
 
 
 
 const DashboardHome = () => {
-let navigate = useNavigate();
- const decodedToken = suspend(useProtectedUser, ['dashboard'])
- console.log({decodedToken})
- useEffect(() => {
-  if(!decodedToken){
-   navigate("/login", { replace: false });
-  } 
- })
+  useRedirect('dash')
+  // let navigate = useNavigate();
+  // const {decodedToken} = suspend(useProtectedUser, ['dash'])
+  // console.log({decodedToken})
+  // useEffect(() => {
+  // if(decodedToken == ''){
+  //     navigate("/login", { replace: false });
+  // } 
+  //})
  
-          
 
   const user = useSelector((state) => state.auth.user_details);
 

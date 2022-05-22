@@ -7,8 +7,12 @@ import { AiOutlinePoweroff } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
 
 import { Link } from 'react-router-dom';
+import { setToken, setUserDetails } from '../../Redux/action';
+import { useDispatch } from 'react-redux';
+import useRedirect from '../../hooks/useRedirect';
 
 export default function Menu() {
+  const dispatch = useDispatch()
   return (
     <div className="flex flex-row text-white justify-around items-center bg-accent h-12 w-full text-tcream bottom-0 z-50 lg:left-0 lg:w-24 lg:h-screen lg:flex-col fixed lg:px-5">
       <Link to="/" class="">
@@ -62,15 +66,21 @@ export default function Menu() {
           Profile
         </span>
       </Link>
-      <Link
-        to="/"
+      <span
         class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
       >
-        <AiOutlinePoweroff size={21} />
+        <AiOutlinePoweroff size={21} onClick={() =>  {
+          dispatch(setToken(''))
+          dispatch(setUserDetails({}))
+          setTimeout(()=>{
+            window.location.assign('enefti-six.vercel.app/')
+          },2000)
+         
+        }} />
         <span className="text-secondary font-bold text-sm lg:group-hover:block hidden">
           Log out
         </span>
-      </Link>
+      </span>
     </div>
   );
 }

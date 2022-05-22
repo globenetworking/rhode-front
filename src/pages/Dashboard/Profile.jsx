@@ -7,13 +7,21 @@ import useRedirect from '../../hooks/useRedirect'
 
 const Profile = () => {
   useRedirect('profile')
+  setTimeout(() => {}, 600)
 
-  const user = useSelector(state => state.auth.user_details)
+      const user = useSelector(state => state.auth.user_details)
   let {email, name} = user
-  name = name.split(' ')
+  if(name){
+    name = name.split(' ')
+  }else{
+    name = ['','']
+  }
+
   const first = name[0]
   const last = name[1]
   console.log('state',user)
+  
+
   return (
     <div className="lg:px-16 md:px-8 w-full pt-0 lg:w-7/12 lg:pt-12 lg:ml-16 px-4">
       <DashboardHeader />
