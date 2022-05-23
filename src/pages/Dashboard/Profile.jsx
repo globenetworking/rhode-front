@@ -86,7 +86,7 @@ const Profile = () => {
     phone: user.phone
   })
 
-    notify('Cancelled')
+    notify('Cancelled!')
   }
   
 

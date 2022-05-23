@@ -12,7 +12,7 @@ import SignIn from './pages/Landing/SignIn';
 import Collections from './pages/Landing/Collections';
 import Admin from './pages/Admin/';
 import { Suspense } from 'react';
-import { Code, Instagram } from 'react-content-loader'
+import { Code, Instagram } from 'react-content-loader';
 import MyLoader from './loader';
 
 
@@ -27,19 +27,19 @@ const App = () => {
       <Menu />
       <div className="hidden lg:block w-20 mb-24"></div>
       <div className=" lg:py-10 py-4 px-2 lg:px-0 relative right-0 w-full">
-      <Suspense fallback={<MyLoader/>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user/dashboard" element={<Dashboard />} />
-          <Route path="/user/deposit" element={<Deposit />} />
-          <Route path="/user/profile" element={<Profile />} />
-          <Route path="user/withdrawal" element={<Withdrawal />} />
-          <Route path="/user/wallet" element={<Wallet />} />
-          <Route path="/collections" element={<Collections />} />
-          <Route path="/login" element={<SignIn />} />
-          <Route path="/register" element={<Signup />} />
-          <Route path="/admin/*" element={<Admin />} />
-        </Routes>
+        <Suspense fallback={<MyLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/login" element={<SignIn />} />
+            <Route path="/register" element={<Signup />} />
+            <Route path="/user/dashboard" element={<Dashboard />} />
+            <Route path="/user/deposit" element={<Deposit />} />
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="user/withdrawal" element={<Withdrawal />} />
+            <Route path="/user/wallet" element={<Wallet />} />
+            <Route path="/admin/*" element={<Admin />} />
+          </Routes>
         </Suspense>
       </div>
     </div>

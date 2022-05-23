@@ -1,8 +1,13 @@
 import React from 'react';
 import { GiAngelWings } from 'react-icons/gi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { setToken, setUserDetails } from '../Redux/action';
+import { useDispatch } from 'react-redux';
 
 const DashboardHeader = () => {
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
+
   return (
     <div className="sticky top-0 left-0 w-full z-10">
       <div class="navbar bg-primary">
@@ -41,7 +46,7 @@ const DashboardHeader = () => {
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
               <div class="w-10 rounded-full">
-                <img src="https://api.lorem.space/image/face?hash=33791" />
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" />
               </div>
             </label>
             <ul
@@ -49,19 +54,24 @@ const DashboardHeader = () => {
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent rounded-box w-52"
             >
               <li>
-                <a class="justify-between">
-                  Profile
-                  {/* <span class="badge">New</span> */}
+                <Link to="/user/profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="/user/dashboard">Wallet</Link>
+              </li>
+              <li>
+                <Link to="/user/profile">Settings</Link>
+              </li>
+              <li>
+                <a
+                  onClick={() => {
+                    dispatch(setToken(''));
+                    dispatch(setUserDetails({}));
+                    navigate('/', { replace: true });
+                  }}
+                >
+                  Logout
                 </a>
-              </li>
-              <li>
-                <a>Wallet</a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
               </li>
             </ul>
           </div>

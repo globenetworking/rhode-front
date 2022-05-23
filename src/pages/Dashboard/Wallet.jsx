@@ -4,7 +4,7 @@ import useRedirect from '../../hooks/useRedirect';
 
 const Wallet = () => {
   return (
-    <div className="lg:px-16 md:px-8 px-2 h-full w-[95%] mx-auto">
+    <div className="lg:px-24 md:px-8 px-2 h-full w-[95%] mx-auto">
       <DashboardHeader />
 
       <div className="my-8">
@@ -33,7 +33,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button border-yellow-500"
+                class="btn modal-button bg-yellow-500 border-transparent"
               >
                 connect
               </label>
@@ -78,7 +78,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button border-yellow-500"
+                class="btn modal-button bg-yellow-500 border-transparent"
               >
                 connect
               </label>
@@ -123,7 +123,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button border-yellow-500"
+                class="btn modal-button bg-yellow-500 border-transparent"
               >
                 connect
               </label>
@@ -169,7 +169,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button border-yellow-500"
+                class="btn modal-button bg-yellow-500 border-transparent"
               >
                 connect
               </label>

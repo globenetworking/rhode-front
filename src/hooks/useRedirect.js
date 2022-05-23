@@ -6,17 +6,17 @@ import useProtectedUser from './useProtectedUser'
 
 
 const useRedirect = (page) => {
-    const token = useSelector((state) => state.auth.token);
-    let navigate = useNavigate();
-    
-    const {decodedToken }= suspend(useProtectedUser, [token])
-   
-    useEffect(() => {
-    if(decodedToken == ''){
-        navigate("/login", { replace: false });
-    } 
-    })
-    console.log({decodedToken})
- }
+  const token = useSelector((state) => state.auth.token);
+  let navigate = useNavigate();
 
- export default useRedirect
+  const { decodedToken } = suspend(useProtectedUser, [token]);
+
+  useEffect(() => {
+    if (decodedToken == '') {
+      navigate('/login', { replace: false });
+    }
+  });
+  console.log({ decodedToken });
+};
+
+export default useRedirect;
