@@ -20,10 +20,10 @@ export default function LandingNav() {
         <Link to='/register'>register</Link>
       </ul>
     </div>
-    <Link to='/' class="btn btn-ghost lg:hidden font-semibold text-base uppercase">daisyUI</Link>
+    <Link to='/' class="btn btn-ghost lg:hidden font-semibold text-base uppercase">Moonverse</Link>
   </div>
   <div class="hidden lg:flex lg:navbar-center ml-0">
-  <Link to='/' class="btn btn-ghost font-semibold text-sm lg:text-xl uppercase">daisyUI</Link>
+  <Link to='/' class="btn btn-ghost font-semibold text-sm lg:text-xl uppercase">Moonverse</Link>
   </div>
   <div class="navbar-end">
     <Link to='/user/wallet' class="ml-6 px-3 py-2 rounded font-semibold bg-green-300 active::bg-red-300 text-black text-sm lg:text-base">

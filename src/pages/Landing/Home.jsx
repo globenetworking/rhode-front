@@ -77,8 +77,8 @@ const Home = () => {
             </svg>
           </div>
           <div class="stat-title">Total Likes</div>
-          <div class="stat-value">25.6K</div>
-          <div class="stat-desc">21% more than last month</div>
+          <div class="stat-value">56.6K</div>
+          <div class="stat-desc">45% more than last month</div>
         </div>
 
         <div class="stat">
@@ -98,7 +98,7 @@ const Home = () => {
             </svg>
           </div>
           <div class="stat-title">Page Views</div>
-          <div class="stat-value text-secondary">2.6M</div>
+          <div class="stat-value text-secondary">1.2M</div>
           <div class="stat-desc">21% more than last month</div>
         </div>
 
@@ -113,9 +113,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div class="stat-value">86%</div>
+          <div class="stat-value">79%</div>
           <div class="stat-title">Tasks done</div>
-          <div class="stat-desc text-secondary">31 tasks remaining</div>
+          <div class="stat-desc text-secondary">some more to come</div>
         </div>
       </div>
 
@@ -127,26 +127,22 @@ const Home = () => {
               <div class="flex flex-col flex-shrink-0 px-4 mb-6 md:w-64 md:mb-0">
                 <strong class="flex text-3xl font-thin leading-none text-left text-thin lg:text-4xl">
                   {' '}
-                  10 <span class="text-sm">PPI </span>{' '}
+                  What is an NFT? 
+
                 </strong>
-                <span class="mt-1 text-xs font-normal leading-relaxed text-gray-700">
-                  Right. Say that again. No, no, George,
+                <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
+                non-fungible token.
                 </span>
               </div>
               <div class="prose md:flex-grow prose-md">
                 <p>
-                  " Right. Say that again. No, no, George, look, it's just an
-                  act, right? Okay, so 9:00 you're strolling through the parking
-                  lot, you see us struggling in the car, you walk up, you open
-                  the door and you say, your line, George. Stop it. We're gonna
-                  take a little break but we'll be back in a while so, don't
-                  nobody go no where."
+                NFT stands for "non-fungible token." At a basic level, an NFT is a digital asset that links ownership to 
+                unique physical or digital items, such as works of art, virtual real estate, music, or videos 
                 </p>
                 <p>
-                  " Right. Say that again. No, no, George, look, it's just an
-                  act, right? Okay, so 9:00 you're strolling through the parking
-                  lot, you see us struggling in the car, you walk up, you open
-                  the door and you say, your line, George."
+                NFTs can be considered modern-day collectibles. They're bought and sold online, and represent a digital proof of 
+                ownership of any given item. NFTs are securely recorded on a blockchain — the same technology behind cryptocurrencies —
+                 which ensures the asset is one-of-a-kind. The technology can also make it difficult to alter or counterfeit NFTs. 
                 </p>
               </div>
             </div>
@@ -159,27 +155,25 @@ const Home = () => {
             <div class="flex flex-wrap py-8 md:flex-nowrap">
               <div class="prose md:flex-grow prose-md lg:pr-12">
                 <p>
-                  " Right. Say that again. No, no, George, look, it's just an
-                  act, right? Okay, so 9:00 you're strolling through the parking
-                  lot, you see us struggling in the car, you walk up, you open
-                  the door and you say, your line, George. Stop it. We're gonna
-                  take a little break but we'll be back in a while so, don't
-                  nobody go no where."
+                We got experts on desk analyzing, drawing out potential collectibles(Nfts), enumeration based on rarity, bid price and nfts with usecases(Good nfts)
+
+            Compared to other NFTs marketplace which charge high gas fees, We have amassed a large number of NFTs,and have the original license and all
+            So if you are buying an NFT worth 7 eth from us you would pay only 7 eth and nothing more
+
                 </p>
                 <p>
-                  " Right. Say that again. No, no, George, look, it's just an
-                  act, right? Okay, so 9:00 you're strolling through the parking
-                  lot, you see us struggling in the car, you walk up, you open
-                  the door and you say, your line, George."
+                We also let our database of bidders know of the NFT photos as sold for a period of time for people to 
+                actually see it and want to know what it is and with that hype they would buy it higher, even if you  also don’t 
+                decide to sell, the NFT itself increase in value with the rise of eth or with the NFTmarket increase in demand and you can 
+                exchange it back to eth and then to cash.
                 </p>
               </div>
               <div class="flex flex-col flex-shrink-0 px-4 mb-6 md:w-64 md:mb-0">
                 <strong class="flex text-3xl font-thin leading-none text-left text-neutral-600 lg:text-4xl">
-                  {' '}
-                  1.0 <span class="text-sm">PPI </span>{' '}
+                 Moonverse
                 </strong>
-                <span class="mt-1 text-xs font-normal leading-relaxed text-gray-700">
-                  Right. Say that again. No, no, George
+                <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
+                analyzing, drawing out potential collectibles(Nfts), enumeration based on rarity
                 </span>
               </div>
             </div>
@@ -224,11 +218,11 @@ const Home = () => {
       <section class="text-gray-50 body-font overflow-hidden">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
-            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
+            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-500">
               Pricing
             </h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-50">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.
+            Now knowing the next big nfts to own is where we come in.
             </p>
             <div class="flex mx-auto border-2 border-indigo-50 rounded overflow-hidden mt-6">
               <button class="py-1 px-4 bg-indigo-500 text-white focus:outline-none">
@@ -245,7 +239,7 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   START
                 </h2>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$38</span>
                   <span class="text-lg ml-1 font-normal text-gray-50">
                     10%/day
@@ -327,7 +321,7 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   PRO
                 </h2>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$38</span>
                   <span class="text-lg ml-1 font-normal text-gray-50">
                     20%/day
@@ -422,7 +416,7 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   BUSINESS
                 </h2>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$56</span>
                   <span class="text-lg ml-1 font-normal text-gray-50">
                     35%/day
@@ -533,7 +527,7 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   SPECIAL
                 </h2>
-                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$72</span>
                   <span class="text-lg ml-1 font-normal text-gray-50">
                     75%/day
@@ -646,7 +640,7 @@ const Home = () => {
       <section class="text-gray-50 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
-            <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">
+            <h1 class="text-2xl font-medium title-font mb-4 text-gray-500">
               OUR TEAM
             </h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
@@ -664,7 +658,7 @@ const Home = () => {
                   src={nft9}
                 />
                 <div class="w-full">
-                  <h2 class="title-font font-medium text-lg text-gray-900">
+                  <h2 class="title-font font-medium text-lg text-gray-500">
                     Holden Caulfield
                   </h2>
                   <h3 class="text-gray-50 mb-3">Cool cat #2345</h3>
@@ -724,7 +718,7 @@ const Home = () => {
                   src={nft8}
                 />
                 <div class="w-full">
-                  <h2 class="title-font font-medium text-lg text-gray-900">
+                  <h2 class="title-font font-medium text-lg text-gray-500">
                     Atticus Finch
                   </h2>
                   <h3 class="text-gray-50 mb-3">Cool cat #3589</h3>
@@ -784,7 +778,7 @@ const Home = () => {
                   src={nft9}
                 />
                 <div class="w-full">
-                  <h2 class="title-font font-medium text-lg text-gray-900">
+                  <h2 class="title-font font-medium text-lg text-gray-500">
                     Henry Letham
                   </h2>
                   <h3 class="text-gray-50 mb-3">Cool cat #2445</h3>
