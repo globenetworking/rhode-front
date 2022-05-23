@@ -15,7 +15,7 @@ import { Suspense } from 'react';
 import { Code, Instagram } from 'react-content-loader'
 import MyLoader from './loader';
 
-const MyInstagramLoader = () => <Instagram />
+
 
 
 const App = () => {
