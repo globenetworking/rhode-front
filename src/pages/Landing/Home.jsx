@@ -173,7 +173,7 @@ const Home = () => {
                  Moonverse
                 </strong>
                 <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
-                analyzing, drawing out potential collectibles(Nfts), enumeration based on rarity
+                analyzing, drawing out potential collectibles <span className='hidden md:flex'>(Nfts), enumeration based on rarity</span>
                 </span>
               </div>
             </div>
