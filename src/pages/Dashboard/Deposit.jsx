@@ -3,9 +3,14 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { BiCopyAlt } from 'react-icons/bi';
 import DashboardHeader from '../../components/DashboardHeader';
 import useRedirect from '../../hooks/useRedirect';
+import { useSelector } from 'react-redux';
 
 const Deposit = () => {
-  useRedirect('deposit')
+  const user = useSelector((state) => state.auth.user_details);
+
+  const { balance } = user;
+
+  useRedirect('deposit');
   const [barcode, setBarcode] = useState('3FXKbTieemhEtv25Q9mSiAxP7HaRc3H4QM');
   const [amt, setAmt] = useState(0);
   const [btc, setBtc] = useState(0.0);
@@ -59,18 +64,17 @@ const Deposit = () => {
   //   });
   //   notify();
   // };
+
   return (
-    // <div className="lg:px-16 md:px-8 w-full pt-0 lg:w-1/2 lg:ml-16 px-4">
-    <div className="lg:px-16 md:px-8 px-4 lg:w-9/12 ">
+    <div className="lg:px-16 md:px-8 px-2 h-full w-[90%] mx-auto">
       <DashboardHeader />
 
       <div className="my-8 flex justify-between">
         <h1 className="text-2xl font-bold pb-3">Deposit</h1>
         <div>
           <p className="text-sm font-bold md:text-lg">Your balance</p>
-          <p><span className='text-secondary'>$</span>{`112000`}</p>
+          <p className="text-secondary font-bold">${balance}</p>
         </div>
-
       </div>
 
       <section className="flex lg:flex-row flex-col lg:mt-12 justify-between gap-x-10">
@@ -143,14 +147,18 @@ const Deposit = () => {
                 <span class="label-text md:text-base">Enter amount</span>
               </label>
               <label class="input-group input-group-xs mt-1 text-white">
-                <span className="bg-gray-700 font-bold text-sm md:text-base">Price</span>
+                <span className="bg-gray-700 font-bold text-sm md:text-base">
+                  Price
+                </span>
                 <input
                   type="text"
                   onChange={handleChange}
                   placeholder="0"
                   class="input h-8 input-group-xs md:input-group-lg input-bordered text-primary"
                 />
-                <span className="bg-gray-700 font-bold text-sm md:text-base">USD</span>
+                <span className="bg-gray-700 font-bold text-sm md:text-base">
+                  USD
+                </span>
               </label>
             </div>
           </div>
@@ -161,11 +169,10 @@ const Deposit = () => {
                 <div className="text-sm md:text-lg">
                   BTC equivalent: {btc ? btc : 0}{' '}
                   <span className="text-yellow-500 text-sm font-bold">BTC</span>
-
                 </div>
                 <input
                   className="flex text-center text-gray-300 w-full px-2"
-                  value='3FXKbTeem...Rc3H4QM'
+                  value="3FXKbTeem...Rc3H4QM"
                 />
               </div>
               <CopyToClipboard text={barcode} onCopy={onCopy}>

@@ -3,19 +3,16 @@ import { useSelector } from 'react-redux';
 
 import DashboardHeader from '../../components/DashboardHeader';
 import useProtectedUser from '../../hooks/useProtectedUser';
-import { suspend } from "suspend-react";
+import { suspend } from 'suspend-react';
 import { useNavigate } from 'react-router-dom';
 import useRedirect from '../../hooks/useRedirect';
 
-
-
 const DashboardHome = () => {
-  useRedirect('dash')
- 
+  useRedirect('dash');
 
   const user = useSelector((state) => state.auth.user_details);
 
-  console.log(user);
+  // console.log(user);
 
   const { balance, deposit, profits, withdrawal } = user;
 
@@ -36,32 +33,34 @@ const DashboardHome = () => {
           </h2>
           <div class="card shadow-xl bg-accent">
             <div class="card-body">
-              <h2 class="card-title text-base text-white">Total Balance</h2>
-              <p className="text-3xl font-bold text-white">$221,567</p>
+              {/* <h2 class="card-title text-base text-white">Total Balance</h2>
+              <p className="text-3xl font-bold text-white">$221,567</p> */}
 
               <div className="grid md:grid-cols-2 mt-5 gap-5">
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Deposit</p>
-                    <h3 className="font-bold text-xl text-white">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">${deposit}</h3>
                   </div>
                 </div>
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Withdrawal</p>
-                    <h3 className="font-bold text-xl text-white">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">
+                      ${withdrawal}
+                    </h3>
                   </div>
                 </div>
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Balance</p>
-                    <h3 className="font-bold text-xl text-white">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">${balance}</h3>
                   </div>
                 </div>
                 <div class="card bg-primary hover:bg-secondary">
                   <div className="card-body justify-between">
                     <p>Profits</p>
-                    <h3 className="font-bold text-xl text-white">$42,678</h3>
+                    <h3 className="font-bold text-xl text-white">${profits}</h3>
                   </div>
                 </div>
               </div>
@@ -78,19 +77,19 @@ const DashboardHome = () => {
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
                 <p className="text-white">Withdrawal</p>
-                <h3 className="text-secondary">$42,678</h3>
+                <h3 className="text-secondary">${withdrawal}</h3>
               </div>
             </div>
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
                 <p className="text-white">Deposit</p>
-                <h3 className="text-secondary">$42,678</h3>
+                <h3 className="text-secondary">${deposit}</h3>
               </div>
             </div>
             <div class="card bg-accent">
               <div className="card-body flex flex-row justify-between">
                 <p className="text-white">Deposit</p>
-                <h3 className="text-secondary">$42,678</h3>
+                <h3 className="text-secondary">${deposit}</h3>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import eth from '../images/icon-ethereum.svg';
 import clock from '../images/icon-clock.svg';
 import avatar from '../images/image-avatar.png';
 
-const NftCard = ({img, name, desc, price, days, author}) => {
+const NftCard = ({ img, name, desc, price, days, author }) => {
   return (
     <section className="bg-rope p-5 mx-5 rounded-xl max-w-xs shadow-2xl">
       <a href="#" className="group block relative rounded-md overflow-hidden">
@@ -27,9 +27,7 @@ const NftCard = ({img, name, desc, price, days, author}) => {
         </a>
       </h1>
 
-      <p className="text-soft-blue font-light">
-        {desc}
-      </p>
+      <p className="text-soft-blue font-light">{desc}</p>
 
       <div className="flex justify-between items-center mt-4">
         <div className="flex text-cyan space-x-2">

@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import DashboardHeader from '../../components/DashboardHeader';
 import useRedirect from '../../hooks/useRedirect';
-
+import { useSelector } from 'react-redux';
 
 const Withdrawal = () => {
-  useRedirect('withdrawal')
+  const user = useSelector((state) => state.auth.user_details);
+
+  const { balance, withdrawal } = user;
+
+  useRedirect('withdrawal');
   const [amt, setAmt] = useState(0);
 
   const handleChange = (e) => {
@@ -22,12 +26,12 @@ const Withdrawal = () => {
         <div class="stats bg-accent text-primary-content">
           <div class="stat">
             <div class="stat-title">Account balance</div>
-            <div class="stat-value text-white">$89,400</div>
+            <div class="stat-value text-white">${balance}</div>
           </div>
 
           <div class="stat md:block hidden">
-            <div class="stat-title">Current balance</div>
-            <div class="stat-value text-white">$89,400</div>
+            <div class="stat-title">Pending withdrawal</div>
+            <div class="stat-value text-white">${withdrawal}</div>
           </div>
         </div>
 
