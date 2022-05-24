@@ -86,7 +86,7 @@ const Signin = () => {
           <div className="">
             <GiAngelWings size={42} className="mx-3 " />
           </div>
-          <span class="uppercase text-lg font-bold">CoolS</span>
+          <span class="Capitalize text-lg font-bold">Moonverse</span>
         </div>
         <div className=" w-full mx-auto pt-6 md:pt-0 max-h-screen  md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
           <div className="sm:max-w-sm w-full">

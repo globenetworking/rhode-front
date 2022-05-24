@@ -3,8 +3,6 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 const useProtectedUser = async () => {
-  const [st, setSt] = useState(true);
-  console.log('eeeeeeeeeeeeeee');
   const token = useSelector((state) => state.auth.token);
   console.log(
     'redux toks......................................................',

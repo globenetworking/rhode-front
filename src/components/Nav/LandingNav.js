@@ -46,7 +46,7 @@ export default function LandingNav() {
           to="/"
           class="btn btn-ghost lg:hidden font-semibold text-base uppercase"
         >
-          daisyUI
+          Moonverse
         </Link>
       </div>
       <div class="hidden lg:flex lg:navbar-center ml-0">
@@ -54,7 +54,7 @@ export default function LandingNav() {
           to="/"
           class="btn btn-ghost font-semibold text-sm lg:text-xl uppercase"
         >
-          daisyUI
+          Moonverse
         </Link>
       </div>
       <div class="navbar-end">

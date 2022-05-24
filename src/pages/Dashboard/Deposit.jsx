@@ -171,7 +171,7 @@ const Deposit = () => {
                   <span className="text-yellow-500 text-sm font-bold">BTC</span>
                 </div>
                 <input
-                  className="flex text-center text-gray-300 w-full px-2"
+                  className="flex text-center text-gray-800 w-full px-2"
                   value="3FXKbTeem...Rc3H4QM"
                 />
               </div>
