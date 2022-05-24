@@ -5,14 +5,15 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import DashboardHeader from '../../components/DashboardHeader';
 import useRedirect from '../../hooks/useRedirect';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const Profile = () => {
   useRedirect('profile');
   setTimeout(() => {}, 600);
+
   let navigate = useNavigate();
-  const notify = (word) =>
+
+  const notify = (word) => {
     toast.info(`${word}`, {
       position: 'top-right',
       autoClose: 5000,
@@ -22,8 +23,11 @@ const Profile = () => {
       draggable: true,
       progress: undefined,
     });
+  };
+
   const user = useSelector((state) => state.auth.user_details);
   console.log({ user_details: user });
+
   const [newUser, setNewUser] = useState({
     email: user.email,
     name: user.name,
@@ -83,19 +87,10 @@ const Profile = () => {
   };
 
   return (
-    <div className="lg:px-16 md:px-8 w-full pt-0 flex flex-col lg:w-9/12 justify-center lg:pt-12 lg:ml-16 px-4">
+    // <div className="lg:px-16 md:px-8 w-full pt-0 flex flex-col lg:w-9/12 justify-center lg:py-0 lg:ml-16 px-4">
+    <div className="lg:px-24 md:px-8 px-2 h-full lg:pb-10 w-[90%] mx-auto">
       <DashboardHeader />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+
       <div className="my-8 flex justify-between ">
         <h1 className="text-2xl font-bold pb-3">Profile</h1>
         <div class="text-sm breadcrumbs">
@@ -140,9 +135,9 @@ const Profile = () => {
         </div>
       </div>
 
-      <section>
+      <section className="pb-20">
         {/* <!-- component --> */}
-        <div class="w-full lg:w-11/12 space-y-8 p-10 rounded-xl shadow-lg z-10 bg-accent">
+        <div class="w-full lg:w-10/12 space-y-8 p-10 rounded-xl shadow-lg z-10 bg-accent">
           <div class="grid  gap-8 grid-cols-1">
             <div class="flex flex-col ">
               <div class="flex flex-col sm:flex-row items-center">
@@ -170,7 +165,7 @@ const Profile = () => {
                         Please fill out this field.
                       </p>
                     </div>
-                    <div class="mb-3 space-y-2 w-full text-base">
+                    {/* <div class="mb-3 space-y-2 w-full text-base">
                       <label class="font-semibold text-gray-100 py-2 lg:text-lg">
                         Last Name <abbr title="required">*</abbr>
                       </label>
@@ -185,7 +180,7 @@ const Profile = () => {
                       <p class="text-red text-base hidden">
                         Please fill out this field.
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

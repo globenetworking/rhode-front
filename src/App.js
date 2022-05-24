@@ -14,6 +14,8 @@ import Admin from './pages/Admin/';
 import { Suspense } from 'react';
 import { Code, Instagram } from 'react-content-loader';
 import MyLoader from './loader';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
@@ -21,6 +23,17 @@ const App = () => {
       className="flex flex-col lg:flex-row relative right-0 bg-primary h-screen overflow-y-scroll"
       data-theme="myTheme"
     >
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Menu />
       <div className="hidden lg:block w-20 mb-24"></div>
       <div className=" lg:py-10 py-4 px-2 lg:px-0 relative right-0 w-full">
