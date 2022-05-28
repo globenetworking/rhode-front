@@ -3,6 +3,7 @@ import eqb from '../images/image-equilibrium.jpg';
 import eth from '../images/icon-ethereum.svg';
 import clock from '../images/icon-clock.svg';
 import avatar from '../images/image-avatar.png';
+import { Link } from 'react-router-dom';
 
 const NftCard = ({ img, name, desc, price, days, author }) => {
   return (
@@ -51,11 +52,11 @@ const NftCard = ({ img, name, desc, price, days, author }) => {
           </a>
         </p>
       </div>
-      <span className="btn btn-secondary w-full mt-6 font-bold text-md">
+      <Link to="/user/wallet" className="btn btn-secondary w-full mt-6 font-bold text-md">
         PLACE BID
-      </span>
+      </Link>
     </section>
   );
 };
 
-export default NftCard;
+export default NftCard

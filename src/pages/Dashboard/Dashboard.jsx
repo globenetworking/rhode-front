@@ -110,8 +110,8 @@ const DashboardHome = () => {
           <div className="flex flex-col gap-10">
             <div class="card xl:w-96 w-full bg-accent shadow-xl">
               <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 class="card-title">New!</h2>
+                {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
                 <div class="card-actions justify-end">
                   <button class="btn btn-primary">Buy Now</button>
                 </div>
@@ -119,8 +119,8 @@ const DashboardHome = () => {
             </div>
             <div class="card xl:w-96 w-full bg-secondary shadow-xl">
               <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 class="card-title">New!</h2>
+                {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
                 <div class="card-actions justify-end">
                   <button class="btn btn-primary">Buy Now</button>
                 </div>

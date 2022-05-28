@@ -239,10 +239,10 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   START
                 </h2>
-                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-400 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$38</span>
-                  <span class="text-lg ml-1 font-normal text-gray-50">
-                    10%/day
+                  <span class="text-sm lg:text-lg ml-3 font-normal text-gray-50">
+                    5% cummulative ROI
                   </span>
                 </h1>
                 <p class="flex items-center text-gray-50 mb-2">
@@ -275,7 +275,7 @@ const Home = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Fixed spreads
+                  compunding interest rates
                 </p>
                 <p class="flex items-center text-gray-50 mb-6">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -321,10 +321,10 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   PRO
                 </h2>
-                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-400 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$38</span>
-                  <span class="text-lg ml-1 font-normal text-gray-50">
-                    20%/day
+                  <span class="text-sm lg:text-lg ml-1 font-normal text-gray-50">
+                    7% cummulative ROI
                   </span>
                 </h1>
                 <p class="flex items-center text-gray-50 mb-2">
@@ -357,7 +357,7 @@ const Home = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Fixed spreads
+                  compunding interest rates
                 </p>
                 <p class="flex items-center text-gray-50 mb-2">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -416,10 +416,10 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   BUSINESS
                 </h2>
-                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-400 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$56</span>
-                  <span class="text-lg ml-1 font-normal text-gray-50">
-                    35%/day
+                  <span class="text-sm lg:text-lg ml-1 font-normal text-gray-50">
+                    15% cummulative ROI
                   </span>
                 </h1>
                 <p class="flex items-center text-gray-50 mb-2">
@@ -452,7 +452,7 @@ const Home = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Fixed spreads
+                  compunding interest rates
                 </p>
                 <p class="flex items-center text-gray-50 mb-2">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -527,10 +527,10 @@ const Home = () => {
                 <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
                   SPECIAL
                 </h2>
-                <h1 class="text-5xl text-gray-500 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                <h1 class="text-5xl text-gray-400 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                   <span>$72</span>
-                  <span class="text-lg ml-1 font-normal text-gray-50">
-                    75%/day
+                  <span class="text-sm lg:text-lg ml-1 font-normal text-gray-50">
+                    20% cummulative ROI
                   </span>
                 </h1>
                 <p class="flex items-center text-gray-50 mb-2">
@@ -563,7 +563,7 @@ const Home = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Fixed spreads
+                  compunding interest rates
                 </p>
                 <p class="flex items-center text-gray-50 mb-2">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
