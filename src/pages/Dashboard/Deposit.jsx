@@ -4,21 +4,36 @@ import { BiCopyAlt } from 'react-icons/bi';
 import DashboardHeader from '../../components/DashboardHeader';
 import useRedirect from '../../hooks/useRedirect';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const Deposit = () => {
   const user = useSelector((state) => state.auth.user_details);
 
-  const { balance } = user;
+  const { balance, email } = user;
+
+  const notify = (word) => {
+    toast.info(`${word}`, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   useRedirect('deposit');
   const [barcode, setBarcode] = useState('3FXKbTieemhEtv25Q9mSiAxP7HaRc3H4QM');
   const [amt, setAmt] = useState(0);
   const [btc, setBtc] = useState(0.0);
   const [currentprice, setCurrentPrice] = useState(0.0);
+
   const handleChange = (e) => {
     setAmt(e.target.value);
     const value = parseInt(e.target.value) * setBtc();
   };
+
   const handleBtc = (e) => {
     const value = amt / currentprice;
     setBtc(value.toFixed(6));
@@ -56,14 +71,26 @@ const Deposit = () => {
     }, 500);
   };
 
-  // const onDeposit = () => {
-  //   fetch("https://sheltered-bastion-98583.herokuapp.com/deposit", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ email, deposit: amt }),
-  //   });
-  //   notify();
-  // };
+  const onDeposit = async () => {
+    if (!amt) {
+      return notify('Please provide an amount');
+    }
+
+    const res = await fetch(
+      'https://sheltered-bastion-98583.herokuapp.com/deposit',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, deposit: amt }),
+      }
+    );
+
+    const result = await res.json();
+
+    notify(`${result.msg}`);
+
+    setAmt(0);
+  };
 
   return (
     <div className="lg:px-16 md:px-8 px-2 h-full w-[90%] mx-auto">
@@ -151,7 +178,7 @@ const Deposit = () => {
                   Price
                 </span>
                 <input
-                  type="text"
+                  type="number"
                   onChange={handleChange}
                   placeholder="0"
                   class="input h-8 input-group-xs md:input-group-lg input-bordered text-primary"
@@ -172,7 +199,7 @@ const Deposit = () => {
                 </div>
                 <input
                   className="flex text-center text-gray-800 w-full px-2"
-                  value='3FXKbTeem...Rc3H4QM'
+                  value="3FXKbTeem...Rc3H4QM"
                 />
               </div>
               <CopyToClipboard text={barcode} onCopy={onCopy}>
@@ -193,7 +220,10 @@ const Deposit = () => {
 
       <div className="lg:w-10/12">
         {' '}
-        <button class="btn btn-primary btn-square mx-0 md:text-lg text-white flex btn-block bg-secondary mt-6">
+        <button
+          class="btn btn-primary btn-square mx-0 md:text-lg text-white flex btn-block bg-secondary mt-6"
+          onClick={onDeposit}
+        >
           I have made payment
         </button>
       </div>
