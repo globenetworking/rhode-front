@@ -14,13 +14,12 @@ const User = ({ user, notify }) => {
   const EditUser = () => {
     dispatch(setAdUser(user));
     navigate("/admin/editUser", { replace: true });
-    notify()
   };
 
   const onDel = async () => {
     const { email } = user;
     const isNotThere = await fetch(
-      "/deleteuser",
+      "https://sheltered-bastion-98583.herokuapp.com/deleteuser",
       {
         method: "post",
         headers: { "Content-Type": "application/json" },
@@ -28,7 +27,7 @@ const User = ({ user, notify }) => {
       }
     );
     let resp = await isNotThere.json();
-    notify()
+    notify('deleted')
   };
 
   return (

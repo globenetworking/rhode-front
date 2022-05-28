@@ -64,9 +64,13 @@ const Signin = () => {
         const { token } = res;
         const { user } = res;
       
-
         if (token != undefined) {
-          console.log('signedIn', token)
+         
+          if(user.role === 'admin'){
+          
+            navigate('/admin/users', { replace: true });
+            return
+          }  
           dispatch(setToken(token));
           dispatch(setUserDetails(user));
           // window.location.assign('http://enefti-six.vercel.app/user/dashboard')

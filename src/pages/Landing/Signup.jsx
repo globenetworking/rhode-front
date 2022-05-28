@@ -32,9 +32,8 @@ const Signup = () => {
   const onSignup = (e) => {
     e.preventDefault();
 
-    console.log('rer', terms);
+    
     if (!terms) {
-      console.log('rerddddddddddd');
       return;
     }
     setMsg({});

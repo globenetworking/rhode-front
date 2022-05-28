@@ -14,7 +14,8 @@ const EditUser = () => {
     accbal: adUser.balance,
     depos: adUser.deposit,
     name: adUser.name,
-    wdl: adUser.withdrawal
+    wdl: adUser.withdrawal,
+    profits: adUser.profits
   })
 
   //get user token from redux
@@ -31,33 +32,35 @@ const EditUser = () => {
       accbal,
       depos,
       name,
-      wdl
+      wdl,
+      profits
     } = user;
 
     const iseditUser = await fetch(
-      "/users/:id",
+      "https://sheltered-bastion-98583.herokuapp.com/users/:id",
       {
         method: "put",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          accbal,
-          depos,
+          balance: accbal,
+          deposit: depos,
           name,
-          wdl,
+          withdrawal: wdl,
+          profits: profits
       })
     })
 
     let resp = await iseditUser.json();
     console.log("edit resp", resp);
     event.preventDefault();
-    // navigate("../admin/users", { replace: false });
+    navigate("/admin/users", { replace: true });
   };
 
   const onDel = async () => {
     const { email } = user;
     const isNotThere = await fetch(
-      "/deleteuser",
+      "https://sheltered-bastion-98583.herokuapp.com/deleteuser",
       {
         method: "post",
         headers: { "Content-Type": "application/json" },
@@ -65,8 +68,7 @@ const EditUser = () => {
       }
     );
     let resp = await isNotThere.json();
-    //notify()
-    //this.props.history.push("/owner/allusers");
+    navigate("/admin/users", { replace: true });
   };
   return(
     <div className="pt-32">
@@ -94,7 +96,7 @@ const EditUser = () => {
             />
           </div>
           <div class="mb-2 pt-0">
-            <label className="text-lg">Account Balance</label>
+            <label className="text-lg">Balance</label>
             <input
               name="accbal"
               onChange={onChange}
@@ -125,6 +127,18 @@ const EditUser = () => {
               value={user.wdl}
               type="number"
               placeholder={`${user.wdl}`}
+              className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
+            />
+          </div>
+
+          <div class="mb-2 pt-0">
+            <label className="text-lg">Profits</label>
+            <input
+              name="profits"
+              onChange={onChange}
+              value={user.profits}
+              type="number"
+              placeholder={`${user.profits}`}
               className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
             />
           </div>
