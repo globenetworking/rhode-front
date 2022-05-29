@@ -68,7 +68,7 @@ export default function Menu() {
         </span>
       </Link>
       <span
-        class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center"
+        class="group flex hover:transition-all ease-in-out delay-1000 flex-col items-center justify-center cursor-pointer"
       >
         <AiOutlinePoweroff size={21} onClick={() =>  {
           dispatch(setToken(''))
