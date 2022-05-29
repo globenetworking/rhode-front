@@ -293,7 +293,7 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <button class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600  border-0 py-2 px-4 w-full focus:outline-none rounded">
+                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600  border-0 py-2 px-4 w-full focus:outline-none rounded">
                   Get Started
                   <svg
                     fill="none"
@@ -306,7 +306,7 @@ const Home = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </button>
+                </Link>
                 <p class="text-xs text-gray-50 mt-3">
                   You can access your personal dashboard anytime, anywhere –
                   24/7.
@@ -391,7 +391,7 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <button class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
+                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
                   Get Started
                   <svg
                     fill="none"
@@ -404,7 +404,7 @@ const Home = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </button>
+                </Link>
                 <p class="text-xs text-gray-50 mt-3">
                   You can access your personal dashboard anytime, anywhere –
                   24/7.
@@ -502,7 +502,7 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <button class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded">
+                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded">
                   Get Started
                   <svg
                     fill="none"
@@ -515,7 +515,7 @@ const Home = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </button>
+                </Link>
                 <p class="text-xs text-gray-50 mt-3">
                   You can access your personal dashboard anytime, anywhere –
                   24/7.
@@ -613,7 +613,7 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <button class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded">
+                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded">
                   Get Started
                   <svg
                     fill="none"
@@ -626,7 +626,7 @@ const Home = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </button>
+                </Link>
                 <p class="text-xs text-gray-50 mt-3">
                   You can access your personal dashboard anytime, anywhere –
                   24/7.

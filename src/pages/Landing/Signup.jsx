@@ -32,14 +32,20 @@ const Signup = () => {
   const onSignup = (e) => {
     e.preventDefault();
 
-    
     if (!terms) {
       return;
     }
     setMsg({});
-    fetch("https://sheltered-bastion-98583.herokuapp.com/sign-up", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
+    console.log({
+      name,
+      email,
+      password,
+    });
+
+    
+    fetch('https://sheltered-bastion-98583.herokuapp.com/sign-up', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name,
         email,
@@ -76,7 +82,7 @@ const Signup = () => {
           <div className="">
             <GiAngelWings size={42} className="mx-3 " />
           </div>
-          <span class="uppercase text-lg font-bold">CoolS</span>
+          <span class="uppercase text-lg font-bold">Moonverse</span>
         </div>
         <div className=" w-full mx-auto pt-6 md:pt-0 max-h-screen  md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
           <form className="sm:max-w-sm w-full">
@@ -90,7 +96,7 @@ const Signup = () => {
               <form method="#" action="#" className="mt-6">
                 <div className="pb-3">
                   <div className="text-left font-semibold pb-1 text-xs lg:text-base">
-                    Fullname
+                    Full Name
                   </div>
                   <input
                     name="name"
@@ -189,10 +195,7 @@ const Signup = () => {
                 <div className="flex mt-4 justify-center w-full">
                   <div className="font-semibold text-sm lg:text-base mb-6">
                     Have an account?{' '}
-                    <Link
-                      to="/login"
-                      className="ml-2 text-secondary font-bold"
-                    >
+                    <Link to="/login" className="ml-2 text-secondary font-bold">
                       Sign in
                     </Link>
                   </div>
