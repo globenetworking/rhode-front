@@ -92,7 +92,7 @@ const Signin = () => {
           </div>
           <span class="Capitalize text-lg font-bold">Moonverse</span>
         </div>
-        <div className=" w-full mx-auto pt-6 md:pt-0 max-h-screen  md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
+        <div className=" w-full mx-auto pt-6 md:pt-0 max-h-screen  md:h-auto flex flex-col self-center items-center md:mt-10 mb-12">
           <div className="sm:max-w-sm w-full">
             <div className="w-full rounded-lg py-0 lg:py-20 px-6 pt-4 lg:pt-12 md:pt-6 bg-accent text-white shadow-xl">
               <label

@@ -127,22 +127,26 @@ const Home = () => {
               <div class="flex flex-col flex-shrink-0 px-4 mb-6 md:w-64 md:mb-0">
                 <strong class="flex text-3xl font-thin leading-none text-left text-thin lg:text-4xl">
                   {' '}
-                  What is an NFT? 
-
+                  What is an NFT?
                 </strong>
                 <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
-                non-fungible token.
+                  non-fungible token.
                 </span>
               </div>
               <div class="prose md:flex-grow prose-md">
                 <p>
-                NFT stands for "non-fungible token." At a basic level, an NFT is a digital asset that links ownership to 
-                unique physical or digital items, such as works of art, virtual real estate, music, or videos 
+                  NFT stands for "non-fungible token." At a basic level, an NFT
+                  is a digital asset that links ownership to unique physical or
+                  digital items, such as works of art, virtual real estate,
+                  music, or videos
                 </p>
                 <p>
-                NFTs can be considered modern-day collectibles. They're bought and sold online, and represent a digital proof of 
-                ownership of any given item. NFTs are securely recorded on a blockchain — the same technology behind cryptocurrencies —
-                 which ensures the asset is one-of-a-kind. The technology can also make it difficult to alter or counterfeit NFTs. 
+                  NFTs can be considered modern-day collectibles. They're bought
+                  and sold online, and represent a digital proof of ownership of
+                  any given item. NFTs are securely recorded on a blockchain —
+                  the same technology behind cryptocurrencies — which ensures
+                  the asset is one-of-a-kind. The technology can also make it
+                  difficult to alter or counterfeit NFTs.
                 </p>
               </div>
             </div>
@@ -150,30 +154,38 @@ const Home = () => {
         </div>
       </section>
       <section class="text-white">
-        <div class="container flex flex-col items-center px-2 py-8 mx-auto lg:px-6">
+        <div class="container flex flex-col items-center px-2 py-8 mx-auto lg:px-10">
           <div>
             <div class="flex flex-wrap py-8 md:flex-nowrap">
               <div class="prose md:flex-grow prose-md lg:pr-12">
                 <p>
-                We got experts on desk analyzing, drawing out potential collectibles(Nfts), enumeration based on rarity, bid price and nfts with usecases(Good nfts)
-
-            Compared to other NFTs marketplace which charge high gas fees, We have amassed a large number of NFTs,and have the original license and all
-            So if you are buying an NFT worth 7 eth from us you would pay only 7 eth and nothing more
-
+                  We got experts on desk analyzing, drawing out potential
+                  collectibles(Nfts), enumeration based on rarity, bid price and
+                  nfts with usecases(Good nfts) Compared to other NFTs
+                  marketplace which charge high gas fees, We have amassed a
+                  large number of NFTs,and have the original license and all So
+                  if you are buying an NFT worth 7 eth from us you would pay
+                  only 7 eth and nothing more
                 </p>
                 <p>
-                We also let our database of bidders know of the NFT photos as sold for a period of time for people to 
-                actually see it and want to know what it is and with that hype they would buy it higher, even if you  also don’t 
-                decide to sell, the NFT itself increase in value with the rise of eth or with the NFTmarket increase in demand and you can 
-                exchange it back to eth and then to cash.
+                  We also let our database of bidders know of the NFT photos as
+                  sold for a period of time for people to actually see it and
+                  want to know what it is and with that hype they would buy it
+                  higher, even if you also don’t decide to sell, the NFT itself
+                  increase in value with the rise of eth or with the NFTmarket
+                  increase in demand and you can exchange it back to eth and
+                  then to cash.
                 </p>
               </div>
               <div class="flex flex-col flex-shrink-0 px-4 mb-6 md:w-64 md:mb-0">
                 <strong class="flex text-3xl font-thin leading-none text-left text-neutral-600 lg:text-4xl">
-                 Moonverse
+                  Moonverse
                 </strong>
                 <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
-                analyzing, drawing out potential collectibles <span className='hidden md:flex'>(Nfts), enumeration based on rarity</span>
+                  analyzing, drawing out potential collectibles{' '}
+                  <span className="hidden md:flex">
+                    (Nfts), enumeration based on rarity
+                  </span>
                 </span>
               </div>
             </div>
@@ -222,7 +234,7 @@ const Home = () => {
               Pricing
             </h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-50">
-            Now knowing the next big nfts to own is where we come in.
+              Now knowing the next big nfts to own is where we come in.
             </p>
             <div class="flex mx-auto border-2 border-indigo-50 rounded overflow-hidden mt-6">
               <button class="py-1 px-4 bg-indigo-500 text-white focus:outline-none">
@@ -293,7 +305,10 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600  border-0 py-2 px-4 w-full focus:outline-none rounded">
+                <Link
+                  to="/register"
+                  class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600  border-0 py-2 px-4 w-full focus:outline-none rounded"
+                >
                   Get Started
                   <svg
                     fill="none"
@@ -391,7 +406,10 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
+                <Link
+                  to="/register"
+                  class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"
+                >
                   Get Started
                   <svg
                     fill="none"
@@ -502,7 +520,10 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded">
+                <Link
+                  to="/register"
+                  class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded"
+                >
                   Get Started
                   <svg
                     fill="none"
@@ -613,7 +634,10 @@ const Home = () => {
                   </span>
                   Account manager
                 </p>
-                <Link to='/register' class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded">
+                <Link
+                  to="/register"
+                  class="flex items-center mt-auto text-white bg-indigo-500 hover:bg-indigo-600 border-0 py-2 px-4 w-full focus:outline-none rounded"
+                >
                   Get Started
                   <svg
                     fill="none"

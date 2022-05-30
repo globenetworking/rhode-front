@@ -15,10 +15,10 @@ const Admin = () => {
   let url = 'admin';
   return (
     <>
-      <div className="">
+      <div className="md:px-8 px-2 h-full w-[95%] mx-auto">
         {/* Header */}
         <Header />
-        <div className="px-4 md:px-10 mx-auto w-full -m-24">
+        <div className="px-5 mx-auto w-full">
           <Routes>
             <Route path="/users" element={<AllUsers />} />
             <Route path="/editUser" element={<EditUser />} />
