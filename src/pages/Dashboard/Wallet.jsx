@@ -79,7 +79,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button bg-yellow-500 border-transparent"
+                class="btn modal-button bg-yellow-400 text-white border-transparent"
               >
                 connect
               </label>
@@ -132,7 +132,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button bg-yellow-500 border-transparent"
+                class="btn modal-button bg-yellow-400 text-white border-transparent"
               >
                 connect
               </label>
@@ -177,7 +177,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button bg-yellow-500 border-transparent"
+                class="btn modal-button bg-yellow-400 text-white border-transparent"
               >
                 connect
               </label>
@@ -223,7 +223,7 @@ const Wallet = () => {
             <div>
               <label
                 for="my-modal-6"
-                class="btn modal-button bg-yellow-500 border-transparent"
+                class="btn modal-button bg-yellow-400 text-white border-transparent"
               >
                 connect
               </label>
