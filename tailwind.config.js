@@ -7,47 +7,5 @@ module.exports = {
       }
     },
   },
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-        
-          "primary": "#131129",
-
-          "accent": "#1d1933",
-
-          "xred": "#ad343e",
-
-          "xyellow": "#F2AF29",
-
-          "egg": "#F2AF29",
-                  
-          "secondary": "#6f4ef2",
-
-          "twhite": "#fff",
-
-          "tcream": "#e3d7ef",
-
-          "tgray": "#6d7e7e",
-
-          "tblack": "#FFF"
-        },
-        anodatheme: {
-        
-          "primary": "#131129",
-
-          "primary-light": "#1D1933",
-                  
-          "secondary": "#6f4ef2",
-
-          "twhite": "#fff",
-
-          "tcream": "#e3d7ef",
-
-          "tgray": "#6d7e7e",
-        },
-      },
-    ],
-  },
-  plugins: [require("daisyui")],
+    plugins: [require("daisyui")],
 }

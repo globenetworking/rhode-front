@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Zoom from 'react-reveal/Zoom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Zoom from "react-reveal/Zoom";
 
-import LandingNav from '../../components/Nav/LandingNav';
-import NftCard from '../../components/NftCard';
-import Footer from '../../components/Footer';
+import LandingNav from "../../components/Nav/LandingNav";
+import NftCard from "../../components/NftCard";
+import Footer from "../../components/Footer";
 
-import nftArr from './nfts';
+import nftArr from "./nfts";
 
-import apes from '../../images/apes.jpg';
-import nft7 from '../../images/nft7.jpg';
-import nft8 from '../../images/nft8.jpg';
-import nft9 from '../../images/nft9.jpg';
+import apes from "../../images/apes.jpg";
+import nft7 from "../../images/nft7.jpg";
+import nft8 from "../../images/nft8.jpg";
+import nft9 from "../../images/nft9.jpg";
 
-const grad = 'bg-gradient-to-r from-pink-300 via-secondary to-secondary';
+const grad = "bg-gradient-to-r from-pink-300 via-secondary to-secondary";
 const gradText = `${grad} text-black bg-clip-text stroke-transparent fill-black stroke-2 `;
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
     <div className="bg-primary text-white lg:px-24 h-screen">
       <div className="flex flex-col lg:flex-row py-2  justify-between items-center ">
         <span className="mb-3 text-xs lg:text-base">
-          {' '}
+          {" "}
           <Zoom cascade>Discover, find and buy extraordinary NFT with us.</Zoom>
         </span>
         <span
@@ -33,17 +33,17 @@ const Home = () => {
       <LandingNav />
       <div className="lg:flex lg:pt-0">
         <div className="px-2 md:w-6/12 ">
-          {' '}
+          {" "}
           <img src={apes} alt="apes" />
         </div>
 
         <div className="flex flex-col mt-16 px-4 lg:px-16 items-center">
           <span
             className={`text-4xl mb-6 lg:text-5xl  lg:leading-snug font-semibold`}
-            style={{ WebkitTextStroke: '3px transparent' }}
+            style={{ WebkitTextStroke: "3px transparent" }}
           >
-            Trade Crypto. Discover, Collect &{' '}
-            <div className={`${gradText} `}> Buy NFTs</div>{' '}
+            Trade Crypto. Discover, Collect &{" "}
+            <div className={`${gradText} `}> Buy NFTs</div>{" "}
           </span>
           <span>
             The Crypto Monkey is a high-quality collection of 100 unique monkeys
@@ -126,7 +126,7 @@ const Home = () => {
             <div class="flex flex-wrap py-8 md:flex-nowrap">
               <div class="flex flex-col flex-shrink-0 px-4 mb-6 md:w-64 md:mb-0">
                 <strong class="flex text-3xl font-thin leading-none text-left text-thin lg:text-4xl">
-                  {' '}
+                  {" "}
                   What is an NFT?
                 </strong>
                 <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
@@ -182,7 +182,7 @@ const Home = () => {
                   Moonverse
                 </strong>
                 <span class="mt-1 text-xs font-normal leading-relaxed text-gray-500">
-                  analyzing, drawing out potential collectibles{' '}
+                  analyzing, drawing out potential collectibles{" "}
                   <span className="hidden md:flex">
                     (Nfts), enumeration based on rarity
                   </span>
