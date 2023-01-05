@@ -16,6 +16,7 @@ import Menu from "./components/Nav/Menu";
 // import { Code, Instagram } from "react-content-loader";
 // import MyLoader from "./loader";
 import "react-toastify/dist/ReactToastify.css";
+import About from "./pages/landingx/Aboutx";
 
 const App = () => {
   return (
@@ -24,8 +25,9 @@ const App = () => {
     
       
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Homex />} />
             <Route path="home" element={<Homex />} />
+            <Route path="/about" element={<About />} />
             {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Signup />} />
