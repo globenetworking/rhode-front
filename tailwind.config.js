@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       strokeWidth: {
         '5': '5px',
-      }
+      },
     },
   },
     plugins: [require("daisyui")],

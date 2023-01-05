@@ -12,10 +12,99 @@ import visa from "../../images/fig6.svg";
 import skrill from "../../images/fig7.svg";
 import paypal from "../../images/fig8.svg";
 import neteller from "../../images/fig9.svg";
+import React, { Component, useState } from "react";
+
+
+const App = () => {
+  const [ showMenu, setShowMenu ] = useState("md:hidden");
+  const toggleMenu = () => {
+    if (showMenu == "hidden"){
+      setShowMenu("md:hidden");
+    }else {
+      setShowMenu("hidden")
+    }
+  }
+}
+
 
 const Homex = () => {
   return (
-    <div>
+    <div className="App bg-gray-300 py-12">
+      <section
+        id="nav_and_hero"
+        className="h-screen lg:px-24 overflow-x-hidden"
+        style={{
+          backgroundImage:
+            "url(https://whitebullsafety.org/static/media/bg_landing_hero.5805bfc1dcb727899876.png); background-color: rgb(33, 34, 36); background-repeat:no-repeat; background-size: cover; background-position: 50% 0px",
+        }}
+      >
+        <div className="absolute bottom-0 left-0 z-10 w-full">
+          {/*
+            <coingecko-coin-price-marquee-widgetcurrency="usd"coin-ids="bitcoin,ethereum,eos,ripple,litecoinlocale="en" vce-ready=""></coingecko-coin-price-marquee-widget>
+          */}
+          <nav
+            className="lg:px-32 flex px-2 sm:px-4 py-5 fixed w-full z-20 top-0 left-0_border-b border-gray-200 dark:border-gray-600"
+            style={{ background: "rgba(22, 22, 26, 0.7)" }}
+          >
+            <div className="container flex flex-wrap justify-between items-center mx-auto">
+              <a href="" className="flex items-center">
+                <img
+                  src="https://whitebullsafety.org/static/media/white.39b2004ccf1f39e097ff.png"
+                  alt="photo"
+                  className="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                />
+              </a>
+              <div className="hidden md:flex md:order-2">
+                <a href="/public/register" className="">
+                  <button
+                    type="button"
+                    className="text-black bg-[#fc5b3f] tracking-wide rounded-lg text-xs px-5 py-3 text-center mr-3 md:mr-0 font-medium"
+                  >
+                    CREATE BUTTON
+                  </button>
+                </a>
+                <button
+                  data-collapse-toggle="navbar-sticky"
+                  type="button"
+                  className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span className="sr-only">Open main menu</span>
+                  </button>
+              </div>
+              <div className="hidden justify-between items-center flex-1 w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul className="flex flex-col p-4 mt-4 lg:ml-24 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+                  <li>
+                    <a href="" className="pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/public/about" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/public/contact" className=" block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/public/markets" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                      Markets
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              {/* <span onClick={toggleMenu} tabIndex="0" className="btn btn-ghost btn-circle md:hidden">
+                
+
+              </span> */}
+            </div>
+          </nav>
+        </div>
+      </section>
+
       <section className="bg-[#101112] text-white md:px-24 lg:px-36 default_cursor_cs">
         <div className="flex flex-col md:flex-row px-4 justify-between pt-12 default_cursor_cs">
           <div className="text-4xl font-bold tracking-wide default_cursor_cs">

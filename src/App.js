@@ -17,6 +17,7 @@ import Menu from "./components/Nav/Menu";
 // import MyLoader from "./loader";
 import "react-toastify/dist/ReactToastify.css";
 import About from "./pages/landingx/Aboutx";
+import Contact from "./pages/landingx/Contactx";
 
 const App = () => {
   return (
@@ -26,8 +27,8 @@ const App = () => {
       
           <Routes>
             <Route path="/" element={<Homex />} />
-            <Route path="home" element={<Homex />} />
-            <Route path="/about" element={<About />} />
+            <Route path="public/about" element={<About />} />
+            <Route path="public/contact" element={<Contact />} />
             {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Signup />} />
