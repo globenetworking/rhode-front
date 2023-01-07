@@ -1,4 +1,4 @@
-import brax from "../../images/brax.jpg";
+import logo from "../../images/whitebulllogo.png";
 
 const Footer = () => {
   return (
@@ -71,7 +71,7 @@ const Footer = () => {
               <div className="space-y-8 xl:col-span-1">
                 <span className="flex items-center w-28 lg:w-36 rounded-md bg-black text-secondary justify-center mb-6">
                   <img
-                    src={brax}
+                    src={logo}
                     className="w-24 self-center text-xl font-semibold whitespace-nowrap text-white"
                   />
                 </span>
