@@ -72,6 +72,7 @@ const Footer = () => {
                 <span className="flex items-center w-28 lg:w-36 rounded-md bg-black text-secondary justify-center mb-6">
                   <img
                     src={logo}
+                    alt="logo"
                     className="w-24 self-center text-xl font-semibold whitespace-nowrap text-white"
                   />
                 </span>
@@ -231,9 +232,9 @@ const Footer = () => {
         </footer>
       </section>
 
-      <div aria-live="polite" class="crisp-client">
-        <div class="cc-cbqy">
-          <div class="cc-2xrx">
+      <div aria-live="polite" className="crisp-client">
+        <div className="cc-cbqy">
+          <div className="cc-2xrx">
             <style type="text/css">
               .crisp-client *:focus-visible ( outline-color: #004AB5 !important;
               ) .crisp-client .cc-1m7s .cc-43er ( color: #FFFFFF !important; )
@@ -278,7 +279,7 @@ const Footer = () => {
               )
             </style>
           </div>
-          <div class="cc-1q75">
+          <div className="cc-1q75">
             <style type="text/css">
               .crisp-client .cc-1m7s ( z-index: 1000000; )
             </style>

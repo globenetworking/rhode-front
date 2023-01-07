@@ -81,7 +81,7 @@ const Homex = () => {
                 <img src={alphabet} alt="/alphabet" />
               </div>
             </div>
-            <div class="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
+            <div className="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -94,11 +94,15 @@ const Homex = () => {
                 <path fill="none" d="M0 0h24v24H0V0z"></path>
                 <path d="M7 14l5-5 5 5H7z"></path>
               </svg>
-              <span class="ml-1 default_cursor_cs">12.443</span>
+              <span className="ml-1 default_cursor_cs">12.443</span>
             </div>
-            <div class="w-66 flex items-center default_cursor_cs">
+            <div className="w-66 flex items-center default_cursor_cs">
               <div>
-                <img src={facebook} class="default_cursor_cs" />
+                <img
+                  src={facebook}
+                  alt="facebook"
+                  className="default_cursor_cs"
+                />
               </div>
               <div class="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
                 <svg
@@ -109,19 +113,22 @@ const Homex = () => {
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="default_cursor_cs"
+                  className="default_cursor_cs"
                 >
                   <path fill="none" d="M0 0h24v24H0V0z"></path>
-                  <path d="M7 14l5-5 5 5H7z" class="default_cursor_cs"></path>
+                  <path
+                    d="M7 14l5-5 5 5H7z"
+                    className="default_cursor_cs"
+                  ></path>
                 </svg>
-                <span class="ml-1 default_cursor_cs">12.443</span>
+                <span className="ml-1 default_cursor_cs">12.443</span>
               </div>
             </div>
-            <div class="w-66 flex items-center default_cursor_cs">
+            <div className="w-66 flex items-center default_cursor_cs">
               <div>
-                <img src={ms} class="default_cursor_cs" />
+                <img src={ms} alt="ms" className="default_cursor_cs" />
               </div>
-              <div class="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
+              <div className="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
@@ -130,39 +137,19 @@ const Homex = () => {
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="default_cursor_cs"
-                >
-                  <path fill="none" d="M0 0h24v24H0V0z"></path>
-                  <path d="M7 14l5-5 5 5H7z"></path>
-                </svg>
-                <span class="ml-1 default_cursor_cs">12.443</span>
-              </div>
-            </div>
-            <div class="w-66 flex items-center default_cursor_cs">
-              <div>
-                <img src={tesla} class="default_cursor_cs" />
-              </div>
-              <div class="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="default_cursor_cs"
                 >
                   <path fill="none" d="M0 0h24v24H0V0z"></path>
                   <path d="M7 14l5-5 5 5H7z"></path>
                 </svg>
-                <span class="ml-1">12.443</span>
+                <span className="ml-1 default_cursor_cs">12.443</span>
               </div>
             </div>
-            <div class="w-66 flex items-center">
+            <div className="w-66 flex items-center default_cursor_cs">
               <div>
-                <img src={amazon} />
+                <img src={tesla} alt="tesla" className="default_cursor_cs" />
               </div>
-              <div class="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4">
+              <div className="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4 default_cursor_cs">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
@@ -175,13 +162,33 @@ const Homex = () => {
                   <path fill="none" d="M0 0h24v24H0V0z"></path>
                   <path d="M7 14l5-5 5 5H7z"></path>
                 </svg>
-                <span class="ml-1">12.443</span>
+                <span className="ml-1">12.443</span>
+              </div>
+            </div>
+            <div className="w-66 flex items-center">
+              <div>
+                <img src={amazon} alt="amazon" />
+              </div>
+              <div className="flex bg-green-500 text-xs text-slate-800 px-4 py-1 rounded ml-4">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0V0z"></path>
+                  <path d="M7 14l5-5 5 5H7z"></path>
+                </svg>
+                <span className="ml-1">12.443</span>
               </div>
             </div>
           </div>
         </section>
         <div className="absolute bottom-0 left-0 z-10 w-full">
-           <Widget />
+          <Widget />
         </div>
       </section>
 
@@ -239,7 +246,7 @@ const Homex = () => {
           </div>
           <div className="w-11/12 overflow-x-hidden relative mb-6 md:mb-0 md:w-80 shadow-xl bg-[#1e1d1d] p-6 pt-0 rounded overflow-y-hidden h-[300px] default_cursor_cs">
             <figure className="w-11/12 absolute -top-20 -right-20 justify-self-end">
-              <img src={fig3} className="w-full" alt="Shoes" />
+              <img src={fig3} alt="fig3" className="w-full" />
             </figure>
             <div className="mb-6 h-36 default_cursor_cs"></div>
             <div className="relative -top-6">
@@ -325,22 +332,22 @@ const Homex = () => {
       <section className="md:px-28 pt-6 md:pt-24 md:pb-16 bg-red-5 default_cursor_cs">
         <div className="flex flex-col md:flex-row justify-between default_cursor_cs">
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} className="w-16" />
+            <img src={leaves} alt="leaves" className="w-16" />
             <div className="font-bold mt-3">Best CFD Broker</div>
             <div className=" text-sm">TradeON Summit 2020</div>
           </div>
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} className="w-16" />
+            <img src={leaves} alt="leaves" className="w-16" />
             <div className="font-bold mt-3">Best Execution Broker</div>
             <div className=" text-sm">Forex EXPO Dubai 2020</div>
           </div>
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} className="w-16" />
+            <img src={leaves} alt="leaves" className="w-16" />
             <div className="font-bold mt-3">Best Trading Platform</div>
             <div className=" text-sm">London Summit 2020</div>
           </div>
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} className="w-16" />
+            <img src={leaves} alt="leaves" className="w-16" />
             <div className="font-bold mt-3">Best Broker Asia</div>
             <div className=" text-sm">iFX EXPO 2020</div>
           </div>
@@ -353,16 +360,16 @@ const Homex = () => {
         </div>
         <div className="flex flex-col mx-auto md:flex-row md:w-8/12 justify-around items-center default_cursor_cs">
           <div className="mt-4 w-3/">
-            <img src={cb} className="mx-auto default_cursor_cs" />
+            <img src={cb} alt="cb" className="mx-auto default_cursor_cs" />
             <div className="text-center font-bold py-2">Coinbase</div>
           </div>
           <div className="mt-4">
-            <img src={btc} className="mx-auto default_cursor_cs" />
+            <img src={btc} alt="btc" className="mx-auto default_cursor_cs" />
             <div className="text-center font-bold py-2 default_cursor_cs" />
             bitcoin.com
           </div>
           <div className="mt-4">
-            <img src={crypto} className="mx-auto default_cursor_cs" />
+            <img src={crypto} alt="cry" className="mx-auto default_cursor_cs" />
             <div className="text-center font-bold py-2">Crypto.com</div>
           </div>
         </div>
@@ -373,12 +380,12 @@ const Homex = () => {
           Payment methods
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between px-4">
-          <img src={btc1} className="w-28 md:48" />
-          <img src={mscard} className="w-28 md:48 my-4" />
-          <img src={visa} className="w-28 md:48" />
-          <img src={skrill} className="w-28 md:48 my-4" />
-          <img src={paypal} className="w-28 md:48" />
-          <img src={neteller} className="w-28 md:48 my-4" />
+          <img src={btc1} alt="img" className="w-28 md:48" />
+          <img src={mscard} alt="img" className="w-28 md:48 my-4" />
+          <img src={visa} alt="img" className="w-28 md:48" />
+          <img src={skrill} alt="img" className="w-28 md:48 my-4" />
+          <img src={paypal} alt="img" className="w-28 md:48" />
+          <img src={neteller} alt="img" className="w-28 md:48 my-4" />
         </div>
       </section>
 
