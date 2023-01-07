@@ -1,4 +1,4 @@
-
+import Footer from "./Footerx";
 
 const Contact = () => {
   return (
@@ -59,6 +59,9 @@ const Contact = () => {
           </div>
         </article>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
