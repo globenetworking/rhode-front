@@ -25,14 +25,14 @@ function Loginx() {
                 <div className="text-center text-red-400 text-sm"></div>
                 <div className="mt-3">
                   <div className="text-left font-semibold pb-1 text-xs lg:text-sm">Password <span className="text-red-600">*</span></div>
-                  <input type="password" placeholder="Enter your password" className=" pl-4 mt-1 block bg-white w-full border border-slate-300 rounded shadow text-black  placeholder-white text-sm h-10 py-.5 focus:ring-0 focus:bg-slate-600" />
+                  <input type="password" placeholder="Enter your password" className=" pl-4 mt-1 block bg-white w-full border border-slate-300 rounded shadow text-black  placeholder-gray-400 text-sm h-10 py-.5 focus:ring-0 focus:bg-slate-200" />
                 </div>
                 <div className="mt-2"></div>
                   <a className="text-xs text-red-700 cursor mt-4 font-semibold tracking-wide" href="/public/forgot-password">Forgot password?
                   </a>
                 <div className="text-center text-red-600 text-sm"></div>
                 <div className="text-center text-red-600 text-sm"></div>
-                <button className="font-semibold bg-blue-600 rounded text-white capitalize text-sm w-full  mt-7 btn-sm h-9">Login</button>
+                <button className="font-semibold bg-blue-600 rounded text-white capitalize text-sm w-full  mt-7 btn-sm h-9 hover:bg-blue-500">Login</button>
                 <div className="flex mt-4 justify-center w-full text-sm">
                   <div className=" text-sm">Don't have an account? 
                     <a className="ml-2 text-blue-600 font-semibold" href="/public/register">Register</a>

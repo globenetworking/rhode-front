@@ -20,6 +20,7 @@ import About from "./pages/landingx/Aboutx";
 import Contact from "./pages/landingx/Contactx";
 import Market from "./pages/landingx/Marketsx";
 import Loginx from "./pages/landingx/Loginx";
+import Registerx from "./pages/landingx/Registerx";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="public/contact" element={<Contact />} />
             <Route path="public/markets" element={<Market />} />
             <Route path="/public/login" element={<Loginx />} />
+            <Route path="/public/register" element={<Registerx />} />
             {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Signup />} />
