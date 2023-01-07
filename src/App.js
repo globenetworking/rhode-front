@@ -19,6 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import About from "./pages/landingx/Aboutx";
 import Contact from "./pages/landingx/Contactx";
 import Market from "./pages/landingx/Marketsx";
+import Loginx from "./pages/landingx/Loginx";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="public/about" element={<About />} />
             <Route path="public/contact" element={<Contact />} />
             <Route path="public/markets" element={<Market />} />
+            <Route path="/public/login" element={<Loginx />} />
             {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Signup />} />
