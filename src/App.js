@@ -21,21 +21,21 @@ import Contact from "./pages/landingx/Contactx";
 import Market from "./pages/landingx/Marketsx";
 import Loginx from "./pages/landingx/Loginx";
 import Registerx from "./pages/landingx/Registerx";
+import Activate from "./pages/landingx/Activate";
 
 const App = () => {
   return (
-    <div
-      className="flex flex-col lg:flex-row relative right-0 bg-primjary h-screen overflow-y-scroll">
-    
-      
-          <Routes>
-            <Route path="/" element={<Homex />} />
-            <Route path="public/about" element={<About />} />
-            <Route path="public/contact" element={<Contact />} />
-            <Route path="public/markets" element={<Market />} />
-            <Route path="/public/login" element={<Loginx />} />
-            <Route path="/public/register" element={<Registerx />} />
-            {/* <Route path="/collections" element={<Collections />} />
+    <div className="flex flex-col lg:flex-row relative right-0 bg-primjary h-screen overflow-y-scroll">
+      <Routes>
+        <Route path="/" element={<Homex />} />
+        <Route path="public/about" element={<About />} />
+        <Route path="public/contact" element={<Contact />} />
+        <Route path="public/markets" element={<Market />} />
+        <Route path="/public/login" element={<Loginx />} />
+        <Route path="/public/register" element={<Registerx />} />
+        <Route path="/public/activate" element={<Activate />} />
+
+        {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Signup />} />
             <Route path="/user/dashboard" element={<Dashboard />} />
@@ -44,7 +44,7 @@ const App = () => {
             <Route path="user/withdrawal" element={<Withdrawal />} />
             <Route path="/user/wallet" element={<Wallet />} />
             <Route path="/admin/*" element={<Admin />} /> */}
-          </Routes>
+      </Routes>
     </div>
   );
 };

@@ -1,7 +1,78 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { setUserDetails, setToken } from '../../Redux/action';
+import { useDispatch } from 'react-redux';
 import logo from "../../images/whitebulllogo.png";
 
 function Registerx() {
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [terms, setTerms] = useState(true);
+  const [password, setPassword] = useState('');
+  const [msg, setMsg] = useState({
+    name: '',
+    email: '',
+    password: '',
+    error: '',
+    exists: '',
+  });
+  const onNameChange = (event) => {
+    setName(event.target.value);
+  };
+  const onEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+
+    if (!terms) {
+      return;
+    }
+    setMsg({});
+    console.log({
+      name,
+      email,
+      password,
+    });
+
+    fetch("https://tame-pear-chinchilla-kit.cyclic.app/sign-up", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log("res", res);
+        const { token } = res;
+        const { user } = res;
+        dispatch(setToken(token));
+
+        if (res.msg) {
+          setMsg(res.msg);
+          console.log("msg", msg);
+        }
+
+        if (token != undefined) {
+          dispatch(setUserDetails(user));
+          navigate("../user/dashboard", { replace: true });
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+
+
   return (
     <div className="px-0 lg:px-0 w-full">
       <div className="flex flex-col bg-[#26313f3a] shadow-md rounded  text-slate-700 items-center h-screen px-3 justify-center pt-3  w-full">
@@ -30,12 +101,13 @@ function Registerx() {
                 </p>
                 <form method="#" action="#" className="mt-6">
                   <div className="pb-3">
-                    <div className="text-left font-semibold pb-1 text-xs lg:text-sm">
+                    <div className="text-left font-semibold pb-1 text-xs lg:text-sm" >
                       Full name <span className="text-red-600">*</span>
                     </div>
                     <input
                       placeholder="Enter your full name"
                       className=" pl-4 mt-1 block w-full border border-slate-300 rounded shadow text-black placeholder-gray-400 text-sm h-10 py-.5 focus:ring-0 focus:bg-slate-200"
+                      onChange={onNameChange}
                     />
                     <div className="text-center text-red-400 text-sm"></div>
                   </div>
@@ -46,6 +118,7 @@ function Registerx() {
                     <input
                       placeholder="Enter your email"
                       className=" pl-4 mt-1 block w-full border border-slate-300 rounded shadow text-black placeholder-gray-400 text-sm h-10 py-.5 focus:ring-0 focus:bg-slate-200"
+                      onChange={onEmailChange}
                     />
                     <div className="text-center text-red-400 text-sm"></div>
                   </div>
@@ -57,12 +130,13 @@ function Registerx() {
                       type="password"
                       placeholder="Enter your password"
                       className=" pl-4 mt-1 block w-full border border-slate-300 rounded shadow text-black placeholder-gray-400 text-sm h-10 py-.5 focus:ring-0 focus:bg-slate-200"
+                      onChange={onPasswordChange}
                     />
                   </div>
                   <div className="text-center text-red-600 text-sm"></div>
                   <div className="text-center text-red-600 text-sm"></div>
                   <div className="mt-7">
-                    <button className="font-semibold bg-blue-600 rounded hover:bg-blue-500 text-white capitalize text-sm w-full  btn-sm h-9 focus:bg-blue-600">
+                    <button className="font-semibold bg-blue-600 rounded hover:bg-blue-500 text-white capitalize text-sm w-full  btn-sm h-9 focus:bg-blue-600" onClick={register}>
                       Register
                     </button>
                   </div>
