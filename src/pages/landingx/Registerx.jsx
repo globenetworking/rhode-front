@@ -65,7 +65,7 @@ function Registerx() {
 
         if (token != undefined) {
           dispatch(setUserDetails(user));
-          navigate("../user/dashboard", { replace: true });
+          navigate("/public/activate", { replace: true });
         }
       })
       .catch((err) => console.log(err));

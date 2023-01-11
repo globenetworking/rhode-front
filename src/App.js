@@ -1,8 +1,8 @@
 // import react, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Landing/Home";
+// import Home from "./pages/Landing/Home";
 import Homex from "./pages/landingx/Homex";
-import Menu from "./components/Nav/Menu";
+// import Menu from "./components/Nav/Menu";
 // import Dashboard from "./pages/Dashboard/Dashboard";
 // import Deposit from "./pages/Dashboard/Deposit";
 // import Profile from "./pages/Dashboard/Profile";
@@ -22,10 +22,14 @@ import Market from "./pages/landingx/Marketsx";
 import Loginx from "./pages/landingx/Loginx";
 import Registerx from "./pages/landingx/Registerx";
 import Activate from "./pages/landingx/Activate";
+import Dashboardx from "./pages/landingx/Dashboard/Dashboardx";
+import Deposit from "./pages/landingx/Dashboard/Deposit";
+import Withdraw from "./pages/landingx/Dashboard/Withdraw";
+import Profile from "./pages/landingx/Dashboard/Profile";
 
 const App = () => {
   return (
-    <div className="flex flex-col lg:flex-row relative right-0 bg-primjary h-screen overflow-y-scroll">
+    <div className="">
       <Routes>
         <Route path="/" element={<Homex />} />
         <Route path="public/about" element={<About />} />
@@ -34,6 +38,10 @@ const App = () => {
         <Route path="/public/login" element={<Loginx />} />
         <Route path="/public/register" element={<Registerx />} />
         <Route path="/public/activate" element={<Activate />} />
+        <Route path="/user/dashboard" element={<Dashboardx />} />
+        <Route path="/user/deposit" element={<Deposit />} />
+        <Route path="/user/withdraw" element={<Withdraw />} />
+        <Route path="/user/profile" element={<Profile />} />
 
         {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />

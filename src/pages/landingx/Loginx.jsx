@@ -77,7 +77,7 @@ function Loginx() {
           dispatch(setUserDetails(user));
           // window.location.assign('http://enefti-six.vercel.app/user/dashboard')
           // https://tame-pear-chinchilla-kit.cyclic.app/login
-          https: navigate("/user/dashboard", { replace: true });
+          navigate("/user/dashboard", { replace: true });
         }
       })
       .catch((err) => console.log(err));
