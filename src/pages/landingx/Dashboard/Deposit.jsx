@@ -275,9 +275,8 @@ const Deposit = () => {
                 </div>
                 <ul>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
+                    class="flex text-gray-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     href="/user/dashboard"
-                    style={{ color: "rgb(225, 29, 72)" }}
                   >
                     <svg
                       stroke="currentColor"
@@ -294,9 +293,8 @@ const Deposit = () => {
                     <span>Dashboard</span>
                   </a>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                    class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     href="/user/deposit"
-                    style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
                       stroke="currentColor"
@@ -456,10 +454,9 @@ const Deposit = () => {
                     <span class="text-red-500">*</span>
                   </span>
                   <input
-                    placeholder="0.00"
-                    type="Number"
-                    class="border font-normal text-base border-gray-300 py- px-2 md:p-2 rounded shadow-sm placeholder:text-sm md:placeholder:text-base"
-                    value=""
+                    placeholder="0.00" 
+                    type="number"
+                    className="border font-normal text-base border-gray-300 py- px-2 md:p-2 rounded shadow-sm placeholder:text-sm md:placeholder:text-base"
                   />
                   <p class="text-xs text-red-600 tracking-wide pt-1 font-medium">
                     Min: $50

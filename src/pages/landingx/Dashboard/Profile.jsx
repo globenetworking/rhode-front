@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
 import logo1 from "../../../images/whitebull.jpg";
 
@@ -14,6 +14,159 @@ const Profile = () => {
   const onChange = (e) => {
     setPlacement(e.target.value);
   };
+
+  const tabsData = [
+    {
+      label: "Profile",
+      content: (
+        <div>
+          {/* <div class="text-slate-700">
+            <p class="text-xl lg:text-4xl font-medium pt-8">Preferences</p>
+            <p>You have full control to manage your own account setting.</p>
+          </div> */}
+          <div class="ant-tabs ant-tabs-top ant-tabs-mobile">
+            <div></div>
+            <div>
+              <div class="ant-tabs-content ant-tabs-content-top">
+                <div
+                  role="tabpanel"
+                  tabindex="0"
+                  aria-hidden="false"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-1-panel-1"
+                  aria-labelledby="rc-tabs-1-tab-1"
+                >
+                  <section class="flex flex-col pt-5">
+                    <article class="flex flex-col md:flex-row">
+                      <p class="flex flex-col w-64 mr-10">
+                        <span class="text-sm pb-2 font-medium">
+                          Full Name
+                          <span class="text-red-500">*</span>
+                        </span>
+                        <input
+                          placeholder="s"
+                          type="text"
+                          class="border border-gray-300 p-2 rounded shadow-sm"
+                        />
+                      </p>
+                      <p class="flex flex-col w-64">
+                        <span class="text-sm pb-2 font-medium">
+                          Email
+                          <span class="text-red-500">*</span>
+                        </span>
+                        <input
+                          placeholder="s@s.com"
+                          disabled=""
+                          class="border border-gray-300 p-2 rounded shadow-sm"
+                        />
+                      </p>
+                    </article>
+                    <article class="flex flex-col md:flex-row mt-3">
+                      <p class="flex flex-col w-64">
+                        <span class="text-sm pb-2 font-medium">
+                          Phone
+                          <span class="text-red-500">*</span>
+                        </span>
+                        <input
+                          placeholder=""
+                          class="border border-gray-300 p-2 rounded shadow-sm"
+                        />
+                      </p>
+                    </article>
+                    <section class="flex pt-5">
+                      <button class="flex items-center pl-4 pr-2 py-2 font-semibold text-sm bg-red-500 text-white rounded">
+                        Update Profile
+                      </button>
+                      <button class="flex items-center ml-3 pl-4 pr-2 py-2 font-semibold text-sm bg-red-5000 bg-gray-50 text-slate-800 rounded">
+                        Cancel
+                      </button>
+                    </section>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      label: "Account",
+      content: (
+        <div
+          id="rc-tabs-0-panel-2"
+          role="tabpanel"
+          tabindex="0"
+          aria-labelledby="rc-tabs-0-tab-2"
+          aria-hidden="false"
+          class="ant-tabs-tabpane ant-tabs-tabpane-active"
+        >
+          <div class="text-sm default_cursor_cs">
+            {" "}
+            <span class="mr-2 font-semibold text-xs uppercase text-slate-600 mb-0 default_cursor_cs">
+              Address:
+            </span>
+          </div>
+          <div class="w-full h-full">
+            <div class="flex flex-col md:flex-row md:items-center justify-between border border-yellow-400 mx-5 px-5 py-5 shadow-lg mt-6 default_cursor_cs">
+              <span class="flex default_cursor_cs">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  class="text-yellow-400 mr-3 md:hidden"
+                  height="38"
+                  width="38"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M955.7 856l-416-720c-6.2-10.7-16.9-16-27.7-16s-21.6 5.3-27.7 16l-416 720C56 877.4 71.4 904 96 904h832c24.6 0 40-26.6 27.7-48zM480 416c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v184c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V416zm32 352a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"></path>
+                </svg>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  class="text-yellow-400 mr-3 hidden md:flex"
+                  height="24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M955.7 856l-416-720c-6.2-10.7-16.9-16-27.7-16s-21.6 5.3-27.7 16l-416 720C56 877.4 71.4 904 96 904h832c24.6 0 40-26.6 27.7-48zM480 416c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v184c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V416zm32 352a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"></path>
+                </svg>
+                <p class="text-sm default_cursor_cs">
+                  Add an account that you’d like to receive payment or withdraw
+                  fund.
+                </p>
+              </span>
+              <button class="px-3 py-1.5 md:py-2.5 text-xs bg-yellow-500 text-white font-medium  rounded uppercase mt-6 md:mt-0">
+                {" "}
+                Add account
+              </button>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
+  const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
+
+  const tabsRef = useRef([]);
+
+  useEffect(() => {
+    function setTabPosition() {
+      const currentTab = tabsRef.current[activeTabIndex];
+      setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
+      setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
+    }
+
+    setTabPosition();
+    window.addEventListener("resize", setTabPosition);
+
+    return () => window.removeEventListener("resize", setTabPosition);
+  }, [activeTabIndex]);
 
   return (
     <div>
@@ -275,9 +428,9 @@ const Profile = () => {
                 </div>
                 <ul>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
+                    class="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     href="/user/dashboard"
-                    style={{ color: "rgb(225, 29, 72)" }}
+                    style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
                       stroke="currentColor"
@@ -338,9 +491,8 @@ const Profile = () => {
                     <span>Withdraw</span>
                   </a>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                    class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     href="/user/profile"
-                    style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
                       stroke="currentColor"
@@ -380,7 +532,7 @@ const Profile = () => {
             </div>
           </section>
 
-          <div className="flex-1 bg-[#f5f6fa]">
+          <div className="flex-1 h-screen bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
                 <span tabindex="0" class="btn btn-ghost btn-circle  md:hidden">
@@ -431,58 +583,35 @@ const Profile = () => {
 
             <div class="px-6 md:px-12 lg:px-12">
               <div class="text-slate-700">
-                <p class="text-xl lg:text-4xl font-medium pt-8">Preferences</p>
-                <p>You have full control to manage your own account setting.</p>
+                <p class="text-xl lg:text-4xl font-medium pt-8 mb-10">
+                  Preferences
+                </p>
+                <p className="mb-5">
+                  You have full control to manage your own account setting.
+                </p>
               </div>
-              <div class="ant-tabs ant-tabs-top ant-tabs-mobile">
-                <div role="tablist" class="ant-tabs-nav">
-                  <div class="ant-tabs-nav-wrap">
-                    <div class=" flex gap-8 mt-4" style={{ transform: "translate(0px, 0px)" }}>
-                      <div class="ant-tabs-tab ant-tabs-tab-active">
-                        <div role="tab" aria-selected="true" class="ant-tabs-tab-btn" tabindex="0" id="rc-tabs-1-tab-1" aria-controls="rc-tabs-1-panel-1">Profile</div>
-                      </div>
-                      <div class="ant-tabs-tab">
-                        <div role="tab" aria-selected="false" class="ant-tabs-tab-btn" tabindex="0" id="rc-tabs-1-tab-2" aria-controls="rc-tabs-1-panel-2">Account</div>
-                      </div>
-                      <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated" style={{left: "0px; width: 39px" }}></div>
-                    </div>
-                  </div>
-                  <div class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"></div>
+              <div className="relative">
+                <div className="flex space-x-7 border-b">
+                  {tabsData.map((tab, idx) => {
+                    return (
+                      <button
+                        key={idx}
+                        ref={(el) => (tabsRef.current[idx] = el)}
+                        className="pt-2 pb-3 text-sm focus:text-blue-500"
+                        onClick={() => setActiveTabIndex(idx)}
+                      >
+                        {tab.label}
+                      </button>
+                    );
+                  })}
                 </div>
-                <div class="ant-tabs-content-holder">
-                  <div class="ant-tabs-content ant-tabs-content-top">
-                    <div role="tabpanel" tabindex="0" aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active" id="rc-tabs-1-panel-1" aria-labelledby="rc-tabs-1-tab-1">
-                      <section class="flex flex-col pt-5">
-                        <article class="flex flex-col md:flex-row">
-                          <p class="flex flex-col w-64 mr-10">
-                            <span class="text-sm pb-2 font-medium">Full Name 
-                              <span class="text-red-500">*</span>
-                            </span>
-                            <input placeholder="s" type="text" class="border border-gray-300 p-2 rounded shadow-sm" />
-                          </p>
-                          <p class="flex flex-col w-64">
-                            <span class="text-sm pb-2 font-medium">Email 
-                              <span class="text-red-500">*</span>
-                            </span>
-                            <input placeholder="s@s.com" disabled="" class="border border-gray-300 p-2 rounded shadow-sm" />
-                          </p>
-                        </article>
-                        <article class="flex flex-col md:flex-row ">
-                          <p class="flex flex-col w-64">
-                            <span class="text-sm pb-2 font-medium">phone 
-                              <span class="text-red-500">*</span>
-                            </span>
-                            <input placeholder="" class="border border-gray-300 p-2 rounded shadow-sm" />
-                          </p>
-                        </article>
-                        <section class="flex pt-5">
-                          <button class="flex items-center pl-4 pr-2 py-2 font-semibold text-sm bg-red-500 text-white rounded">Update Profile</button>
-                          <button class="flex items-center pl-4 pr-2 py-2 font-semibold text-sm bg-red-5000 bg-gray-50 text-slate-800 rounded">Cancel</button>
-                        </section>
-                      </section>
-                    </div>
-                  </div>
-                </div>
+                <span
+                  className="absolute bottom-0 block h-0.5 bg-blue-400 transition-all duration-300"
+                  style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
+                />
+              </div>
+              <div className="py-4">
+                <p>{tabsData[activeTabIndex].content}</p>
               </div>
             </div>
           </div>

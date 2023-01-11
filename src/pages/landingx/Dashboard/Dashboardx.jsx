@@ -277,9 +277,8 @@ const Dashboardx = () => {
                 </div>
                 <ul>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
+                    class="flex text-red-500 hover:bg-slate-200 focus:text-red-500 items-center py-3 px-3 rounded w-10/12"
                     href="/user/dashboard"
-                    style={{ color: "rgb(225, 29, 72)" }}
                   >
                     <svg
                       stroke="currentColor"

@@ -275,9 +275,9 @@ const Withdraw = () => {
                 </div>
                 <ul>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
+                    class="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     href="/user/dashboard"
-                    style={{ color: "rgb(225, 29, 72)" }}
+                    style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
                       stroke="currentColor"
@@ -316,9 +316,8 @@ const Withdraw = () => {
                     <span>Deposit</span>
                   </a>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                    class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     href="/user/withdraw"
-                    style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
                       stroke="currentColor"
@@ -380,7 +379,7 @@ const Withdraw = () => {
             </div>
           </section>
 
-          <div className="flex-1 bg-[#f5f6fa]">
+          <div className="flex-1 h-screen bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
                 <span tabindex="0" class="btn btn-ghost btn-circle  md:hidden">
@@ -429,15 +428,21 @@ const Withdraw = () => {
               </div>
             </div>
 
-           <section class="bg-[#f5f6fa] md:flex md:mt-20 flex-col justify-center font-normal">
+            <section class="bg-[#f5f6fa] md:flex md:mt-20 flex-col justify-center font-normal">
               <div class="flex flex-col items-center font-semibold text-2xl px-0 md:px-6 pt-8 h-full">
-                <p class="text-lg md:text-3xl text-slate-600 text-center mt-6">Withdraw Funds</p>
-                <p class="text-center font-normal text-sm px-2 md:w-1/3 text-slate-600">Secure and safely deposit money into your account</p>
+                <p class="text-lg md:text-3xl text-slate-600 text-center mt-6">
+                  Withdraw Funds
+                </p>
+                <p class="text-center font-normal text-sm px-2 md:w-1/3 text-slate-600">
+                  Secure and safely deposit money into your account
+                </p>
                 <section class=" w-full md:w-auto">
                   <div class="h-full w-full flex font-normal flex-col items-center">
                     <div class=" flex flex-col justify-center w-11/12 md:w-full mt-10">
                       <div class="mb-6 flex flex-col justify-center">
-                        <label class="text-sm pb-2 font-semibold">Select withdrawal method:</label>
+                        <label class="text-sm pb-2 font-semibold">
+                          Select withdrawal method:
+                        </label>
                         <select class="py-1.5 rounded border mt-1 border-gray-200 w-full  text-base">
                           <option value="">Select method</option>
                           <option value="btc">Bitcoin</option>
@@ -447,10 +452,17 @@ const Withdraw = () => {
                         </select>
                       </div>
                       <p class="flex flex-col w-72 md:w-80 lg:w-96 text-base">
-                        <span class="text-sm pb-2 font-semibold">Description (Optional):</span>
-                        <input type="text" class="py-1 px-2 text-base rounded border mt-1 mb-4 border-gray-200 md:w-96" />
+                        <span class="text-sm pb-2 font-semibold">
+                          Description (Optional):
+                        </span>
+                        <input
+                          type="text"
+                          class="py-1 px-2 text-base rounded border mt-1 mb-4 border-gray-200 md:w-96"
+                        />
                       </p>
-                      <button class="px-3 py-1.5 md:w-72_ md:w-80 lg:w-full md:py-2.5 text-sm bg-red-500 text-white font-medium rounded uppercase mt-3 md:mt-0">Continue to withdraw</button>
+                      <button class="px-3 py-1.5 md:w-72_ md:w-80 lg:w-full md:py-2.5 text-sm bg-red-500 text-white font-medium rounded uppercase mt-3 md:mt-0">
+                        Continue to withdraw
+                      </button>
                     </div>
                   </div>
                 </section>
