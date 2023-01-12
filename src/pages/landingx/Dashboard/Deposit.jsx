@@ -17,6 +17,7 @@ const Deposit = () => {
 
   return (
     <div>
+      {/* Drawer */}
       <Drawer
         placement={placement}
         closable={false}
@@ -189,8 +190,11 @@ const Deposit = () => {
         </div>
       </Drawer>
 
+        {/* Content */}
       <div className="px-0 lg:px-0 w-full">
         <div className="md:flex relative">
+
+          {/* left section */}
           <section
             className="hidden md:relative z-10 top-0 left-0 bottom-0 w-full bg-white md:flex md:flex-col md:items-center md:w-4/12 lg:w-1/5 bg-red-5 shadow-lg"
             style={{
@@ -378,6 +382,7 @@ const Deposit = () => {
             </div>
           </section>
 
+            {/* Deposit Content */}
           <div className="flex-1 bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>

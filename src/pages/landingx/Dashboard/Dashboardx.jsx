@@ -19,6 +19,7 @@ const Dashboardx = () => {
 
   return (
     <div>
+      {/* DRAWER */}
       <Drawer
         placement={placement}
         closable={false}
@@ -191,8 +192,11 @@ const Dashboardx = () => {
         </div>
       </Drawer>
 
+      {/* Content */}
       <div className="px-0 lg:px-0 w-full">
         <div className="md:flex relative">
+
+          {/* left Section */}
           <section
             className="hidden md:relative z-10 top-0 left-0 bottom-0 w-full bg-white md:flex md:flex-col md:items-center md:w-4/12 lg:w-1/5 bg-red-5 shadow-lg"
             style={{
@@ -381,6 +385,7 @@ const Dashboardx = () => {
             </div>
           </section>
 
+            {/* Dashboard content */}
           <div className="flex-1 bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
@@ -429,7 +434,6 @@ const Dashboardx = () => {
                 </p>
               </div>
             </div>
-
             <section className="lg:bg-gray-50">
               <div class="px-6 pt-6">
                 <p class="text-gray-500">Welcome!</p>

@@ -1,4 +1,3 @@
-import brax from "../../images/brax.jpg";
 import fig1 from "../../images/fig1.svg";
 import fig2 from "../../images/fig2.svg";
 import fig3 from "../../images/fig3.svg";

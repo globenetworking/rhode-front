@@ -7,7 +7,7 @@ import logo from "../../images/whitebulllogo.png";
 
 
 
-function Loginx() {
+const Loginx = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [name, setName] = useState("");
