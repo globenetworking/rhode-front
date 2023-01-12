@@ -1,4 +1,4 @@
-import logo from "../../images/whitebulllogo.png";
+import bultpay3 from "../../images/bultpay3.png";
 
 const Footer = () => {
   return (
@@ -69,9 +69,9 @@ const Footer = () => {
           <div className="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20 default_cursor_cs">
             <div className="xl:grid xl:grid-cols-3 xl:gap-8 default_cursor_cs">
               <div className="space-y-8 xl:col-span-1">
-                <span className="flex items-center w-28 lg:w-36 rounded-md bg-black text-secondary justify-center mb-6">
+                <span className="flex items-center w-28 lg:w-36 rounded-md text-secondary justify-center mb-6">
                   <img
-                    src={logo}
+                    src={bultpay3}
                     alt="logo"
                     className="w-24 self-center text-xl font-semibold whitespace-nowrap text-white"
                   />

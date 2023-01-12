@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { setUserDetails, setToken } from '../../Redux/action';
 import { useDispatch } from 'react-redux';
 import logo from "../../images/whitebulllogo.png";
+import bultpay3 from "../../images/bultpay3.png";
+
 
 function Registerx() {
   let navigate = useNavigate();
@@ -79,9 +81,9 @@ function Registerx() {
         <div className="lg:mx-auto w-full lg:w-10/12 px-3 lg:px-12">
 
           <div className="flex items-center justify-center">
-            <span className="flex items-center w-32 lg:w-36 rounded-md bg-black text-gray-400 justify-center mb-6">
+            <span className="flex items-center w-32 lg:w-36 rounded-md text-gray-400 justify-center mb-6">
               <img
-                src={logo}
+                src={bultpay3}
                 alt="whitebull"
                 className="w-32 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white"
               />

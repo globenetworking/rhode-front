@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import bultpay3 from "../../images/bultpay3.png";
 
 
 const Nav = () => {
@@ -20,10 +20,10 @@ const Nav = () => {
         style={{ background: "rgba(22, 22, 26, 0.7)" }}
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
-              src="https://whitebullsafety.org/static/media/white.39b2004ccf1f39e097ff.png"
-              alt="photo"
+              src={bultpay3}
+              alt="bult"
               className="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
             />
           </a>
