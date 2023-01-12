@@ -1,11 +1,43 @@
 import React, { useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
-import logo1 from "../../../images/whitebull.jpg"
+import logo1 from "../../../images/whitebull.jpg";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Dashboardx = () => {
+  const { email } = useSelector((state) => state.auth.user_details);
+  const [user, setUser] = useState({
+    balance: 0,
+    btc: "",
+    deposit: 0,
+    email: "wall@w.com",
+    name: "",
+    phone: "",
+    profits: 0,
+    role: "user",
+    withdrawal: 0,
+  });
+  //console.log({user});
+
+  useEffect(() => {
+    fetch("https://tame-pear-chinchilla-kit.cyclic.app/get-profile", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        const { user } = res;
+        console.log(user);
+        setUser(user)
+      })
+      .catch((err) => console.log("errrrrrrr", err));
+  }, []);
 
   const [open, setOpen] = useState(false);
-  const [placement, setPlacement] = useState('left');
+  const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
     setOpen(true);
   };
@@ -15,7 +47,6 @@ const Dashboardx = () => {
   const onChange = (e) => {
     setPlacement(e.target.value);
   };
-
 
   return (
     <div>
@@ -195,7 +226,6 @@ const Dashboardx = () => {
       {/* Content */}
       <div className="px-0 lg:px-0 w-full">
         <div className="md:flex relative">
-
           {/* left Section */}
           <section
             className="hidden md:relative z-10 top-0 left-0 bottom-0 w-full bg-white md:flex md:flex-col md:items-center md:w-4/12 lg:w-1/5 bg-red-5 shadow-lg"
@@ -250,15 +280,15 @@ const Dashboardx = () => {
                   Main account Balance
                 </div>
                 <p class="text-2xl font-semibold text-red-600">
-                  $0 <span class="text-lg">USD</span>
+                  ${user.balance} <span class="text-lg">USD</span>
                 </p>
                 <p class="flex justify-between text-gray-800 mt-3 font-medium text-sm">
                   <span>Deposit</span>
-                  <span>$0.00 usd</span>
+                  <span>${user.deposit} usd</span>
                 </p>
                 <p class="flex justify-between text-gray-800 mt-3 font-medium text-sm">
                   <span>Withdraw</span>
-                  <span>$0.00 usd</span>
+                  <span>${user.withdrawal} usd</span>
                 </p>
                 <p class="flex justify-between items-center font-semibold pt-5">
                   <a
@@ -385,7 +415,7 @@ const Dashboardx = () => {
             </div>
           </section>
 
-            {/* Dashboard content */}
+          {/* Dashboard content */}
           <div className="flex-1 bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
@@ -438,10 +468,10 @@ const Dashboardx = () => {
               <div class="px-6 pt-6">
                 <p class="text-gray-500">Welcome!</p>
                 <p class="text-xl lg:text-3xl font-medium pb-0 mb-0 capitalize">
-                  s
+                  {user.name}
                 </p>
                 <p class="text-xs lg:text-sm text-slate-700 pb-3 font-medium">
-                  s@s.com
+                  {user.email}
                 </p>
                 <p class="text-gray-700 text-sm lg:text-sm">
                   Here's a summary of your account. Have fun!
@@ -504,7 +534,7 @@ const Dashboardx = () => {
                       <path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
                     </svg>
                   </p>
-                  <p class="text-2xl font-semibold pt-6">$0 USD</p>
+                  <p class="text-2xl font-semibold pt-6">${user.balance} USD</p>
                   <p class="flex justify-between items-center font-semibold pt-16 md:inline lg:flex">
                     <a
                       class="flex items-center pl-4 pr-2 py-1.5 text-sm bg-red-500 text-white rounded-md md:my-3"
@@ -552,7 +582,7 @@ const Dashboardx = () => {
                     </svg>
                   </p>
                   <div class="uppercase text-xs pt-6">This month</div>
-                  <p class="text-2xl font-semibold">$0 USD</p>
+                  <p class="text-2xl font-semibold">${user.deposit} USD</p>
                 </div>
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-yellow-400 md:w-1/3">
                   <p class="flex justify-between items-center">
@@ -571,7 +601,7 @@ const Dashboardx = () => {
                     </svg>
                   </p>
                   <div class="uppercase text-xs pt-6">This month</div>
-                  <p class="text-2xl font-semibold">$0 USD</p>
+                  <p class="text-2xl font-semibold">${user.withdrawal} USD</p>
                 </div>
               </div>
             </section>
@@ -580,6 +610,6 @@ const Dashboardx = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Dashboardx;

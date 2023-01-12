@@ -1,8 +1,85 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
 import logo1 from "../../../images/whitebull.jpg";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Profile = () => {
+
+  const notify = (word) => {
+    toast.info(`${word}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+ const user = useSelector((state) => state.auth.user_details);
+ console.log({ user_details: user });
+
+ const [newUser, setNewUser] = useState({
+   email: user.email,
+   name: user.name,
+   btc: user.btc,
+   phone: user.phone,
+ });
+
+ let { email, name } = user;
+ if (name) {
+   name = name.split(" ");
+ } else {
+   name = ["", ""];
+ }
+
+ const first = name[0];
+ const last = name[1];
+
+ const onChanges = (event) => {
+   event.preventDefault();
+   const { name, value } = event.target;
+   setNewUser({ ...newUser, [name]: value });
+   console.log("user", newUser);
+ };
+
+ const onEdit = async (event) => {
+   const { email, name, btc, phone } = user;
+
+   const iseditUser = await fetch(
+     "https://tame-pear-chinchilla-kit.cyclic.app/users/:id",
+     {
+       method: "put",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify({
+         email,
+         name,
+         btc,
+         phone,
+       }),
+     }
+   );
+
+   let resp = await iseditUser.json();
+   //console.log("edit resp", resp);
+
+   notify("Saved!");
+ };
+
+ const cancel = () => {
+   setNewUser({
+     email: user.email,
+     name: user.name,
+     btc: user.btc,
+     phone: user.phone,
+   });
+
+   notify("Cancelled!");
+ };
+
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
@@ -44,6 +121,8 @@ const Profile = () => {
                           <span class="text-red-500">*</span>
                         </span>
                         <input
+                          onChange={onChange}
+                          value={newUser.name}
                           placeholder="s"
                           type="text"
                           class="border border-gray-300 p-2 rounded shadow-sm"
@@ -55,6 +134,8 @@ const Profile = () => {
                           <span class="text-red-500">*</span>
                         </span>
                         <input
+                          onChange={onchange}
+                          value={newUser.email}
                           placeholder="s@s.com"
                           disabled=""
                           class="border border-gray-300 p-2 rounded shadow-sm"
@@ -68,6 +149,8 @@ const Profile = () => {
                           <span class="text-red-500">*</span>
                         </span>
                         <input
+                          onchange={onChange}
+                          value={newUser.phone}
                           placeholder=""
                           class="border border-gray-300 p-2 rounded shadow-sm"
                         />
