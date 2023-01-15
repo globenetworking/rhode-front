@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { setUserDetails, setToken } from "../../Redux/action";
 import { useDispatch } from "react-redux";
-import logo from "../../images/whitebulllogo.png";
+// import logo from "../../images/whitebulllogo.png";
 import bultpay3 from "../../images/bultpay3.png";
 
 
@@ -16,7 +16,7 @@ const Loginx = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [exists, setexists] = useState("");
+  // const [exists, setexists] = useState("");
   const [msg, setMsg] = useState({
     name: "",
     email: "",
@@ -89,7 +89,7 @@ const Loginx = () => {
 
   return (
     <div className="px-0 lg:px-0 w-full">
-      <div className="flex flex-col bg-[#26313f3a] shadow-md rounded  text-slate-700 items-center h-screen px-3 justify-center bg-reed pt-3  w-full">
+      <div className="flex flex-col bg-[#26313f3a] shadow-md rounded  text-slate-700 items-center h-screen px-3 pt-3  w-full">
         <div className="lg:mx-auto w-full lg:w-10/12 px-3 lg:px-12">
           <div className="flex items-center justify-center">
             <span className="flex items-center w-32 lg:w-36 rounded-md text-secondary justify-center mb-6">

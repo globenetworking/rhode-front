@@ -62,6 +62,7 @@ const EditUser = () => {
       }
     );
     let resp = await isNotThere.json();
+     console.log("edit resp", resp);
     navigate('/admin/users', { replace: true });
   };
   return (

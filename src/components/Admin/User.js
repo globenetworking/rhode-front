@@ -30,6 +30,7 @@ const User = ({ user, notify }) => {
   };
 
   return (
+    
     <div className="lg:p-5 p-3 bg-accent border rounded-md text-white shadow-xl border-white  flex-1 flex justify-between lg:items-center lg:flex-row flex-col gap-3">
       <div className="text-base font-semibold gap-5">
         <p>{`Name: ${user.name}`}</p>

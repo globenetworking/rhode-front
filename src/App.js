@@ -26,6 +26,10 @@ import Dashboardx from "./pages/landingx/Dashboard/Dashboardx";
 import Deposit from "./pages/landingx/Dashboard/Deposit";
 import Withdraw from "./pages/landingx/Dashboard/Withdraw";
 import Profile from "./pages/landingx/Dashboard/Profile";
+import Withdrawal from "./pages/landingx/Adminx/Withdrawal";
+import EditUsers from "./pages/landingx/EditUsers";
+import AllUsers from "./pages/landingx/Adminx/AllUsers";
+
 
 const App = () => {
   return (
@@ -42,6 +46,9 @@ const App = () => {
         <Route path="/user/deposit" element={<Deposit />} />
         <Route path="/user/withdraw" element={<Withdraw />} />
         <Route path="/user/profile" element={<Profile />} />
+        <Route path="/admin/users" element={<AllUsers />} />
+        <Route path="/admin/withdrawals" element={<Withdrawal />} />
+        <Route path="/admin/edituser" element={<EditUsers />} />
 
         {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />

@@ -24,7 +24,7 @@ const Nav = () => {
             <img
               src={bultpay3}
               alt="bult"
-              className="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+              className="p-2 w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
             />
           </a>
           <div className="hidden md:flex md:order-2">

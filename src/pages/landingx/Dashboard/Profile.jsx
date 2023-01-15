@@ -101,67 +101,74 @@ const Profile = () => {
             <p class="text-xl lg:text-4xl font-medium pt-8">Preferences</p>
             <p>You have full control to manage your own account setting.</p>
           </div> */}
-          <div class="ant-tabs ant-tabs-top ant-tabs-mobile">
+          <div className="ant-tabs ant-tabs-top ant-tabs-mobile">
             <div></div>
             <div>
-              <div class="ant-tabs-content ant-tabs-content-top">
+              <div className="ant-tabs-content ant-tabs-content-top">
                 <div
                   role="tabpanel"
                   tabindex="0"
                   aria-hidden="false"
-                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  className="ant-tabs-tabpane ant-tabs-tabpane-active"
                   id="rc-tabs-1-panel-1"
                   aria-labelledby="rc-tabs-1-tab-1"
                 >
-                  <section class="flex flex-col pt-5">
-                    <article class="flex flex-col md:flex-row">
-                      <p class="flex flex-col w-64 mr-10">
-                        <span class="text-sm pb-2 font-medium">
+                  <section className="flex flex-col pt-5">
+                    <article className="flex flex-col md:flex-row">
+                      <p className="flex flex-col w-64 mr-10">
+                        <span className="text-sm pb-2 font-medium">
                           Full Name
-                          <span class="text-red-500">*</span>
+                          <span className="text-red-500">*</span>
                         </span>
                         <input
                           onChange={onChange}
                           value={newUser.name}
                           placeholder="s"
                           type="text"
-                          class="border border-gray-300 p-2 rounded shadow-sm"
+                          className="border border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>
-                      <p class="flex flex-col w-64">
-                        <span class="text-sm pb-2 font-medium">
+                      <p className="flex flex-col w-64">
+                        <span className="text-sm pb-2 font-medium">
                           Email
-                          <span class="text-red-500">*</span>
+                          <span className="text-red-500">*</span>
                         </span>
                         <input
                           onChange={onchange}
                           value={newUser.email}
                           placeholder="s@s.com"
                           disabled=""
-                          class="border border-gray-300 p-2 rounded shadow-sm"
+                          className="border border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>
                     </article>
-                    <article class="flex flex-col md:flex-row mt-3">
-                      <p class="flex flex-col w-64">
-                        <span class="text-sm pb-2 font-medium">
+                    <article className="flex flex-col md:flex-row mt-3">
+                      <p className="flex flex-col w-64">
+                        <span className="text-sm pb-2 font-medium">
                           Phone
-                          <span class="text-red-500">*</span>
+                          <span className="text-red-500">*</span>
                         </span>
                         <input
                           onchange={onChange}
                           value={newUser.phone}
                           placeholder=""
-                          class="border border-gray-300 p-2 rounded shadow-sm"
+                          className="border border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>
                     </article>
-                    <section class="flex pt-5">
-                      <button class="flex items-center pl-4 pr-2 py-2 font-semibold text-sm bg-red-500 text-white rounded">
+                    <section className="flex pt-5">
+                      <button
+                        onClick={onEdit}
+                        class="flex items-center pl-4 pr-2 py-2 font-semibold text-sm bg-red-500 text-white rounded"
+                      >
                         Update Profile
                       </button>
-                      <button class="flex items-center ml-3 pl-4 pr-2 py-2 font-semibold text-sm bg-red-5000 bg-gray-50 text-slate-800 rounded">
-                        Cancel
+                      <button
+                        onChange={cancel}
+                        className="flex items-center ml-3 pl-4 pr-2 py-2 font-semibold text-sm bg-red-5000 bg-gray-50 text-slate-800 rounded"
+                      >
+                        {" "}
+                        Cancel{" "}
                       </button>
                     </section>
                   </section>
@@ -181,23 +188,23 @@ const Profile = () => {
           tabindex="0"
           aria-labelledby="rc-tabs-0-tab-2"
           aria-hidden="false"
-          class="ant-tabs-tabpane ant-tabs-tabpane-active"
+          className="ant-tabs-tabpane ant-tabs-tabpane-active"
         >
-          <div class="text-sm default_cursor_cs">
+          <div className="text-sm default_cursor_cs">
             {" "}
-            <span class="mr-2 font-semibold text-xs uppercase text-slate-600 mb-0 default_cursor_cs">
+            <span className="mr-2 font-semibold text-xs uppercase text-slate-600 mb-0 default_cursor_cs">
               Address:
             </span>
           </div>
-          <div class="w-full h-full">
-            <div class="flex flex-col md:flex-row md:items-center justify-between border border-yellow-400 mx-5 px-5 py-5 shadow-lg mt-6 default_cursor_cs">
+          <div className="w-full h-full">
+            <div className="flex flex-col md:flex-row md:items-center justify-between border border-yellow-400 mx-5 px-5 py-5 shadow-lg mt-6 default_cursor_cs">
               <span class="flex default_cursor_cs">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 1024 1024"
-                  class="text-yellow-400 mr-3 md:hidden"
+                  className="text-yellow-400 mr-3 md:hidden"
                   height="38"
                   width="38"
                   xmlns="http://www.w3.org/2000/svg"
@@ -209,19 +216,19 @@ const Profile = () => {
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 1024 1024"
-                  class="text-yellow-400 mr-3 hidden md:flex"
+                  className="text-yellow-400 mr-3 hidden md:flex"
                   height="24"
                   width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M955.7 856l-416-720c-6.2-10.7-16.9-16-27.7-16s-21.6 5.3-27.7 16l-416 720C56 877.4 71.4 904 96 904h832c24.6 0 40-26.6 27.7-48zM480 416c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v184c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V416zm32 352a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"></path>
                 </svg>
-                <p class="text-sm default_cursor_cs">
+                <p className="text-sm default_cursor_cs">
                   Add an account that you’d like to receive payment or withdraw
                   fund.
                 </p>
               </span>
-              <button class="px-3 py-1.5 md:py-2.5 text-xs bg-yellow-500 text-white font-medium  rounded uppercase mt-6 md:mt-0">
+              <button className="px-3 py-1.5 md:py-2.5 text-xs bg-yellow-500 text-white font-medium  rounded uppercase mt-6 md:mt-0">
                 {" "}
                 Add account
               </button>
@@ -274,20 +281,20 @@ const Profile = () => {
               height="20"
               width="20"
               xmlns="http://www.w3.org/2000/svg"
-              class="default_cursor_cs"
+              className="default_cursor_cs"
             >
               <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path>
             </svg>
           </p>
         </div>
-        <div class="flex items-center justify-between border-y-2 my-2 py-6 px-4">
-          <p class="rounded-full w-8 h-8 flex justify-center items-center bg-sky-600 mr-6">
+        <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4">
+          <p className="rounded-full w-8 h-8 flex justify-center items-center bg-sky-600 mr-6">
             <svg
               stroke="currentColor"
               fill="currentColor"
               stroke-width="0"
               viewBox="0 0 24 24"
-              class=" text-gray-300 bg-clip-text rounded-full"
+              className=" text-gray-300 bg-clip-text rounded-full"
               height="13"
               width="13"
               xmlns="http://www.w3.org/2000/svg"
@@ -316,12 +323,12 @@ const Profile = () => {
           </svg>
         </div>
         <div className="w-11/12 font-medium text-slate-700 text-sm">
-          <div class="tracking mt-10 uppercase text-xs font-bold pl-3 tracking-wider">
+          <div className="tracking mt-10 uppercase text-xs font-bold pl-3 tracking-wider">
             Menu
           </div>
           <ul>
             <a
-              class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
+              className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
               href="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
             >
@@ -330,7 +337,7 @@ const Profile = () => {
                 fill="currentColor"
                 stroke-width="0"
                 viewBox="0 0 16 16"
-                class="mr-4"
+                className="mr-4"
                 height="25"
                 width="25"
                 xmlns="http://www.w3.org/2000/svg"
@@ -340,7 +347,7 @@ const Profile = () => {
               <span>Dashboard</span>
             </a>
             <a
-              class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+              className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               href="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
             >
@@ -349,7 +356,7 @@ const Profile = () => {
                 fill="currentColor"
                 stroke-width="0"
                 viewBox="0 0 24 24"
-                class="mr-4"
+                className="mr-4"
                 height="25"
                 width="25"
                 xmlns="http://www.w3.org/2000/svg"
@@ -362,7 +369,7 @@ const Profile = () => {
               <span>Deposit</span>
             </a>
             <a
-              class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+              className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               href="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
             >
@@ -371,7 +378,7 @@ const Profile = () => {
                 fill="currentColor"
                 stroke-width="0"
                 viewBox="0 0 24 24"
-                class="mr-4"
+                className="mr-4"
                 height="25"
                 width="25"
                 xmlns="http://www.w3.org/2000/svg"
@@ -384,7 +391,7 @@ const Profile = () => {
               <span>Withdraw</span>
             </a>
             <a
-              class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+              className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               href="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
             >
@@ -395,7 +402,7 @@ const Profile = () => {
                 viewBox="0 0 24 24"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="mr-4"
+                className="mr-4"
                 height="25"
                 width="25"
                 xmlns="http://www.w3.org/2000/svg"
@@ -406,13 +413,13 @@ const Profile = () => {
               </svg>
               <span>Account Setting</span>
             </a>
-            <p class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
+            <p className="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
                 stroke-width="0"
                 viewBox="0 0 1024 1024"
-                class="mr-4"
+                className="mr-4"
                 height="25"
                 width="25"
                 xmlns="http://www.w3.org/2000/svg"
@@ -458,9 +465,9 @@ const Profile = () => {
                     </g>
                   </svg>
                 </p>
-                <p class="flex flex-col flex-1 text-sm">
-                  <span class="font-semibold">$</span>
-                  <span class="text-gray-600 text-xs">$</span>
+                <p className="flex flex-col flex-1 text-sm">
+                  <span className="font-semibold">$</span>
+                  <span className="text-gray-600 text-xs">$</span>
                 </p>
                 <svg
                   stroke="currentColor"
@@ -476,29 +483,29 @@ const Profile = () => {
                 </svg>
               </div>
               <div className="py-6 px-1 mb-5 w-11/12 hidden md:block">
-                <div class="uppercase mt-3  text-xs tracking-wide text-gray-700 font-semibold tra">
+                <div className="uppercase mt-3  text-xs tracking-wide text-gray-700 font-semibold tra">
                   Main account Balance
                 </div>
-                <p class="text-2xl font-semibold text-red-600">
-                  $0 <span class="text-lg">USD</span>
+                <p className="text-2xl font-semibold text-red-600">
+                  $0 <span className="text-lg">USD</span>
                 </p>
-                <p class="flex justify-between text-gray-800 mt-3 font-medium text-sm">
+                <p className="flex justify-between text-gray-800 mt-3 font-medium text-sm">
                   <span>Deposit</span>
                   <span>$0.00 usd</span>
                 </p>
-                <p class="flex justify-between text-gray-800 mt-3 font-medium text-sm">
+                <p className="flex justify-between text-gray-800 mt-3 font-medium text-sm">
                   <span>Withdraw</span>
                   <span>$0.00 usd</span>
                 </p>
-                <p class="flex justify-between items-center font-semibold pt-5">
+                <p className="flex justify-between items-center font-semibold pt-5">
                   <a
-                    class="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
+                    className="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
                     href="/user/deposit"
                   >
                     <span>Deposit</span>
                   </a>
                   <a
-                    class="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
+                    className="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
                     href="/user/withdraw"
                   >
                     Withdraw
@@ -506,12 +513,12 @@ const Profile = () => {
                 </p>
               </div>
               <div className="w-11/12 font-medium text-slate-700 text-sm">
-                <div class="tracking mt-10 uppercase text-xs font-bold pl-3 tracking-wider">
+                <div className="tracking mt-10 uppercase text-xs font-bold pl-3 tracking-wider">
                   Menu
                 </div>
                 <ul>
                   <a
-                    class="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
+                    className="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     href="/user/dashboard"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
@@ -520,7 +527,7 @@ const Profile = () => {
                       fill="currentColor"
                       stroke-width="0"
                       viewBox="0 0 16 16"
-                      class="mr-4"
+                      className="mr-4"
                       height="25"
                       width="25"
                       xmlns="http://www.w3.org/2000/svg"
@@ -530,7 +537,7 @@ const Profile = () => {
                     <span>Dashboard</span>
                   </a>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                    className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     href="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
@@ -539,7 +546,7 @@ const Profile = () => {
                       fill="currentColor"
                       stroke-width="0"
                       viewBox="0 0 24 24"
-                      class="mr-4"
+                      className="mr-4"
                       height="25"
                       width="25"
                       xmlns="http://www.w3.org/2000/svg"
@@ -552,7 +559,7 @@ const Profile = () => {
                     <span>Deposit</span>
                   </a>
                   <a
-                    class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                    className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     href="/user/withdraw"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
@@ -561,7 +568,7 @@ const Profile = () => {
                       fill="currentColor"
                       stroke-width="0"
                       viewBox="0 0 24 24"
-                      class="mr-4"
+                      className="mr-4"
                       height="25"
                       width="25"
                       xmlns="http://www.w3.org/2000/svg"
@@ -574,7 +581,7 @@ const Profile = () => {
                     <span>Withdraw</span>
                   </a>
                   <a
-                    class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                    className="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     href="/user/profile"
                   >
                     <svg
@@ -584,7 +591,7 @@ const Profile = () => {
                       viewBox="0 0 24 24"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="mr-4"
+                      className="mr-4"
                       height="25"
                       width="25"
                       xmlns="http://www.w3.org/2000/svg"
@@ -595,13 +602,13 @@ const Profile = () => {
                     </svg>
                     <span>Account Setting</span>
                   </a>
-                  <p class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
+                  <p className="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
                       stroke-width="0"
                       viewBox="0 0 1024 1024"
-                      class="mr-4"
+                      className="mr-4"
                       height="25"
                       width="25"
                       xmlns="http://www.w3.org/2000/svg"

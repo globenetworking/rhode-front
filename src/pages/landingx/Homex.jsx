@@ -48,12 +48,12 @@ const Homex = () => {
                 </p>
                 <div className="flex pl-4 flex-wrap w-7/12 md:w-5/12 mt-2 mx-4 text-left justify-between">
                   <a className="" href="/public/login">
-                    <button className="border-2 border-secondary px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
+                    <button className="border-2 border-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       Login
                     </button>
                   </a>
                   <a href="/public/register">
-                    <button className="border-2 border-secondary px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
+                    <button className="border-2 border-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       SignUp
                     </button>
                   </a>
