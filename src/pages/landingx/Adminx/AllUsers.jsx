@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AdminNav from "./AdminNav";
 import User from "./Users";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -49,7 +49,7 @@ const AllUsers = () => {
               <div className="px-3 grid grid-cols-1 lg:grid-cols-2 mt-10 lg:gap-0 gap-6">
                 {users
                   .filter((user) => {
-                    if (search == "") {
+                    if (search === "") {
                       return user;
                     } else if (
                       user.email.toLowerCase().includes(search.toLowerCase()) ||

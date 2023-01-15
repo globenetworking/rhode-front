@@ -1,5 +1,4 @@
 import React from 'react';
-import AdminNav from "./AdminNav";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { setAdUser } from "../../../Redux/action";
