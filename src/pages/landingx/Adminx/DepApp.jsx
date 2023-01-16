@@ -56,7 +56,7 @@ const DepApp = ({ user }) => {
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
       })
     ).json();
-    // console.log("approve", isNotThere);
+    console.log("decline", isNotThere);
   };
 
   return (

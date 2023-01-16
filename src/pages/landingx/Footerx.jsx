@@ -223,7 +223,7 @@ const Footer = () => {
                   className="mx-2 text-blue-500 hover:text-white"
                   rel="noopener noreferrer"
                 >
-                  braxtrade.net
+                  bultpay.com
                 </a>
                 . Since 2014
               </span>

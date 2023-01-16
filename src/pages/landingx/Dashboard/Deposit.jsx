@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import { Button, Drawer, Radio, Space } from "antd";
+import { Button, Drawer, Modal, Space } from "antd";
 import logo1 from "../../../images/whitebull.jpg";
+import { useNavigate } from "react-router-dom";
+import { setToken, setUserDetails } from "../../../Redux/action";
+import { useDispatch } from "react-redux";
+
 
 const Deposit = () => {
+
+   const dispatch = useDispatch();
+   let navigate = useNavigate();
+
   const [open, setOpen] = useState(false);
+  const [done, setdone] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
     setOpen(true);
@@ -13,6 +22,17 @@ const Deposit = () => {
   };
   const onChange = (e) => {
     setPlacement(e.target.value);
+  };
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -171,7 +191,17 @@ const Deposit = () => {
               </svg>
               <span>Account Setting</span>
             </a>
-            <p class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
+            <p
+              onClick={() => {
+                dispatch(setToken(""));
+                dispatch(setUserDetails({}));
+                navigate("/public/login", { replace: true });
+                // setTimeout(()=>{
+                // window.location.assign('enefti-six.vercel.app/')
+                // },2000)
+              }}
+              class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+            >
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -190,10 +220,9 @@ const Deposit = () => {
         </div>
       </Drawer>
 
-        {/* Content */}
+      {/* Content */}
       <div className="px-0 lg:px-0 w-full">
         <div className="md:flex relative">
-
           {/* left section */}
           <section
             className="hidden md:relative z-10 top-0 left-0 bottom-0 w-full bg-white md:flex md:flex-col md:items-center md:w-4/12 lg:w-1/5 bg-red-5 shadow-lg"
@@ -362,7 +391,17 @@ const Deposit = () => {
                     </svg>
                     <span>Account Setting</span>
                   </a>
-                  <p class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
+                  <p
+                    onClick={() => {
+                      dispatch(setToken(""));
+                      dispatch(setUserDetails({}));
+                      navigate("/public/login", { replace: true });
+                      // setTimeout(()=>{
+                      // window.location.assign('enefti-six.vercel.app/')
+                      // },2000)
+                    }}
+                    class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                  >
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
@@ -382,7 +421,7 @@ const Deposit = () => {
             </div>
           </section>
 
-            {/* Deposit Content */}
+          {/* Deposit Content */}
           <div className="flex-1 bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
@@ -459,7 +498,7 @@ const Deposit = () => {
                     <span class="text-red-500">*</span>
                   </span>
                   <input
-                    placeholder="0.00" 
+                    placeholder="0.00"
                     type="number"
                     className="border font-normal text-base border-gray-300 py- px-2 md:p-2 rounded shadow-sm placeholder:text-sm md:placeholder:text-base"
                   />
@@ -467,6 +506,12 @@ const Deposit = () => {
                     Min: $50
                   </p>
                 </p>
+                <select class="py-1.5 rounded w-72 md:w-80 font-normal mb-4 border mt-1 border-gray-200  text-base">
+                  <option value="btc">Bitcoin</option>
+                  <option value="eth">Ethereum</option>
+                  <option value="shib">Bank</option>
+                  <option value="doge">USDC</option>
+                </select>
                 <p class="flex flex-col w-72 md:w-80 lg:w-96 text-base mb-3">
                   <span class="text-sm pb-2 font-normal">Description</span>
                   <textarea
@@ -474,10 +519,83 @@ const Deposit = () => {
                     class="border pt-2 text-gray-900 text-base border-gray-300 py- px-2 md:p-2 rounded shadow-sm font-normal placeholder:text-sm md:placeholder:text-base"
                   ></textarea>
                 </p>
-                <button class="px-3 py-1.5 w-72 md:w-80 lg:w-96 md:py-2.5 text-sm bg-yellow-500 text-white font-medium rounded uppercase mt-3 md:mt-0">
+                <button
+                  onClick={showModal}
+                  class="px-3 py-1.5 w-72 md:w-80 lg:w-96 md:py-2.5 text-sm bg-yellow-500 text-white font-medium rounded uppercase mt-3 md:mt-0"
+                >
                   Continue to Deposit
                 </button>
                 <p class="font-medium text-red-600 text-xs md:text-base"></p>
+                <Modal
+                  title="Complete Deposit"
+                  open={isModalOpen}
+                  onOk={handleOk}
+                  onCancel={handleCancel}
+                  >
+                  <div className="border border-gray-100 w-full"></div>
+                  <div className="text-black">
+                    <section className="border mt-5 border-slate-300 px-1 md:px-4 mb-6 font-normal default_cursor_cs">
+                      <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm font-normal default_cursor_cs">
+                        <span>Payment method</span>
+                        <span class="flex uppercase text-sm font-normal default_cursor_cs">
+                          {" "}
+                          <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 512 512"
+                            class=" text-slate-800 rounded-full mr-2"
+                            height="17"
+                            width="17"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M47.5 104H432V51.52a16 16 0 00-19.14-15.69l-368 60.48a16 16 0 00-12 10.47A39.69 39.69 0 0147.5 104zm416 24h-416a16 16 0 00-16 16v288a16 16 0 0016 16h416a16 16 0 0016-16V144a16 16 0 00-16-16zM368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path>
+                            <path d="M31.33 259.5V116c0-12.33 5.72-18.48 15.42-20 35.2-5.53 108.58-8.5 108.58-8.5s-8.33 16-27.33 16V128c18.5 0 31.33 23.5 31.33 23.5L84.83 236z"></path>
+                          </svg>
+                          btc
+                        </span>
+                      </div>
+                      <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
+                        <span class="flex text-sm">3782bCuU88...</span>
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 24 24"
+                          class="mt-1 ml-4 text-green-500 hover:text-green-600 bg-pr default_cursor_cs"
+                          height="20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+                          <path d="M6 12h6v2H6zm0 4h6v2H6z"></path>
+                        </svg>
+                      </div>
+                      <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
+                        <span>You will send</span>
+                        <span class="uppercase font-medium default_cursor_cs">
+                          $54 USD
+                        </span>
+                      </div>
+                      <div class="mb-3 pt-3 text-sm default_cursor_cs">
+                        *Click the copy icon and proceed to make deposit.
+                      </div>
+                    </section>
+                    <button class="px-3 mt-8 pt-1.5 pb-1.5 w-full md:py-2.5 text-xs bg-yellow-500 text-white font-medium rounded uppercase md:mt-0 default_pointer_cs">
+                      Confirm Pay
+                    </button>
+                  </div>
+                </Modal>
+                <Modal>
+                  <div className="bg-white border border-slate-200">
+                    <div className="">
+                      <p className="text-md font-semibold">You selected Bank deposit method</p>
+                    </div>
+                    <div>
+                      Please visit ...bultpay.com
+                    </div>
+                  </div>
+                </Modal>
               </div>
             </section>
           </div>

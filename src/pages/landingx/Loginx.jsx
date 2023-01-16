@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setUserDetails, setToken } from "../../Redux/action";
 import { useDispatch } from "react-redux";
 // import logo from "../../images/whitebulllogo.png";
@@ -132,12 +132,12 @@ const Loginx = () => {
                   />
                 </div>
                 <div className="mt-2"></div>
-                <a
+                <Link
                   className="text-xs text-red-600 cursor mt-4 font-semibold tracking-wide"
-                  href="/public/forgot-password"
+                  to="/public/forgot-password"
                 >
                   Forgot password?
-                </a>
+                </Link>
                 <div className="text-center text-red-600 text-sm">
                   {msg.password}
                 </div>
@@ -151,12 +151,12 @@ const Loginx = () => {
                 <div className="flex mt-4 justify-center w-full text-sm">
                   <div className=" text-sm">
                     Don't have an account?
-                    <a
+                    <Link
                       className="ml-2 text-blue-600 font-semibold focus:text-red-500"
-                      href="/public/register"
+                      to="/public/register"
                     >
                       Register
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </form>

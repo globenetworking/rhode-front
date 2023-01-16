@@ -31,7 +31,7 @@ const Market = () => {
             </h1>
             <p className="pb-6 text-sm lg:text-lg text-center text-slate-400 tracking-normal lg:tracking-wider lg:w-7/12 font-normal">
               Some believe you must choose between an online broker and a wealth
-              management firm. At braxtrade.net, you don’t need to compromise.
+              management firm. At Bultpay, you don’t need to compromise.
               Whether you invest on your own, with an advisor, or a little of
               both — we can support you.
             </p>

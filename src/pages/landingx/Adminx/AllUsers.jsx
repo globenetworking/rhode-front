@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AdminNav from "./AdminNav";
 import User from "./Users";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -38,6 +38,7 @@ const AllUsers = () => {
               <div class="text-2xl font-semibold mb-4 text-center default_cursor_cs">
                 All Users on the site
               </div>
+              <ToastContainer />
               <input
                 type="text"
                 placeholder="search here..."
@@ -53,7 +54,8 @@ const AllUsers = () => {
                       return user;
                     } else if (
                       user.email.toLowerCase().includes(search.toLowerCase()) ||
-                      user.name.toLowerCase().includes(search.toLowerCase())
+                      user.name.toLowerCase().includes(search.toLowerCase()) ||
+                      user.phone.toLowerCase().includes(search.toLowerCase())
                     ) {
                       return user;
                     }
@@ -61,7 +63,6 @@ const AllUsers = () => {
                   .map((user, i) => {
                     return <User key={i} user={user} notify={notify} />;
                   })}
-                
               </div>
             </div>
           </div>

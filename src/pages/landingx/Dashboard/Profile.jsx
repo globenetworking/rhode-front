@@ -31,9 +31,9 @@ const Profile = () => {
 
  let { email, name } = user;
  if (name) {
-   name = name.split(" ");
+   name = name.split(' ');
  } else {
-   name = ["", ""];
+   name = ['', ''];
  }
 
  const first = name[0];
@@ -121,11 +121,11 @@ const Profile = () => {
                           <span className="text-red-500">*</span>
                         </span>
                         <input
-                          onChange={onChange}
+                          onChange={onChanges}
                           value={newUser.name}
                           placeholder="s"
                           type="text"
-                          className="border border-gray-300 p-2 rounded shadow-sm"
+                          className="border text-gray-400 border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>
                       <p className="flex flex-col w-64">
@@ -134,11 +134,11 @@ const Profile = () => {
                           <span className="text-red-500">*</span>
                         </span>
                         <input
-                          onChange={onchange}
+                          onChange={onChanges}
+                          disabled
                           value={newUser.email}
                           placeholder="s@s.com"
-                          disabled=""
-                          className="border border-gray-300 p-2 rounded shadow-sm"
+                          className="border text-gray-400 border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>
                     </article>
@@ -149,9 +149,9 @@ const Profile = () => {
                           <span className="text-red-500">*</span>
                         </span>
                         <input
-                          onchange={onChange}
+                          onchange={onChanges}
                           value={newUser.phone}
-                          placeholder=""
+                          placeholder="233-324-2343"
                           className="border border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>

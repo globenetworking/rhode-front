@@ -16,6 +16,7 @@ const EditUsers = () => {
     name: adUser.name,
     wdl: adUser.withdrawal,
     profits: adUser.profits,
+    phone: adUser.phone
   });
 
   //get user token from redux
@@ -27,7 +28,7 @@ const EditUsers = () => {
   };
 
   const onEdit = async (event) => {
-    const { email, accbal, depos, name, wdl, profits } = user;
+    const { email, accbal, depos, name, wdl, profits, phone } = user;
 
     const iseditUser = await fetch(
       "https://tame-pear-chinchilla-kit.cyclic.app/users/:id",
@@ -41,6 +42,7 @@ const EditUsers = () => {
           name,
           withdrawal: wdl,
           profits: profits,
+          phone: phone,
         }),
       }
     );
@@ -136,13 +138,25 @@ const EditUsers = () => {
         </div>
 
         <div class="mb-2 pt-0">
-          <label className="text-lg font-semibold">Profits:</label>
+          <label className="text-lg font-semibold">Earnings:</label>
           <input
             name="profits"
             onChange={onChange}
             value={user.profits}
             type="number"
             placeholder={`${user.profits}`}
+            className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:bg-slate-200"
+          />
+        </div>
+
+        <div class="mb-2 pt-0">
+          <label className="text-lg font-semibold">Phone:</label>
+          <input
+            name="phone"
+            onChange={onChange}
+            value={user.phone}
+            type="text/number"
+            placeholder={`${user.phone}`}
             className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:bg-slate-200"
           />
         </div>

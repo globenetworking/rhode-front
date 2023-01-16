@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Nav from "./Navx";
-import logo from "../../images/whitebulllogo.png";
+import bultpay from "../../images/bultpay3.png";
 
 
 function Activate() {
@@ -10,9 +11,9 @@ function Activate() {
         <Nav />
         <div className="lg:mx-auto  w-full lg:w-10/12  px-3 lg:px-12">
           <div className="flex items-center bg-white_ justify-center">
-            <span className="flex items-center w-32 lg:w-36 rounded-md bg-black text-secondary justify-center mb-6">
+            <span className="flex items-center w-32 lg:w-36 rounded-md justify-center mb-6">
               <img
-                src={logo}
+                src={bultpay}
                 alt="logo"
                 className="w-32 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white"
               />
@@ -22,12 +23,12 @@ function Activate() {
             <div class="bg-white sm:w-56 text-base text-center pt-8 w-full lg:w-96 px-6 pb-4 md:pb-0 ">
               Please go to your email, and follow the instructions to activate
               your account. Click{" "}
-              <a
+              <Link
                 className="underline underline-offset-2 text-red-600 focus:text-blue-500 hover:text-red-400"
-                href="/public/login"
+                to="/public/login"
               >
                 here
-              </a>{" "}
+              </Link>{" "}
               to Login
             </div>
           </div>

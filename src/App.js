@@ -30,6 +30,9 @@ import Withdrawal from "./pages/landingx/Adminx/Withdrawal";
 import EditUsers from "./pages/landingx/Adminx/EditUsers";
 import AllUsers from "./pages/landingx/Adminx/AllUsers";
 import UserDep from "./pages/landingx/Adminx/UserDep";
+import SetActivate from "./pages/landingx/SetActivate";
+import ResetPassword from "./pages/landingx/ResetPassword";
+import TC from "./pages/landingx/Dashboard/T&C";
 
 
 
@@ -44,6 +47,7 @@ const App = () => {
         <Route path="/public/login" element={<Loginx />} />
         <Route path="/public/register" element={<Registerx />} />
         <Route path="/public/activate" element={<Activate />} />
+        <Route path="/on-activate/:email" element={<SetActivate />} />
         <Route path="/user/dashboard" element={<Dashboardx />} />
         <Route path="/user/deposit" element={<Deposit />} />
         <Route path="/user/withdraw" element={<Withdraw />} />
@@ -52,6 +56,8 @@ const App = () => {
         <Route path="/admin/withdrawals" element={<Withdrawal />} />
         <Route path="/admin/edituser" element={<EditUsers />} />
         <Route path="/admin/deposits" element={<UserDep />} />
+        <Route path="/public/forgot-password" element={<ResetPassword />} />
+        <Route path="/user/T&C" element={<TC />} />
 
         {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />

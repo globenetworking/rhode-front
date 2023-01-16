@@ -35,6 +35,7 @@ const Users = ({ user, notify }) => {
         <div class="text-base font-semibold gap-5">
           <p>{`Name: ${user.name}`}</p>
           <p>{`Email: ${user.email}`}</p>
+          <p>{`Phone: ${user.phone}`}</p>
         </div>
         <div className="text-gray-600 ml-5 flex lg:justify-between self-end gap-2">
           <FiEdit

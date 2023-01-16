@@ -3,11 +3,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { setUserDetails } from '../../Redux/action';
 import { AiOutlineRollback } from 'react-icons/ai';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EditUser = () => {
   let navigate = useNavigate();
   const adUser = useSelector((state) => state.auth.user);
   // console.log('aduser', adUser)
+
+  const notify = () => toast("Wow so easy!");
 
   const [user, setUser] = useState({
     email: adUser.email,
@@ -71,7 +75,9 @@ const EditUser = () => {
         <AiOutlineRollback
           className="text-blue-300"
           size={34}
-          onClick={() => {navigate('/admin/users')}}
+          onClick={() => {
+            navigate("/admin/users");
+          }}
         />
         Back
       </div>
@@ -149,6 +155,7 @@ const EditUser = () => {
         <div className="mt-8 text-gray-600 flex justify-between md:w-[25%] gap-2">
           <button
             onClick={onEdit}
+            // onClick={notify}
             className="bg-green-500 text-white active:bg-green-800 font-bold uppercase text-xs px-4 py-2 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="button"
           >
