@@ -9,6 +9,7 @@ const ResetPassword = () => {
           <div class="flex items-center text-secondary justify-center ">
             <img
               src={bultpay}
+              alt="bultpay"
               class="w-28 lg:w-48 mb-6 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
             />
           </div>

@@ -5,27 +5,26 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Withdrawal = () => {
+  const notify = () => {
+    toast("Deleted");
+    setReload((reload) => !reload);
+  };
+  const [reload, setReload] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
 
-   const notify = () => {
-     toast("Deleted");
-     setReload((reload) => !reload);
-   };
-   const [reload, setReload] = useState(false);
-   const [users, setUsers] = useState([]);
-   const [search, setSearch] = useState("");
-
-   useEffect(() => {
-     fetch("https://tame-pear-chinchilla-kit.cyclic.app/withdrawals", {
-       method: "get",
-       headers: { "Content-Type": "application/json" },
-     })
-       .then((res) => res.json())
-       .then((res) => {
-         console.log("usersssssssssss", res.users);
-         setUsers(res.users);
-       })
-       .catch((err) => console.log("errrrrrrr", err));
-   }, [reload]);
+  useEffect(() => {
+    fetch("https://zany-gold-perch-sock.cyclic.app/withdrawals", {
+      method: "get",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("usersssssssssss", res.users);
+        setUsers(res.users);
+      })
+      .catch((err) => console.log("errrrrrrr", err));
+  }, [reload]);
 
   return (
     <div className="px-0 lg:px-0 w-full">
@@ -64,6 +63,6 @@ const Withdrawal = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Withdrawal;

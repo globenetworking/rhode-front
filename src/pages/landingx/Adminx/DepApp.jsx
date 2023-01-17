@@ -10,7 +10,6 @@ const DepApp = ({ user }) => {
   // console.log("who is", user);
   let navigate = useNavigate();
   const dispatch = useDispatch();
- 
 
   const approve = async () => {
     // console.log("appprv na");
@@ -27,7 +26,7 @@ const DepApp = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://tame-pear-chinchilla-kit.cyclic.app/deposit/approve", {
+      await fetch("https://zany-gold-perch-sock.cyclic.app/deposit/approve", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
@@ -50,7 +49,7 @@ const DepApp = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://tame-pear-chinchilla-kit.cyclic.app/deposit/decline", {
+      await fetch("https://zany-gold-perch-sock.cyclic.app/deposit/decline", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),

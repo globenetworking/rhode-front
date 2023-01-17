@@ -9,9 +9,8 @@ import { useDispatch } from "react-redux";
 import Widget2 from "./Widget2";
 
 const Dashboardx = () => {
-
-   const dispatch = useDispatch();
-   let navigate = useNavigate();
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const { email } = useSelector((state) => state.auth.user_details);
   const [user, setUser] = useState({
@@ -28,7 +27,7 @@ const Dashboardx = () => {
   //console.log({user});
 
   useEffect(() => {
-    fetch("https://tame-pear-chinchilla-kit.cyclic.app/get-profile", {
+    fetch("https://zany-gold-perch-sock.cyclic.app/get-profile", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -39,7 +38,7 @@ const Dashboardx = () => {
       .then((res) => {
         const { user } = res;
         console.log(user);
-        setUser(user)
+        setUser(user);
       })
       .catch((err) => console.log("errrrrrrr", err));
   }, []);
@@ -128,7 +127,7 @@ const Dashboardx = () => {
           <ul>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
-              href="/user/dashboard"
+              to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
             >
               <svg
@@ -147,7 +146,7 @@ const Dashboardx = () => {
             </a>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/deposit"
+              to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -169,7 +168,7 @@ const Dashboardx = () => {
             </a>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/withdraw"
+              to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -191,7 +190,7 @@ const Dashboardx = () => {
             </a>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/profile"
+              to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -252,7 +251,7 @@ const Dashboardx = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" href="/">
+              <a aria-current="page" class="active" to="/">
                 <img
                   src={logo1}
                   class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
@@ -311,13 +310,13 @@ const Dashboardx = () => {
                 <p class="flex justify-between items-center font-semibold pt-5">
                   <a
                     class="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
-                    href="/user/deposit"
+                    to="/user/deposit"
                   >
                     <span>Deposit</span>
                   </a>
                   <a
                     class="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
-                    href="/user/withdraw"
+                    to="/user/withdraw"
                   >
                     Withdraw
                   </a>
@@ -330,7 +329,7 @@ const Dashboardx = () => {
                 <ul>
                   <a
                     class="flex text-red-500 hover:bg-slate-200 focus:text-red-500 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/dashboard"
+                    to="/user/dashboard"
                   >
                     <svg
                       stroke="currentColor"
@@ -348,7 +347,7 @@ const Dashboardx = () => {
                   </a>
                   <a
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/deposit"
+                    to="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -370,7 +369,7 @@ const Dashboardx = () => {
                   </a>
                   <a
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/withdraw"
+                    to="/user/withdraw"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -392,7 +391,7 @@ const Dashboardx = () => {
                   </a>
                   <a
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/profile"
+                    to="/user/profile"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -465,7 +464,7 @@ const Dashboardx = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <a aria-current="page" class="active" href="/">
+                <a aria-current="page" class="active" to="/">
                   <img
                     src={logo1}
                     class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
@@ -538,7 +537,7 @@ const Dashboardx = () => {
                 </span>
                 <a
                   class="px-3 py-1.5 md:py-2.5 text-center text-xs bg-yellow-500 text-white font-medium  rounded uppercase mt-6 md:mt-0"
-                  href="/user/profile"
+                  to="/user/profile"
                 >
                   Add account
                 </a>
@@ -566,7 +565,7 @@ const Dashboardx = () => {
                   <p class="flex justify-between items-center font-semibold pt-16 md:inline lg:flex">
                     <a
                       class="flex items-center pl-4 pr-2 py-1.5 text-sm bg-red-500 text-white rounded-md md:my-3"
-                      href="/user/deposit"
+                      to="/user/deposit"
                     >
                       <span>Deposit</span>
                       <svg
@@ -587,7 +586,7 @@ const Dashboardx = () => {
                     </a>
                     <a
                       class="px-4 py-1.5 text-sm bg-sky-800 text-white rounded-md md:px-2 lg:px-4"
-                      href="/user/withdraw"
+                      to="/user/withdraw"
                     >
                       Access funds
                     </a>
@@ -635,7 +634,7 @@ const Dashboardx = () => {
             </section>
           </div>
         </div>
-      </div> 
+      </div>
       <div className="z-10 w-full">
         <Widget2 />
       </div>

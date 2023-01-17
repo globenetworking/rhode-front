@@ -1,36 +1,35 @@
-import React from 'react';
+import React from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import logo1 from "../../../images/whitebull.jpg";
 
-
 const AdminNav = () => {
-   const items = [
-     {
-       label: (
-         <a href="/admin/users" className="font-semibold">
-           All Users
-         </a>
-       ),
-       key: "0",
-     },
-     {
-       label: (
-         <a href="/admin/withdrawals" className="font-semibold">
-           Withdrawal
-         </a>
-       ),
-       key: "1",
-     },
-     {
-       label: (
-         <a href="/admin/deposits" className="font-semibold">
-           deposit
-         </a>
-       ),
-       key: "3",
-     },
-   ];
+  const items = [
+    {
+      label: (
+        <a to="/admin/users" className="font-semibold">
+          All Users
+        </a>
+      ),
+      key: "0",
+    },
+    {
+      label: (
+        <a to="/admin/withdrawals" className="font-semibold">
+          Withdrawal
+        </a>
+      ),
+      key: "1",
+    },
+    {
+      label: (
+        <a to="/admin/deposits" className="font-semibold">
+          deposit
+        </a>
+      ),
+      key: "3",
+    },
+  ];
   return (
     <div>
       <nav className="flex justify-between items-center pt-5 px-7 w-full">
@@ -95,6 +94,6 @@ const AdminNav = () => {
       </nav>
     </div>
   );
-}
+};
 
 export default AdminNav;

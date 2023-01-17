@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Profile = () => {
-
   const notify = (word) => {
     toast.info(`${word}`, {
       position: "top-right",
@@ -19,66 +18,66 @@ const Profile = () => {
     });
   };
 
- const user = useSelector((state) => state.auth.user_details);
- console.log({ user_details: user });
+  const user = useSelector((state) => state.auth.user_details);
+  console.log({ user_details: user });
 
- const [newUser, setNewUser] = useState({
-   email: user.email,
-   name: user.name,
-   btc: user.btc,
-   phone: user.phone,
- });
+  const [newUser, setNewUser] = useState({
+    email: user.email,
+    name: user.name,
+    btc: user.btc,
+    phone: user.phone,
+  });
 
- let { email, name } = user;
- if (name) {
-   name = name.split(' ');
- } else {
-   name = ['', ''];
- }
+  let { email, name } = user;
+  if (name) {
+    name = name.split(" ");
+  } else {
+    name = ["", ""];
+  }
 
- const first = name[0];
- const last = name[1];
+  const first = name[0];
+  const last = name[1];
 
- const onChanges = (event) => {
-   event.preventDefault();
-   const { name, value } = event.target;
-   setNewUser({ ...newUser, [name]: value });
-   console.log("user", newUser);
- };
+  const onChanges = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setNewUser({ ...newUser, [name]: value });
+    console.log("user", newUser);
+  };
 
- const onEdit = async (event) => {
-   const { email, name, btc, phone } = user;
+  const onEdit = async (event) => {
+    const { email, name, btc, phone } = user;
 
-   const iseditUser = await fetch(
-     "https://tame-pear-chinchilla-kit.cyclic.app/users/:id",
-     {
-       method: "put",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
-         email,
-         name,
-         btc,
-         phone,
-       }),
-     }
-   );
+    const iseditUser = await fetch(
+      "https://zany-gold-perch-sock.cyclic.app/users/:id",
+      {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          name,
+          btc,
+          phone,
+        }),
+      }
+    );
 
-   let resp = await iseditUser.json();
-   //console.log("edit resp", resp);
+    let resp = await iseditUser.json();
+    //console.log("edit resp", resp);
 
-   notify("Saved!");
- };
+    notify("Saved!");
+  };
 
- const cancel = () => {
-   setNewUser({
-     email: user.email,
-     name: user.name,
-     btc: user.btc,
-     phone: user.phone,
-   });
+  const cancel = () => {
+    setNewUser({
+      email: user.email,
+      name: user.name,
+      btc: user.btc,
+      phone: user.phone,
+    });
 
-   notify("Cancelled!");
- };
+    notify("Cancelled!");
+  };
 
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
@@ -329,7 +328,7 @@ const Profile = () => {
           <ul>
             <a
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
-              href="/user/dashboard"
+              to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
             >
               <svg
@@ -348,7 +347,7 @@ const Profile = () => {
             </a>
             <a
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/deposit"
+              to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -370,7 +369,7 @@ const Profile = () => {
             </a>
             <a
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/withdraw"
+              to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -392,7 +391,7 @@ const Profile = () => {
             </a>
             <a
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/profile"
+              to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -441,7 +440,7 @@ const Profile = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" href="/">
+              <a aria-current="page" class="active" to="/">
                 <img
                   src={logo1}
                   class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
@@ -500,13 +499,13 @@ const Profile = () => {
                 <p className="flex justify-between items-center font-semibold pt-5">
                   <a
                     className="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
-                    href="/user/deposit"
+                    to="/user/deposit"
                   >
                     <span>Deposit</span>
                   </a>
                   <a
                     className="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
-                    href="/user/withdraw"
+                    to="/user/withdraw"
                   >
                     Withdraw
                   </a>
@@ -519,7 +518,7 @@ const Profile = () => {
                 <ul>
                   <a
                     className="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
-                    href="/user/dashboard"
+                    to="/user/dashboard"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -538,7 +537,7 @@ const Profile = () => {
                   </a>
                   <a
                     className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/deposit"
+                    to="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -560,7 +559,7 @@ const Profile = () => {
                   </a>
                   <a
                     className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/withdraw"
+                    to="/user/withdraw"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -582,7 +581,7 @@ const Profile = () => {
                   </a>
                   <a
                     className="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/profile"
+                    to="/user/profile"
                   >
                     <svg
                       stroke="currentColor"
@@ -643,7 +642,7 @@ const Profile = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <a aria-current="page" class="active" href="/">
+                <a aria-current="page" class="active" to="/">
                   <img
                     src={logo1}
                     class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"

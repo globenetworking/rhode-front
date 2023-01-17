@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { GiAngelWings } from 'react-icons/gi';
-import { setUserDetails, setToken } from '../../Redux/action';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { GiAngelWings } from "react-icons/gi";
+import { setUserDetails, setToken } from "../../Redux/action";
+import { useDispatch } from "react-redux";
 
 const Signin = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [exists, setexists] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [exists, setexists] = useState("");
   const [msg, setMsg] = useState({
-    name: '',
-    email: '',
-    password: '',
-    error: '',
-    exists: '',
+    name: "",
+    email: "",
+    password: "",
+    error: "",
+    exists: "",
   });
   const onNameChange = (event) => {
     setName(event.target.value);
@@ -46,35 +46,33 @@ const Signin = () => {
       .then((res) => {
         // console.log('res', res);
         if (res.msg) {
-          setError('incorrect login credentials');
+          setError("incorrect login credentials");
           setTimeout(() => {
-            setError('');
+            setError("");
           }, 2000);
           return;
         }
 
         if (res.error) {
-          setError('incorrect login credentials');
+          setError("incorrect login credentials");
           setTimeout(() => {
-            setError('');
+            setError("");
           }, 2000);
           return;
         }
 
         const { token } = res;
         const { user } = res;
-      
+
         if (token != undefined) {
-         
-          if(user.role === 'admin'){
-          
-            navigate('/admin/users', { replace: true });
-            return
-          }  
+          if (user.role === "admin") {
+            navigate("/admin/users", { replace: true });
+            return;
+          }
           dispatch(setToken(token));
           dispatch(setUserDetails(user));
           // window.location.assign('http://enefti-six.vercel.app/user/dashboard')
-          // https://tame-pear-chinchilla-kit.cyclic.app/login
+          // https://zany-gold-perch-sock.cyclic.app/login
           https: navigate("/user/dashboard", { replace: true });
         }
       })
@@ -82,7 +80,7 @@ const Signin = () => {
   };
 
   const inputStyle =
-    ' pl-4 mt-1 block w-full border-none bg-primary placeholder-white text-sm h-11 focus:ring-0';
+    " pl-4 mt-1 block w-full border-none bg-primary placeholder-white text-sm h-11 focus:ring-0";
 
   return (
     <div className="flex flex-col items-center h-full justify-center text-white bg-reed pt-6 lg:pt-12 text-center w-full mb-6">
@@ -151,7 +149,7 @@ const Signin = () => {
 
                 <div className="flex mt-4 justify-center w-full">
                   <div className="font-semibold text-sm lg:text-base mb-6">
-                    Don't have an account?{' '}
+                    Don't have an account?{" "}
                     <Link
                       to="/register"
                       className="ml-2 text-secondary font-bold"

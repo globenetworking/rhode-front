@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import AdminNav from './AdminNav';
+import AdminNav from "./AdminNav";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Users from "./Users";
 import DepApp from "./DepApp";
 
-
 const UserDep = () => {
-
   const notify = () => {
     toast("Deleted");
     setReload((reload) => !reload);
@@ -17,7 +15,7 @@ const UserDep = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("https://tame-pear-chinchilla-kit.cyclic.app/deposits", {
+    fetch("https://zany-gold-perch-sock.cyclic.app/deposits", {
       method: "get",
       headers: { "Content-Type": "application/json" },
     })
@@ -68,6 +66,6 @@ const UserDep = () => {
       </div>
     </div>
   );
-}
+};
 
 export default UserDep;

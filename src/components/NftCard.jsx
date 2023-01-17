@@ -1,14 +1,14 @@
-import eye from '../images/icon-view.svg';
-import eqb from '../images/image-equilibrium.jpg';
-import eth from '../images/icon-ethereum.svg';
-import clock from '../images/icon-clock.svg';
-import avatar from '../images/image-avatar.png';
-import { Link } from 'react-router-dom';
+import eye from "../images/icon-view.svg";
+import eqb from "../images/image-equilibrium.jpg";
+import eth from "../images/icon-ethereum.svg";
+import clock from "../images/icon-clock.svg";
+import avatar from "../images/image-avatar.png";
+import { Link } from "react-router-dom";
 
 const NftCard = ({ img, name, desc, price, days, author }) => {
   return (
     <section className="bg-rope p-5 mx-5 rounded-xl max-w-xs shadow-2xl">
-      <a href="#" className="group block relative rounded-md overflow-hidden">
+      <a to="#" className="group block relative rounded-md overflow-hidden">
         <div className="invisible group-hover:visible absolute inset-0 bg-cyan/50">
           <img
             src={eye}
@@ -21,7 +21,7 @@ const NftCard = ({ img, name, desc, price, days, author }) => {
 
       <h1>
         <a
-          href="#"
+          to="#"
           className="block text-white my-4 font-semibold text-lg hover:text-cyan"
         >
           {name}
@@ -47,16 +47,19 @@ const NftCard = ({ img, name, desc, price, days, author }) => {
         <img src={avatar} alt="avatar" className="w-8 h-8" />
         <p className="text-white">
           <span className="text-secondary">Creation of </span>
-          <a href="#" className="hover:text-cyan">
+          <a to="#" className="hover:text-cyan">
             {author}
           </a>
         </p>
       </div>
-      <Link to="/user/wallet" className="btn btn-secondary w-full mt-6 font-bold text-md">
+      <Link
+        to="/user/wallet"
+        className="btn btn-secondary w-full mt-6 font-bold text-md"
+      >
         PLACE BID
       </Link>
     </section>
   );
 };
 
-export default NftCard
+export default NftCard;

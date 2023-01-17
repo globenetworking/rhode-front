@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { setUserDetails, setToken } from '../../Redux/action';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { setUserDetails, setToken } from "../../Redux/action";
+import { useDispatch } from "react-redux";
 import bultpay3 from "../../images/bultpay3.png";
-
 
 function Registerx() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [terms, setTerms] = useState(true);
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [msg, setMsg] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    password: '',
-    error: '',
-    exists: '',
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    error: "",
+    exists: "",
   });
   const onNameChange = (event) => {
     setName(event.target.value);
@@ -49,7 +48,7 @@ function Registerx() {
       password,
     });
 
-    fetch("https://tame-pear-chinchilla-kit.cyclic.app/sign-up", {
+    fetch("https://zany-gold-perch-sock.cyclic.app/sign-up", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -78,8 +77,6 @@ function Registerx() {
       })
       .catch((err) => console.log(err));
   };
-
-
 
   return (
     <div className="px-0 lg:px-0 w-full">

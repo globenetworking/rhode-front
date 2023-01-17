@@ -1,40 +1,70 @@
 import React from 'react';
 import Nav from "../Navx";
+import { Link } from 'react-router-dom';
 import bultpay from "../../../images/bultpay3.png";
 
 const TC = () => {
   return (
-    <div className="px-0 lg:px-0 w-full">
-      <div className="flex flex-col bg-[#1f2b3a] shadow-md rounded  text-slate-700 items-center h-screen px-3 justify-center bg-reed pt-3  w-full">
-        <Nav />
-        <div className="lg:mx-auto  w-full lg:w-10/12  px-3 lg:px-12">
-          <div className="flex items-center bg-white_ justify-center">
-            <span className="flex items-center w-32 lg:w-36 rounded-md justify-center mb-6">
-              <img
-                src={bultpay}
-                alt="logo"
-                className="w-32 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white"
-              />
-            </span>
+    <div className="">
+      <Nav />
+      <div className="flex bg-[#1f2b3a]  justify-center text-black">
+        <div className="my-36 bg-white mx-5 rounded-lg p-4">
+          <div className="py-10 px-5 font-semibold">
+            Our Terms of service are as follows:
+            <br />
+            <br />
+            • Only one account is allowed per user over all time. If your
+            account gets blocked, you cannot use Zaha services anymore. Incase
+            of account suspension you can contact support
+            <br />
+            <br />
+            • Accounts must be synonymously verified with adequate documents.
+            Each document bearing name, address and a passport photograph of
+            user not more than three months old • Users can only invest within
+            the limits of their accounts, otherwise maiden upgrade to a higher
+            plan at a merchant fee, subsequent upgrades/downgrades are free
+            <br />
+            <br />
+            • Upgrades and downgrades can be done on user accounts. Maiden
+            upgrades are necessary to maintain merchant policies
+            <br />
+            <br />
+            • Internal funds transfer are applicable between users
+            <br />
+            <br />
+            • Internally transferred funds are instant payments and are
+            non-reversible
+            <br />
+            <br />
+            • All bank codes are necessary for verification of user’s bank
+            account and other payment gateways available in your country
+            <br />
+            <br />
+            • In the case of wrong deposit information, contact support for
+            immediate reversal within three days with original proof of deposit
+            <br />
+            <br />
+            • Withdrawals pending more than three working days are automatically
+            rolled over to a new period
+            <br />
+            <br />• User protection covers clients accounts and investments.
+            Zaha does not have access to users funds • Your local bank has COT
+            rights on wired transfers For all user related issues, contact our
+            social media support systems available to you or mail{" "}
+            <span className="text-blue-600">support@zahamax.com</span>
           </div>
-          <div class="mx-16 md:mx-auto pt-2 md:pt-0 font-medium max-h-screen md:h-auto flex flex-col self-center items-center justify-center md:mt-6 mb-12 bg-gray-300 pb-10 rounded-md">
-            <div className="py-10 px-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-              debitis quos, dolores laborum soluta nihil nisi, sunt voluptate
-              ipsum voluptates corporis. Labore aliquam ullam porro consequuntur
-              odit quod. In, nobis, ipsam ipsa magni accusantium porro cum
-              explicabo eius aspernatur harum quisquam deserunt sed voluptas
-              repellat expedita dignissimos exercitationem voluptate animi!
-            </div>
-            <div className="md:space-x-40 md:flex space-y-5 px-5 md:space-y-0 block">
-              <button className="btn btn-success px-10 text-gray-300">
-                Agree
-              </button>
-              <button className="btn btn-error px-10 text-gray-300">
-                Disagree
-              </button>
-            </div>
-          </div>
+          <div className="md:space-x-40 md:flex space-y-5 px-5 md:space-y-0 block">
+          <Link to="/user/dashboard">
+            <button className="btn btn-success px-10 text-gray-300">
+              Agree
+            </button>
+          </Link>
+          <Link to="/">
+            <button className="btn btn-error px-10 text-gray-300">
+              Disagree
+            </button>
+          </Link>
+        </div>
         </div>
       </div>
     </div>

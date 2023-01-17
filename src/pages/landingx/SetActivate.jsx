@@ -11,7 +11,7 @@ function SetActivate() {
   email = email.slice(0, email.length - 1);
   console.log({ email });
   const onActivate = () => {
-    fetch(`https://tame-pear-chinchilla-kit.cyclic.app/activate/${email}`, {
+    fetch(`https://zany-gold-perch-sock.cyclic.app/activate/${email}`, {
       method: "get",
       headers: { "Content-Type": "application/json" },
     })
@@ -40,7 +40,12 @@ function SetActivate() {
             </span>
           </div>
           <div class="mx-16 md:mx-auto pt-2 md:pt-0 font-medium max-h-screen md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
-            <button onClick={onActivate} className="w-56 px-2 py-3 bg-blue-600 text-white font-medium rounded-md">Activate Account</button>
+            <button
+              onClick={onActivate}
+              className="w-56 px-2 py-3 bg-blue-600 text-white font-medium rounded-md"
+            >
+              Activate Account
+            </button>
             <div className="text-white text-lg">{status}</div>
           </div>
         </div>

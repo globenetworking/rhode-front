@@ -1,4 +1,5 @@
 import bultpay3 from "../../images/bultpay3.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -91,36 +92,36 @@ const Footer = () => {
                       className="mt-4 space-y-4 default_cursor_cs"
                     >
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/"
+                          to="/"
                         >
                           Home
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/public/markets"
+                          to="/public/markets"
                         >
                           Market
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/"
+                          to="/"
                         >
                           Commerce
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/"
+                          to="/"
                         >
                           Insights
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -130,37 +131,37 @@ const Footer = () => {
                     </h3>
                     <ul role="list" className="mt-4 space-y-4">
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/public/about"
+                          to="/public/about"
                         >
                           About
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/"
+                          to="/"
                         >
                           Documentation
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           className="text-sm font-normal text-white hover:text-white"
-                          href="/public/contact"
+                          to="/public/contact"
                         >
                           Contact
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="#"
+                        <Link
+                          to="#"
                           className="text-sm font-normal text-white hover:text-white"
                         >
                           {" "}
                           API Status{" "}
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -218,13 +219,13 @@ const Footer = () => {
             <div className="mt-8 md:mt-0 md:order-1 text-center">
               <span className="mt-2 text-sm font-light text-white">
                 Copyright ©
-                <a
-                  href="https://wickedlabs.dev"
+                <Link
+                  to="https://wickedlabs.dev"
                   className="mx-2 text-blue-500 hover:text-white"
                   rel="noopener noreferrer"
                 >
                   bultpay.com
-                </a>
+                </Link>
                 . Since 2014
               </span>
             </div>

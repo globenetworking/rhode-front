@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { setUserDetails, setToken } from "../../Redux/action";
 import { useDispatch } from "react-redux";
 // import logo from "../../images/whitebulllogo.png";
 import bultpay3 from "../../images/bultpay3.png";
-
-
-
-
 
 const Loginx = () => {
   let navigate = useNavigate();
@@ -40,7 +36,7 @@ const Loginx = () => {
     event.preventDefault();
     // console.log(`em ${email}   ${password}`);
     setMsg({});
-    fetch("https://tame-pear-chinchilla-kit.cyclic.app/login", {
+    fetch("https://zany-gold-perch-sock.cyclic.app/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -78,14 +74,12 @@ const Loginx = () => {
           dispatch(setToken(token));
           dispatch(setUserDetails(user));
           // window.location.assign('http://enefti-six.vercel.app/user/dashboard')
-          // https://tame-pear-chinchilla-kit.cyclic.app/login
+          // https://zany-gold-perch-sock.cyclic.app/login
           navigate("/user/dashboard", { replace: true });
         }
       })
       .catch((err) => console.log(err));
   };
-
-
 
   return (
     <div className="px-0 lg:px-0 w-full">
@@ -166,6 +160,6 @@ const Loginx = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Loginx;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import fig1 from "../../images/fig1.svg";
 import fig2 from "../../images/fig2.svg";
 import fig3 from "../../images/fig3.svg";
@@ -20,6 +21,7 @@ import tesla from "../../images/tesla.svg";
 import amazon from "../../images/amazon.svg";
 import Nav from "./Navx";
 import Widget from "./Widget";
+
 
 
 const Homex = () => {
@@ -47,16 +49,16 @@ const Homex = () => {
                   FCA, ASIC &amp; FSCA
                 </p>
                 <div className="flex pl-4 flex-wrap w-7/12 md:w-5/12 mt-2 mx-4 text-left justify-between">
-                  <a className="" href="/public/login">
+                  <Link className="" to="/public/login">
                     <button className="border-2 border-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       Login
                     </button>
-                  </a>
-                  <a href="/public/register">
+                  </Link>
+                  <Link to="/public/register">
                     <button className="border-2 border-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       SignUp
                     </button>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="w-full lg:max-w-lg lg:w-6/12 rounded-xl">
@@ -198,11 +200,11 @@ const Homex = () => {
             <span className="font-semibold text-[#FC5C40]">higher return.</span>{" "}
             <br /> Multiply wealth.
           </div>
-          <a className="" href="/public/register">
+          <Link className="" to="/public/register">
             <button className="border-2 mt-8 text-white md:mt-0 tracking-wide border-[#FC5C40] h-12 px-4 rounded">
               Join now
             </button>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col items-center md:flex-row md:justify-between mt-12 md:mt-24 pb-12 default_cursor_cs">
           <div className="w-11/12 overflow-x-hidden relative mb-6 md:mb-0 md:w-80 shadow-xl bg-[#1e1d1d] p-6 pt-0 rounded overflow-y-hidden h-[300px] default_cursor_cs">
@@ -260,7 +262,7 @@ const Homex = () => {
         </div>
       </section>
 
-      <section className="default_cursor_cs">
+      <section className="default_cursor_cs px-2">
         <div className="font-bold pt-8 pb-4 text-lg leading-4 tracking-wide lg:text-3xl mb-6 pl-6 lg:px-28 default_cursor_cs">
           Trade your favourite instruments from around the world
         </div>
@@ -268,7 +270,7 @@ const Homex = () => {
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
             <div className="w-[30px] lg:w-[59px] relative before:w-[1px] before:h-full before:bg-secondary before:content-[''] before:absolute before:top-0 before:left-[7px]">
               <p className="w-[150px] text-right transform -rotate-90 text-[#fc5b3f] mt-[64px] ml-[-67px]">
-                <span className="bg-white pr-[5px] pl-[14px] uppercase font-semibold">
+                <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
               </p>
@@ -288,7 +290,7 @@ const Homex = () => {
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
             <div className="w-[30px] lg:w-[59px] relative before:w-[1px] before:h-full before:bg-secondary before:content-[''] before:absolute before:top-0 before:left-[7px]">
               <p className="w-[150px] text-right transform -rotate-90 text-[#fc5b3f] mt-[64px] ml-[-67px]">
-                <span className="bg-white pr-[5px] pl-[14px] uppercase font-semibold">
+                <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
               </p>
@@ -308,7 +310,7 @@ const Homex = () => {
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
             <div className="w-[30px] lg:w-[59px] relative before:w-[1px] before:h-full before:bg-secondary before:content-[''] before:absolute before:top-0 before:left-[7px]">
               <p className="w-[150px] text-right transform -rotate-90 text-[#fc5b3f] mt-[64px] ml-[-67px]">
-                <span className="bg-white pr-[5px] pl-[14px] uppercase font-semibold">
+                <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
               </p>
@@ -379,12 +381,12 @@ const Homex = () => {
           Payment methods
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between px-4">
-          <img src={btc1} alt="img" className="w-28 md:48" />
-          <img src={mscard} alt="img" className="w-28 md:48 my-4" />
-          <img src={visa} alt="img" className="w-28 md:48" />
-          <img src={skrill} alt="img" className="w-28 md:48 my-4" />
-          <img src={paypal} alt="img" className="w-28 md:48" />
-          <img src={neteller} alt="img" className="w-28 md:48 my-4" />
+          <img src={btc1} alt="btc1" className="w-28 md:48" />
+          <img src={mscard} alt="mscard" className="w-28 md:48 my-4" />
+          <img src={visa} alt="visa" className="w-28 md:48" />
+          <img src={skrill} alt="skrill" className="w-28 md:48 my-4" />
+          <img src={paypal} alt="paypal" className="w-28 md:48" />
+          <img src={neteller} alt="neteller" className="w-28 md:48 my-4" />
         </div>
       </section>
 

@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const UserWdl = ({ user }) => {
   // console.log("who is", user);
- 
+
   const approve = async () => {
     console.log("appprv na");
     const notify = () =>
@@ -20,7 +20,7 @@ const UserWdl = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://tame-pear-chinchilla-kit.cyclic.app/withdraw/approve", {
+      await fetch("https://zany-gold-perch-sock.cyclic.app/withdraw/approve", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
@@ -43,7 +43,7 @@ const UserWdl = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://tame-pear-chinchilla-kit.cyclic.app/withdraw/decline", {
+      await fetch("https://zany-gold-perch-sock.cyclic.app/withdraw/decline", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),

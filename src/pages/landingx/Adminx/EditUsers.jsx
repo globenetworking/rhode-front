@@ -16,7 +16,7 @@ const EditUsers = () => {
     name: adUser.name,
     wdl: adUser.withdrawal,
     profits: adUser.profits,
-    phone: adUser.phone
+    phone: adUser.phone,
   });
 
   //get user token from redux
@@ -31,7 +31,7 @@ const EditUsers = () => {
     const { email, accbal, depos, name, wdl, profits, phone } = user;
 
     const iseditUser = await fetch(
-      "https://tame-pear-chinchilla-kit.cyclic.app/users/:id",
+      "https://zany-gold-perch-sock.cyclic.app/users/:id",
       {
         method: "put",
         headers: { "Content-Type": "application/json" },
@@ -56,7 +56,7 @@ const EditUsers = () => {
   const onDel = async () => {
     const { email } = user;
     const isNotThere = await fetch(
-      "https://tame-pear-chinchilla-kit.cyclic.app/deleteuser",
+      "https://zany-gold-perch-sock.cyclic.app/deleteuser",
       {
         method: "post",
         headers: { "Content-Type": "application/json" },

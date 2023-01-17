@@ -87,7 +87,7 @@ const Withdraw = () => {
           <ul>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
-              href="/user/dashboard"
+              to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
             >
               <svg
@@ -106,7 +106,7 @@ const Withdraw = () => {
             </a>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/deposit"
+              to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -128,7 +128,7 @@ const Withdraw = () => {
             </a>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/withdraw"
+              to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -150,7 +150,7 @@ const Withdraw = () => {
             </a>
             <a
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-              href="/user/profile"
+              to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
             >
               <svg
@@ -199,7 +199,7 @@ const Withdraw = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" href="/">
+              <a aria-current="page" class="active" to="/">
                 <img
                   src={logo1}
                   class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
@@ -258,13 +258,13 @@ const Withdraw = () => {
                 <p class="flex justify-between items-center font-semibold pt-5">
                   <a
                     class="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
-                    href="/user/deposit"
+                    to="/user/deposit"
                   >
                     <span>Deposit</span>
                   </a>
                   <a
                     class="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
-                    href="/user/withdraw"
+                    to="/user/withdraw"
                   >
                     Withdraw
                   </a>
@@ -277,7 +277,7 @@ const Withdraw = () => {
                 <ul>
                   <a
                     class="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
-                    href="/user/dashboard"
+                    to="/user/dashboard"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -296,7 +296,7 @@ const Withdraw = () => {
                   </a>
                   <a
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/deposit"
+                    to="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -318,7 +318,7 @@ const Withdraw = () => {
                   </a>
                   <a
                     class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/withdraw"
+                    to="/user/withdraw"
                   >
                     <svg
                       stroke="currentColor"
@@ -339,7 +339,7 @@ const Withdraw = () => {
                   </a>
                   <a
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
-                    href="/user/profile"
+                    to="/user/profile"
                     style={{ color: "rgb(82, 100, 132)" }}
                   >
                     <svg
@@ -401,7 +401,7 @@ const Withdraw = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <a aria-current="page" class="active" href="/">
+                <a aria-current="page" class="active" to="/">
                   <img
                     src={logo1}
                     class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"

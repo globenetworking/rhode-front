@@ -12,15 +12,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <BrowserRouter>
-        <ConfigProvider
+        {/* <ConfigProvider
           theme={{
             token: {
               colorPrimary: "#00b96b",
             },
           }}
-        >
+        > */}
           <App />
-        </ConfigProvider>
+        {/* </ConfigProvider> */}
       </BrowserRouter>
     </PersistGate>
   </Provider>

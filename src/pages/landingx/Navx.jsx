@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import bultpay3 from "../../images/bultpay3.png";
 
-
 const Nav = () => {
-  const [showMenu, setShowMenu] = useState("md:hidden");
+  const [showMenu, setShowMenu] = useState("hidden");
 
   const toggleMenu = () => {
     if (showMenu === "hidden") {
@@ -20,22 +20,22 @@ const Nav = () => {
         style={{ background: "rgba(22, 22, 26, 0.7)" }}
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               src={bultpay3}
               alt="bult"
               className="p-2 w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
             />
-          </a>
+          </Link>
           <div className="hidden md:flex md:order-2">
-            <a href="/public/register" className="">
+            <Link to="/public/register" className="">
               <button
                 type="button"
                 className="text-black bg-[#fc5b3f] tracking-wide rounded-lg text-xs px-5 py-3 text-center mr-3 md:mr-0 font-medium"
               >
                 CREATE ACCOUNT
               </button>
-            </a>
+            </Link>
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
@@ -52,36 +52,44 @@ const Nav = () => {
           >
             <ul className="flex flex-col p-4 mt-4 lg:ml-24 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="pr-4 pl-3 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/public/about"
+                <Link
+                  to="/public/about"
                   className="block py-2 pr-4 pl-3 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/public/contact"
+                <Link
+                  to="/public/contact"
                   className=" block py-2 pr-4 pl-3 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/public/markets"
+                <Link
+                  to="/public/markets"
                   className="block py-2 pr-4 pl-3 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Markets
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/user/T&C"
+                  className="block py-2 pr-4 pl-3 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Terms
+                </Link>
               </li>
             </ul>
           </div>
@@ -125,26 +133,30 @@ const Nav = () => {
               <path d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z" />
             </svg>
           </span>
-          <a aria-current="page" className="text-white active" href="/">
+          <Link aria-current="page" className="text-white active" to="/">
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             className="py-4 text-white active:text-secondary"
-            href="/public/about"
+            to="/public/about"
             style={{ color: "white" }}
           >
             About
-          </a>
-          <a className="" href="/public/contact" style={{ color: "white" }}>
+          </Link>
+          <Link className="" to="/public/contact" style={{ color: "white" }}>
             Contact
-          </a>
-          <a className="py-4" href="/public/markets" style={{ color: "white" }}>
+          </Link>
+          <Link
+            className="py-4"
+            to="/public/markets"
+            style={{ color: "white" }}
+          >
             Market
-          </a>
+          </Link>
           <button className="flex w-[70%] p-2 font-normal justify-center text-sm uppercase bg-secondary rounded-md shadow-xl">
-            <a href="/public/login" style={{ color: "white" }}>
+            <Link to="/public/login" style={{ color: "white" }}>
               Log in
-            </a>
+            </Link>
           </button>
         </div>
       </nav>
