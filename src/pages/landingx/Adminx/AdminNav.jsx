@@ -1,7 +1,7 @@
 import React from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
-import logo1 from "../../../images/whitebull.jpg";
+import logo1 from "../../../images/bultpay3.png";
 import { Link } from "react-router-dom";
 
 const AdminNav = () => {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
-import logo1 from "../../../images/whitebull.jpg";
+import logo1 from "../../../images/bultpay3.png";
+import { Link } from "react-router-dom";
 
 const Withdraw = () => {
   const [open, setOpen] = useState(false);
@@ -85,7 +86,7 @@ const Withdraw = () => {
             Menu
           </div>
           <ul>
-            <a
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
               to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
@@ -103,8 +104,8 @@ const Withdraw = () => {
                 <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
               </svg>
               <span>Dashboard</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -125,8 +126,8 @@ const Withdraw = () => {
                 </g>
               </svg>
               <span>Deposit</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -147,8 +148,8 @@ const Withdraw = () => {
                 </g>
               </svg>
               <span>Withdraw</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -170,28 +171,15 @@ const Withdraw = () => {
                 <polyline points="17 11 19 13 23 9"></polyline>
               </svg>
               <span>Account Setting</span>
-            </a>
-            <p class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 1024 1024"
-                class="mr-4"
-                height="25"
-                width="25"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z"></path>
-              </svg>
-              <span>Sign Out</span>
-            </p>
+            </Link>
           </ul>
         </div>
       </Drawer>
 
+            {/* content */}
       <div className="px-0 lg:px-0 w-full">
         <div className="md:flex relative">
+          {/* left section */}
           <section
             className="hidden md:relative z-10 top-0 left-0 bottom-0 w-full bg-white md:flex md:flex-col md:items-center md:w-4/12 lg:w-1/5 bg-red-5 shadow-lg"
             style={{
@@ -199,12 +187,12 @@ const Withdraw = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" to="/">
+              <Link aria-current="page" class="active" to="/">
                 <img
                   src={logo1}
-                  class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                  class="w-28 p-3 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                 />
-              </a>
+              </Link>
               <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4 md:hidden">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-blue-600 mr-6">
                   <svg
@@ -256,18 +244,18 @@ const Withdraw = () => {
                   <span>$0.00 usd</span>
                 </p>
                 <p class="flex justify-between items-center font-semibold pt-5">
-                  <a
+                  <Link
                     class="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
                     to="/user/deposit"
                   >
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
                     to="/user/withdraw"
                   >
                     Withdraw
-                  </a>
+                  </Link>
                 </p>
               </div>
               <div className="w-11/12 font-medium text-slate-700 text-sm">
@@ -275,7 +263,7 @@ const Withdraw = () => {
                   Menu
                 </div>
                 <ul>
-                  <a
+                  <Link
                     class="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     to="/user/dashboard"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -293,8 +281,8 @@ const Withdraw = () => {
                       <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
                     </svg>
                     <span>Dashboard</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -315,8 +303,8 @@ const Withdraw = () => {
                       </g>
                     </svg>
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/withdraw"
                   >
@@ -336,8 +324,8 @@ const Withdraw = () => {
                       </g>
                     </svg>
                     <span>Withdraw</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/profile"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -359,27 +347,12 @@ const Withdraw = () => {
                       <polyline points="17 11 19 13 23 9"></polyline>
                     </svg>
                     <span>Account Setting</span>
-                  </a>
-                  <p class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
-                    <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      stroke-width="0"
-                      viewBox="0 0 1024 1024"
-                      class="mr-4"
-                      height="25"
-                      width="25"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 0 1-112.7 75.9A352.8 352.8 0 0 1 512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 0 1-112.7-75.9 353.28 353.28 0 0 1-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 0 0 0-12.6z"></path>
-                    </svg>
-                    <span>Sign Out</span>
-                  </p>
+                  </Link>
                 </ul>
               </div>
             </div>
           </section>
-
+              {/* withdraw content */}
           <div className="flex-1 h-screen bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
@@ -401,12 +374,12 @@ const Withdraw = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <a aria-current="page" class="active" to="/">
+                <Link aria-current="page" class="active" to="/">
                   <img
                     src={logo1}
-                    class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                    class="w-28 p-3 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                   />
-                </a>
+                </Link>
               </div>
               <div class="py-1">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-rose-600">
@@ -448,7 +421,7 @@ const Withdraw = () => {
                           <option value="">Select method</option>
                           <option value="btc">Bitcoin</option>
                           <option value="Bank"> Bank</option>
-                          <option value="Skrill"> Skrill</option>
+                          {/* <option value="Skrill"> Skrill</option> */}
                           <option value="Paypal">Paypal</option>
                         </select>
                       </div>

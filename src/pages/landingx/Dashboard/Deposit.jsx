@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-import { Button, Drawer, Modal, Space } from "antd";
-import logo1 from "../../../images/whitebull.jpg";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Drawer, Modal } from "antd";
+import bultpay from "../../../images/bultpay3.png";
+import { useNavigate, Link } from "react-router-dom";
 import { setToken, setUserDetails } from "../../../Redux/action";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Deposit = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
-
+ 
+  const [barcode, setBarcode] = useState("");
+  const [amt, setAmt] = useState("");
   const [open, setOpen] = useState(false);
-  const [done, setdone] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
     setOpen(true);
@@ -21,6 +26,71 @@ const Deposit = () => {
   const onChange = (e) => {
     setPlacement(e.target.value);
   };
+  
+  const onAmtChange = (e) => {
+    setAmt(e.target.value);
+  }; 
+
+  const onCoinChange = (e) => {
+    const { value } = e.target;
+    console.log({ value, a: barcode });
+
+    if (value == "btc") {
+      setBarcode("btc");
+    } else if (value == "eth") {
+      setBarcode("eth");
+    } else if (value == "usdc") {
+      setBarcode("usdc");
+    } else if (value == "bank") {
+      showBank();
+    }
+  };
+
+  const user = useSelector((state) => state.auth.user_details);
+
+  const { email } = user;
+
+  const notify = (word) => {
+    toast.info(`${word}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+   useEffect(() => {
+     const controller = new AbortController();
+     const signal = controller.signal;
+     fetch("https://zany-gold-perch-sock.cyclic.app/deposit", {
+      signal: signal,
+     })
+       .then((response) => response.json())
+
+     return () => controller.abort();
+   }, []);
+
+   const onDeposit = async () => {
+     if (!amt) {
+       return notify("Please provide an amount");
+     }
+
+     const res = await fetch(
+       "https://zany-gold-perch-sock.cyclic.app/deposit",
+       {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify({ email,  deposit: amt }),
+       }
+     );
+
+     const result = await res.json();
+
+     notify(`${result.msg}`);
+   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -31,6 +101,16 @@ const Deposit = () => {
   };
   const handleCancel = () => {
     setIsModalOpen(false);
+  }; 
+  const [openBank, setOpenBank] = useState(false);
+  const showBank = () => {
+    setOpenBank(true);
+  };
+  const handleDone = () => {
+    setOpenBank(false);
+  };
+  const handleClose = () => {
+    setOpenBank(false);
   };
 
   return (
@@ -45,7 +125,7 @@ const Deposit = () => {
         <div className="w-[93%] pt-6 pl-2.5 default_cursor_cs">
           <p className="flex justify-between py-2">
             <img
-              src={logo1}
+              src={bultpay}
               class="w-28 lg:w-36 text-xl font-semibold left-0 whitespace-nowrap text-white"
             />
             <svg
@@ -103,7 +183,7 @@ const Deposit = () => {
             Menu
           </div>
           <ul>
-            <a
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
               to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
@@ -121,8 +201,8 @@ const Deposit = () => {
                 <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
               </svg>
               <span>Dashboard</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -143,8 +223,8 @@ const Deposit = () => {
                 </g>
               </svg>
               <span>Deposit</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -165,8 +245,8 @@ const Deposit = () => {
                 </g>
               </svg>
               <span>Withdraw</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -188,7 +268,7 @@ const Deposit = () => {
                 <polyline points="17 11 19 13 23 9"></polyline>
               </svg>
               <span>Account Setting</span>
-            </a>
+            </Link>
             <p
               onClick={() => {
                 dispatch(setToken(""));
@@ -229,12 +309,12 @@ const Deposit = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" to="/">
+              <Link aria-current="page" class="active" to="/">
                 <img
-                  src={logo1}
-                  class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                  src={bultpay}
+                  class="w-28 p-3 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                 />
-              </a>
+              </Link>
               <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4 md:hidden">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-blue-600 mr-6">
                   <svg
@@ -286,18 +366,18 @@ const Deposit = () => {
                   <span>$0.00 usd</span>
                 </p>
                 <p class="flex justify-between items-center font-semibold pt-5">
-                  <a
+                  <Link
                     class="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
                     to="/user/deposit"
                   >
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
                     to="/user/withdraw"
                   >
                     Withdraw
-                  </a>
+                  </Link>
                 </p>
               </div>
               <div className="w-11/12 font-medium text-slate-700 text-sm">
@@ -305,7 +385,7 @@ const Deposit = () => {
                   Menu
                 </div>
                 <ul>
-                  <a
+                  <Link
                     class="flex text-gray-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     to="/user/dashboard"
                   >
@@ -322,8 +402,8 @@ const Deposit = () => {
                       <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
                     </svg>
                     <span>Dashboard</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/deposit"
                   >
@@ -343,8 +423,8 @@ const Deposit = () => {
                       </g>
                     </svg>
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/withdraw"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -365,8 +445,8 @@ const Deposit = () => {
                       </g>
                     </svg>
                     <span>Withdraw</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/profile"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -388,7 +468,7 @@ const Deposit = () => {
                       <polyline points="17 11 19 13 23 9"></polyline>
                     </svg>
                     <span>Account Setting</span>
-                  </a>
+                  </Link>
                   <p
                     onClick={() => {
                       dispatch(setToken(""));
@@ -421,6 +501,7 @@ const Deposit = () => {
 
           {/* Deposit Content */}
           <div className="flex-1 bg-[#f5f6fa]">
+            <ToastContainer />
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
                 <span tabindex="0" class="btn btn-ghost btn-circle  md:hidden">
@@ -441,12 +522,12 @@ const Deposit = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <a aria-current="page" class="active" to="/">
+                <Link aria-current="page" class="active" to="/">
                   <img
-                    src={logo1}
-                    class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                    src={bultpay}
+                    class="w-28 p-3 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                   />
-                </a>
+                </Link>
               </div>
               <div class="py-1">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-rose-600">
@@ -498,17 +579,21 @@ const Deposit = () => {
                   <input
                     placeholder="0.00"
                     type="number"
+                    onChange={onAmtChange}
                     className="border font-normal text-base border-gray-300 py- px-2 md:p-2 rounded shadow-sm placeholder:text-sm md:placeholder:text-base"
                   />
                   <p class="text-xs text-red-600 tracking-wide pt-1 font-medium">
                     Min: $50
                   </p>
                 </p>
-                <select class="py-1.5 rounded w-72 md:w-80 font-normal mb-4 border mt-1 border-gray-200  text-base">
+                <select
+                  onChange={onCoinChange}
+                  class="py-1.5 rounded w-72 md:w-80 font-normal mb-4 border mt-1 border-gray-200  text-base"
+                >
                   <option value="btc">Bitcoin</option>
                   <option value="eth">Ethereum</option>
-                  <option value="shib">Bank</option>
-                  <option value="doge">USDC</option>
+                  <option value="bank">Bank</option>
+                  <option value="usdc">USDC</option>
                 </select>
                 <p class="flex flex-col w-72 md:w-80 lg:w-96 text-base mb-3">
                   <span class="text-sm pb-2 font-normal">Description</span>
@@ -550,7 +635,7 @@ const Deposit = () => {
                             <path d="M47.5 104H432V51.52a16 16 0 00-19.14-15.69l-368 60.48a16 16 0 00-12 10.47A39.69 39.69 0 0147.5 104zm416 24h-416a16 16 0 00-16 16v288a16 16 0 0016 16h416a16 16 0 0016-16V144a16 16 0 00-16-16zM368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path>
                             <path d="M31.33 259.5V116c0-12.33 5.72-18.48 15.42-20 35.2-5.53 108.58-8.5 108.58-8.5s-8.33 16-27.33 16V128c18.5 0 31.33 23.5 31.33 23.5L84.83 236z"></path>
                           </svg>
-                          btc
+                          {barcode}
                         </span>
                       </div>
                       <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
@@ -572,19 +657,27 @@ const Deposit = () => {
                       <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
                         <span>You will send</span>
                         <span class="uppercase font-medium default_cursor_cs">
-                          $54 USD
+                          ${amt}
                         </span>
                       </div>
                       <div class="mb-3 pt-3 text-sm default_cursor_cs">
                         *Click the copy icon and proceed to make deposit.
                       </div>
                     </section>
-                    <button class="px-3 mt-8 pt-1.5 pb-1.5 w-full md:py-2.5 text-xs bg-yellow-500 text-white font-medium rounded uppercase md:mt-0 default_pointer_cs">
+                    <button
+                      onClick={onDeposit}
+                      class="px-3 mt-8 pt-1.5 pb-1.5 w-full md:py-2.5 text-xs bg-yellow-500 text-white font-medium rounded uppercase md:mt-0 default_pointer_cs"
+                    >
                       Confirm Pay
                     </button>
                   </div>
                 </Modal>
-                <Modal>
+                <Modal
+                  title="Using Bank Method"
+                  open={openBank}
+                  onOk={handleDone}
+                  onCancel={handleClose}
+                >
                   <div className="bg-white border border-slate-200">
                     <div className="">
                       <p className="text-md font-semibold">

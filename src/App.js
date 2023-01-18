@@ -33,6 +33,7 @@ import UserDep from "./pages/landingx/Adminx/UserDep";
 import SetActivate from "./pages/landingx/SetActivate";
 import ResetPassword from "./pages/landingx/ResetPassword";
 import TC from "./pages/landingx/Dashboard/T&C";
+import ConfirmWld from "./pages/landingx/Dashboard/ConfirmWld";
 
 
 
@@ -58,6 +59,8 @@ const App = () => {
         <Route path="/admin/deposits" element={<UserDep />} />
         <Route path="/public/forgot-password" element={<ResetPassword />} />
         <Route path="/user/T&C" element={<TC />} />
+        <Route path='/user/withdrawal' element={<ConfirmWld />}/>
+        
 
         {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />

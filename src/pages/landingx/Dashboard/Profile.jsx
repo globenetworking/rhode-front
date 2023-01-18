@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
-import logo1 from "../../../images/whitebull.jpg";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import bultpay from "../../../images/bultpay3.png";
+import { setToken, setUserDetails } from "../../../Redux/action";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Profile = () => {
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
+
   const notify = (word) => {
     toast.info(`${word}`, {
       position: "top-right",
@@ -19,7 +23,7 @@ const Profile = () => {
   };
 
   const user = useSelector((state) => state.auth.user_details);
-  console.log({ user_details: user });
+  // console.log({ user_details: user });
 
   const [newUser, setNewUser] = useState({
     email: user.email,
@@ -42,7 +46,7 @@ const Profile = () => {
     event.preventDefault();
     const { name, value } = event.target;
     setNewUser({ ...newUser, [name]: value });
-    console.log("user", newUser);
+    // console.log("user", newUser);
   };
 
   const onEdit = async (event) => {
@@ -121,7 +125,8 @@ const Profile = () => {
                         </span>
                         <input
                           onChange={onChanges}
-                          value={newUser.name}
+                          // value={newUser.name}
+                          value=""
                           placeholder="s"
                           type="text"
                           className="border text-gray-400 border-gray-300 p-2 rounded shadow-sm"
@@ -149,7 +154,7 @@ const Profile = () => {
                         </span>
                         <input
                           onchange={onChanges}
-                          value={newUser.phone}
+                          // value={newUser.phone}
                           placeholder="233-324-2343"
                           className="border border-gray-300 p-2 rounded shadow-sm"
                         />
@@ -268,7 +273,7 @@ const Profile = () => {
         <div className="w-[93%] pt-6 pl-2.5 default_cursor_cs">
           <p className="flex justify-between py-2">
             <img
-              src={logo1}
+              src={bultpay}
               class="w-28 lg:w-36 text-xl font-semibold left-0 whitespace-nowrap text-white"
             />
             <svg
@@ -326,7 +331,7 @@ const Profile = () => {
             Menu
           </div>
           <ul>
-            <a
+            <Link
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
               to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
@@ -344,8 +349,8 @@ const Profile = () => {
                 <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
               </svg>
               <span>Dashboard</span>
-            </a>
-            <a
+            </Link>
+            <Link
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -366,8 +371,8 @@ const Profile = () => {
                 </g>
               </svg>
               <span>Deposit</span>
-            </a>
-            <a
+            </Link>
+            <Link
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -388,8 +393,8 @@ const Profile = () => {
                 </g>
               </svg>
               <span>Withdraw</span>
-            </a>
-            <a
+            </Link>
+            <Link
               className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -411,14 +416,24 @@ const Profile = () => {
                 <polyline points="17 11 19 13 23 9"></polyline>
               </svg>
               <span>Account Setting</span>
-            </a>
-            <p className="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
+            </Link>
+            <p
+              onClick={() => {
+                dispatch(setToken(""));
+                dispatch(setUserDetails({}));
+                navigate("/public/login", { replace: true });
+                // setTimeout(()=>{
+                // window.location.assign('enefti-six.vercel.app/')
+                // },2000)
+              }}
+              class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+            >
               <svg
                 stroke="currentColor"
                 fill="currentColor"
                 stroke-width="0"
                 viewBox="0 0 1024 1024"
-                className="mr-4"
+                class="mr-4"
                 height="25"
                 width="25"
                 xmlns="http://www.w3.org/2000/svg"
@@ -440,12 +455,12 @@ const Profile = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" to="/">
+              <Link aria-current="page" class="active" to="/">
                 <img
-                  src={logo1}
-                  class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                  src={bultpay}
+                  class="w-28 lg:w-36 p-3 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                 />
-              </a>
+              </Link>
               <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4 md:hidden">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-blue-600 mr-6">
                   <svg
@@ -497,18 +512,18 @@ const Profile = () => {
                   <span>$0.00 usd</span>
                 </p>
                 <p className="flex justify-between items-center font-semibold pt-5">
-                  <a
+                  <Link
                     className="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
                     to="/user/deposit"
                   >
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
                     to="/user/withdraw"
                   >
                     Withdraw
-                  </a>
+                  </Link>
                 </p>
               </div>
               <div className="w-11/12 font-medium text-slate-700 text-sm">
@@ -516,7 +531,7 @@ const Profile = () => {
                   Menu
                 </div>
                 <ul>
-                  <a
+                  <Link
                     className="flex hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
                     to="/user/dashboard"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -534,8 +549,8 @@ const Profile = () => {
                       <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
                     </svg>
                     <span>Dashboard</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -556,8 +571,8 @@ const Profile = () => {
                       </g>
                     </svg>
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/withdraw"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -578,8 +593,8 @@ const Profile = () => {
                       </g>
                     </svg>
                     <span>Withdraw</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="flex text-red-500 focus:text-red-500 hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/profile"
                   >
@@ -600,14 +615,24 @@ const Profile = () => {
                       <polyline points="17 11 19 13 23 9"></polyline>
                     </svg>
                     <span>Account Setting</span>
-                  </a>
-                  <p className="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12">
+                  </Link>
+                  <p
+                    onClick={() => {
+                      dispatch(setToken(""));
+                      dispatch(setUserDetails({}));
+                      navigate("/public/login", { replace: true });
+                      // setTimeout(()=>{
+                      // window.location.assign('enefti-six.vercel.app/')
+                      // },2000)
+                    }}
+                    class="flex text-[#526484] hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
+                  >
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
                       stroke-width="0"
                       viewBox="0 0 1024 1024"
-                      className="mr-4"
+                      class="mr-4"
                       height="25"
                       width="25"
                       xmlns="http://www.w3.org/2000/svg"
@@ -642,12 +667,12 @@ const Profile = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <a aria-current="page" class="active" to="/">
+                <Link aria-current="page" class="active" to="/">
                   <img
-                    src={logo1}
-                    class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                    src={bultpay}
+                    class="w-28 lg:w-36 p-3 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                   />
-                </a>
+                </Link>
               </div>
               <div class="py-1">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-rose-600">
