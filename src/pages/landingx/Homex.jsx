@@ -22,14 +22,12 @@ import amazon from "../../images/amazon.svg";
 import Nav from "./Navx";
 import Widget from "./Widget";
 
-
-
 const Homex = () => {
   return (
     <div className="App">
       <section
         id="nav_and_hero"
-        className="h-screen lg:px-24 overflow-x-hidden bg-[#212224] bg-no-repeat bg-cover bg-left-[50%] bg-right-[50%] bg-top-[0] bg-bottom[0]"
+        className="h-screen lg:px-24 overflow-x-hidden bg-black bg-no-repeat bg-cover bg-left-[50%] bg-right-[50%] bg-top-[0] bg-bottom[0]"
         style={{
           backgroundImage: "url(/bglanding.png)",
         }}
@@ -40,7 +38,7 @@ const Homex = () => {
             <div className="flex flex-col md:flex-row md:flex-wrap overflow-y justify-between items-center mx-auto lg:pl-12 lg:pr-8">
               <div className="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-6/12 md:mb-0 xl:mt-0">
                 <span className="hidden md:flex mb-8 text-xs font">{""}</span>
-                <h1 className="mb-8 mt-16 md:mt-2 tracking-wide text-2xl w-9/12 md:w-full md:leading-10 lg:tracking-wide lg:pr-40 font-bold text-white lg:text-5xl">
+                <h1 className="mb-8 mt-16 md:mt-2 tracking-wide text-2xl w-9/12 md:w-full md:leading-10 lg:tracking-wide lg:pr-40 font-bold text-black lg:text-5xl">
                   Multi-regulated <br className="md:hidden" />
                   global broker
                 </h1>
@@ -50,12 +48,12 @@ const Homex = () => {
                 </p>
                 <div className="flex pl-4 flex-wrap w-7/12 md:w-5/12 mt-2 mx-4 text-left justify-between">
                   <Link className="" to="/public/login">
-                    <button className="border-2 border-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
+                    <button className="border-2 bg-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-black rounded-md">
                       Login
                     </button>
                   </Link>
                   <Link to="/public/register">
-                    <button className="border-2 border-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
+                    <button className="border-2 bg-[#FC5C40] bg-slate400 hover:bg-slate-200 focus:bg-slate-400 px-3 md:px-6 uppercase text-xs font-medium py-2 text-black rounded-md">
                       SignUp
                     </button>
                   </Link>

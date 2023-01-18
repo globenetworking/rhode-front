@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
-import logo1 from "../../../images/whitebull.jpg";
+import bultpay from "../../../images/bultpay3.png"
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { setToken, setUserDetails } from "../../../Redux/action";
 import { useDispatch } from "react-redux";
 import Widget2 from "./Widget2";
@@ -67,7 +67,7 @@ const Dashboardx = () => {
         <div className="w-[93%] pt-6 pl-2.5 default_cursor_cs">
           <p className="flex justify-between py-2">
             <img
-              src={logo1}
+              src={bultpay}
               class="w-28 lg:w-36 text-xl font-semibold left-0 whitespace-nowrap text-white"
             />
             <svg
@@ -125,7 +125,7 @@ const Dashboardx = () => {
             Menu
           </div>
           <ul>
-            <a
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12  active"
               to="/user/dashboard"
               style={{ color: "rgb(225, 29, 72)" }}
@@ -143,8 +143,8 @@ const Dashboardx = () => {
                 <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
               </svg>
               <span>Dashboard</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/deposit"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -165,8 +165,8 @@ const Dashboardx = () => {
                 </g>
               </svg>
               <span>Deposit</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/withdraw"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -187,8 +187,8 @@ const Dashboardx = () => {
                 </g>
               </svg>
               <span>Withdraw</span>
-            </a>
-            <a
+            </Link>
+            <Link
               class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
               to="/user/profile"
               style={{ color: "rgb(82, 100, 132)" }}
@@ -210,7 +210,7 @@ const Dashboardx = () => {
                 <polyline points="17 11 19 13 23 9"></polyline>
               </svg>
               <span>Account Setting</span>
-            </a>
+            </Link>
             <p
               onClick={() => {
                 dispatch(setToken(""));
@@ -251,12 +251,12 @@ const Dashboardx = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <a aria-current="page" class="active" to="/">
+              <Link aria-current="page" class="active" to="/">
                 <img
-                  src={logo1}
-                  class="w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                  src={bultpay}
+                  class="w-28 p-3 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                 />
-              </a>
+              </Link>
               <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4 md:hidden">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-blue-600 mr-6">
                   <svg
@@ -308,18 +308,18 @@ const Dashboardx = () => {
                   <span>${user.withdrawal} usd</span>
                 </p>
                 <p class="flex justify-between items-center font-semibold pt-5">
-                  <a
+                  <Link
                     class="flex items-center pl-4 pr-2 py-1.5 hover:text-white text-sm bg-red-500 text-white rounded"
                     to="/user/deposit"
                   >
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="px-4 py-1.5 text-sm bg-yellow-500 hover:text-white text-white rounded"
                     to="/user/withdraw"
                   >
                     Withdraw
-                  </a>
+                  </Link>
                 </p>
               </div>
               <div className="w-11/12 font-medium text-slate-700 text-sm">
@@ -327,7 +327,7 @@ const Dashboardx = () => {
                   Menu
                 </div>
                 <ul>
-                  <a
+                  <Link
                     class="flex text-red-500 hover:bg-slate-200 focus:text-red-500 items-center py-3 px-3 rounded w-10/12"
                     to="/user/dashboard"
                   >
@@ -344,8 +344,8 @@ const Dashboardx = () => {
                       <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h2A1.5 1.5 0 0 1 5 1.5v2A1.5 1.5 0 0 1 3.5 5h-2A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"></path>
                     </svg>
                     <span>Dashboard</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/deposit"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -366,8 +366,8 @@ const Dashboardx = () => {
                       </g>
                     </svg>
                     <span>Deposit</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/withdraw"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -388,8 +388,8 @@ const Dashboardx = () => {
                       </g>
                     </svg>
                     <span>Withdraw</span>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     class="flex text-black hover:bg-slate-200 items-center py-3 px-3 rounded w-10/12"
                     to="/user/profile"
                     style={{ color: "rgb(82, 100, 132)" }}
@@ -411,7 +411,7 @@ const Dashboardx = () => {
                       <polyline points="17 11 19 13 23 9"></polyline>
                     </svg>
                     <span>Account Setting</span>
-                  </a>
+                  </Link>
                   <p
                     onClick={() => {
                       dispatch(setToken(""));
@@ -443,7 +443,7 @@ const Dashboardx = () => {
           </section>
 
           {/* Dashboard content */}
-          <div className="flex-1 bg-[#f5f6fa]">
+          <div className="flex-1 bg-[#f5f6fa] h-screen">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
                 <span tabindex="0" class="btn btn-ghost btn-circle  md:hidden">
@@ -466,8 +466,8 @@ const Dashboardx = () => {
               <div class="justify-self-center">
                 <a aria-current="page" class="active" to="/">
                   <img
-                    src={logo1}
-                    class="w-28 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
+                    src={bultpay}
+                    class="w-28 p-3 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
                   />
                 </a>
               </div>
@@ -504,7 +504,7 @@ const Dashboardx = () => {
                   Here's a summary of your account. Have fun!
                 </p>
               </div>
-              <div class="flex md:mt-12 flex-col md:flex-row md:items-center justify-between border border-yellow-400 mx-5 px-5 py-5 shadow-lg mt-6">
+              {/* <div class="flex md:mt-12 flex-col md:flex-row md:items-center justify-between border border-yellow-400 mx-5 px-5 py-5 shadow-lg mt-6">
                 <span class="flex">
                   <svg
                     stroke="currentColor"
@@ -541,7 +541,7 @@ const Dashboardx = () => {
                 >
                   Add account
                 </a>
-              </div>
+              </div> */}
               <div className="md:flex justify-between md:mt-12">
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-red-400 md:w-1/3">
                   <p class="flex justify-between items-center">
@@ -563,7 +563,7 @@ const Dashboardx = () => {
                   </p>
                   <p class="text-2xl font-semibold pt-6">${user.balance} USD</p>
                   <p class="flex justify-between items-center font-semibold pt-16 md:inline lg:flex">
-                    <a
+                    <Link
                       class="flex items-center pl-4 pr-2 py-1.5 text-sm bg-red-500 text-white rounded-md md:my-3"
                       to="/user/deposit"
                     >
@@ -583,13 +583,13 @@ const Dashboardx = () => {
                           d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
                         ></path>
                       </svg>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       class="px-4 py-1.5 text-sm bg-sky-800 text-white rounded-md md:px-2 lg:px-4"
                       to="/user/withdraw"
                     >
                       Access funds
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-sky-800 md:w-1/3">

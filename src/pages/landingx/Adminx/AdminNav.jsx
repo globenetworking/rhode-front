@@ -2,30 +2,31 @@ import React from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import logo1 from "../../../images/whitebull.jpg";
+import { Link } from "react-router-dom";
 
 const AdminNav = () => {
   const items = [
     {
       label: (
-        <a to="/admin/users" className="font-semibold">
+        <Link to="/admin/users" className="font-semibold">
           All Users
-        </a>
+        </Link>
       ),
       key: "0",
     },
     {
       label: (
-        <a to="/admin/withdrawals" className="font-semibold">
+        <Link to="/admin/withdrawals" className="font-semibold">
           Withdrawal
-        </a>
+        </Link>
       ),
       key: "1",
     },
     {
       label: (
-        <a to="/admin/deposits" className="font-semibold">
+        <Link to="/admin/deposits" className="font-semibold">
           deposit
-        </a>
+        </Link>
       ),
       key: "3",
     },
@@ -40,9 +41,9 @@ const AdminNav = () => {
             }}
             trigger={["click"]}
           >
-            <a onClick={(e) => e.preventDefault()}>
+            <Link onClick={(e) => e.preventDefault()}>
               <MenuOutlined />
-            </a>
+            </Link>
           </Dropdown>
         </div>
         <div>
