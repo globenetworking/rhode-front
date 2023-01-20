@@ -34,10 +34,12 @@ import SetActivate from "./pages/landingx/SetActivate";
 import ResetPassword from "./pages/landingx/ResetPassword";
 import TC from "./pages/landingx/Dashboard/T&C";
 import ConfirmWld from "./pages/landingx/Dashboard/ConfirmWld";
-
-
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const { email } = useSelector((state) => state.auth.user_details);
+  const props = { email };
+
   return (
     <div className="">
       <Routes>
@@ -49,6 +51,10 @@ const App = () => {
         <Route path="/public/register" element={<Registerx />} />
         <Route path="/public/activate" element={<Activate />} />
         <Route path="/on-activate/:email" element={<SetActivate />} />
+        {/* <Route
+          path="user/dashboard"
+          render={(props) => <Dashboardx {...props} />}
+        /> */}
         <Route path="/user/dashboard" element={<Dashboardx />} />
         <Route path="/user/deposit" element={<Deposit />} />
         <Route path="/user/withdraw" element={<Withdraw />} />
@@ -59,8 +65,7 @@ const App = () => {
         <Route path="/admin/deposits" element={<UserDep />} />
         <Route path="/public/forgot-password" element={<ResetPassword />} />
         <Route path="/user/T&C" element={<TC />} />
-        <Route path='/user/withdrawal' element={<ConfirmWld />}/>
-        
+        <Route path="/user/withdrawal" element={<ConfirmWld />} />
 
         {/* <Route path="/collections" element={<Collections />} />
             <Route path="/login" element={<SignIn />} />

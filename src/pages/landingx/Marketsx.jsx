@@ -26,12 +26,12 @@ const Market = () => {
         <section className=" text-black px-3 md:px-24 lg:px-24">
           <div className="flex flex-col items-center text-centerw-full">
             <h1 className="text-lg text-center lg:text-3xl mb-3 mt-16 font-bold">
-              A <span className="text-[#FC5C40]">Relationship</span> on your
+              A <span className="text-[#5474c6]">Relationship</span> on your
               terms.
             </h1>
             <p className="pb-6 text-sm lg:text-lg text-center text-slate-400 tracking-normal lg:tracking-wider lg:w-7/12 font-normal">
               Some believe you must choose between an online broker and a wealth
-              management firm. At Bultpay, you don’t need to compromise.
+              management firm. At octatrade, you don’t need to compromise.
               Whether you invest on your own, with an advisor, or a little of
               both — we can support you.
             </p>
@@ -215,6 +215,6 @@ const Market = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Market;

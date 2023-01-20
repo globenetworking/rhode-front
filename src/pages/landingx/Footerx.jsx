@@ -1,5 +1,6 @@
 import bultpay3 from "../../images/bultpay3.png";
 import { Link } from "react-router-dom";
+import Icon from "../../components/Nav/Icon";
 
 const Footer = () => {
   return (
@@ -71,14 +72,10 @@ const Footer = () => {
             <div className="xl:grid xl:grid-cols-3 xl:gap-8 default_cursor_cs">
               <div className="space-y-8 xl:col-span-1">
                 <span className="flex items-center w-28 lg:w-36 rounded-md text-secondary justify-center mb-6">
-                  <img
-                    src={bultpay3}
-                    alt="logo"
-                    className="w-24 self-center text-xl font-semibold whitespace-nowrap text-white"
-                  />
+                 <Icon/>
                 </span>
                 <p className="w-1/2 mt-2 text-sm text-whtie">
-                  We have licenses provide services Worldwide.
+                  We have licenses provide to services Worldwide.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2 text-white">
@@ -224,7 +221,7 @@ const Footer = () => {
                   className="mx-2 text-blue-500 hover:text-white"
                   rel="noopener noreferrer"
                 >
-                  bultpay.com
+                  Octatrade.net
                 </Link>
                 . Since 2014
               </span>

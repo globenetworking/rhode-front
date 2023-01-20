@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Drawer, Radio, Space } from "antd";
 import logo1 from "../../../images/bultpay3.png";
 import { Link } from "react-router-dom";
+import WhiteIcon from "../../../components/Nav/whiteIcon";
 
 const Withdraw = () => {
   const [open, setOpen] = useState(false);
@@ -27,10 +28,7 @@ const Withdraw = () => {
       >
         <div className="w-[93%] pt-6 pl-2.5 default_cursor_cs">
           <p className="flex justify-between py-2">
-            <img
-              src={logo1}
-              class="w-28 lg:w-36 text-xl font-semibold left-0 whitespace-nowrap text-white"
-            />
+            <WhiteIcon />
             <svg
               onClick={onClose}
               stroke="currentColor"
@@ -176,7 +174,7 @@ const Withdraw = () => {
         </div>
       </Drawer>
 
-            {/* content */}
+      {/* content */}
       <div className="px-0 lg:px-0 w-full">
         <div className="md:flex relative">
           {/* left section */}
@@ -187,12 +185,7 @@ const Withdraw = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <Link aria-current="page" class="active" to="/">
-                <img
-                  src={logo1}
-                  class="w-28 p-3 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
-                />
-              </Link>
+             <WhiteIcon />
               <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4 md:hidden">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-blue-600 mr-6">
                   <svg
@@ -352,7 +345,7 @@ const Withdraw = () => {
               </div>
             </div>
           </section>
-              {/* withdraw content */}
+          {/* withdraw content */}
           <div className="flex-1 h-screen bg-[#f5f6fa]">
             <div className="pt-2 px-3 flex items-center justify-between border-b border-gray-200 bg-white">
               <div class="bg-green200 p-0 relative -top-1" onClick={showDrawer}>
@@ -374,12 +367,7 @@ const Withdraw = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <Link aria-current="page" class="active" to="/">
-                  <img
-                    src={logo1}
-                    class="w-28 p-3 lg:w-36 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
-                  />
-                </Link>
+                <WhiteIcon />
               </div>
               <div class="py-1">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-rose-600">

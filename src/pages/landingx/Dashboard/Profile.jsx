@@ -4,7 +4,10 @@ import bultpay from "../../../images/bultpay3.png";
 import { setToken, setUserDetails } from "../../../Redux/action";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Icon from "../../../components/Nav/Icon";
+import WhiteIcon from "../../../components/Nav/whiteIcon";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -124,10 +127,9 @@ const Profile = () => {
                           <span className="text-red-500">*</span>
                         </span>
                         <input
+                          name="name"
                           onChange={onChanges}
-                          // value={newUser.name}
-                          value=""
-                          placeholder="s"
+                          value={newUser.name}
                           type="text"
                           className="border text-gray-400 border-gray-300 p-2 rounded shadow-sm"
                         />
@@ -153,9 +155,10 @@ const Profile = () => {
                           <span className="text-red-500">*</span>
                         </span>
                         <input
-                          onchange={onChanges}
-                          // value={newUser.phone}
-                          placeholder="233-324-2343"
+                          name="phone"
+                          onChange={onChanges}
+                          value={newUser.phone}
+                          type="phone"
                           className="border border-gray-300 p-2 rounded shadow-sm"
                         />
                       </p>
@@ -180,6 +183,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
+          <ToastContainer />
         </div>
       ),
     },
@@ -272,10 +276,7 @@ const Profile = () => {
       >
         <div className="w-[93%] pt-6 pl-2.5 default_cursor_cs">
           <p className="flex justify-between py-2">
-            <img
-              src={bultpay}
-              class="w-28 lg:w-36 text-xl font-semibold left-0 whitespace-nowrap text-white"
-            />
+            <WhiteIcon />
             <svg
               onClick={onClose}
               stroke="currentColor"
@@ -455,12 +456,7 @@ const Profile = () => {
             }}
           >
             <div className="w-[93%] pt-3 pl-2.5">
-              <Link aria-current="page" class="active" to="/">
-                <img
-                  src={bultpay}
-                  class="w-28 lg:w-36 p-3 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
-                />
-              </Link>
+              <WhiteIcon />
               <div className="flex items-center justify-between border-y-2 my-2 py-6 px-4 md:hidden">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-blue-600 mr-6">
                   <svg
@@ -667,12 +663,7 @@ const Profile = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-                <Link aria-current="page" class="active" to="/">
-                  <img
-                    src={bultpay}
-                    class="w-28 lg:w-36 p-3 bg-white self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
-                  />
-                </Link>
+                <WhiteIcon />
               </div>
               <div class="py-1">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-rose-600">

@@ -1,10 +1,11 @@
-import React,  { useState } from 'react';
+import React, { useState } from "react";
 // import useRedirect from "../../../hooks/useRedirect";
 import { useSelector } from "react-redux";
 import bultpay from "../../../images/bultpay3.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Icon from "../../../components/Nav/Icon";
+import WhiteIcon from "../../../components/Nav/whiteIcon";
 
 const ConfirmWld = () => {
   // const showToastMessage = () => {
@@ -48,9 +49,9 @@ const ConfirmWld = () => {
 
   const handleWithdrawal = async () => {
     // console.log('first click')
-    if (!withdrawal.amount || !withdrawal.address || !withdrawal.addressType) {
-      return notify("Please provide all information");
-    }
+    // if (!withdrawal.amount || !withdrawal.address || !withdrawal.addressType) {
+    //   return notify("Please provide all information");
+    // }
 
     // if (withdrawal.amount > balance) {
     //   return notify('Insufficient balance');
@@ -81,10 +82,8 @@ const ConfirmWld = () => {
   return (
     <div className="bg-[#f5f6fa] h-screen">
       <div aria-current="page" class="active" to="/">
-        <img
-          src={bultpay}
-          className="w-28 p-3  lg:w-36 items-center text-center justify-center"
-        />
+        {/* <p className="text-[#456fdc] text-2xl font-bold p-3">OCTATRADE</p> */}
+        <WhiteIcon />
       </div>
       <ToastContainer />
       <section class=" md:flex flex-col justify-center font-normal">
@@ -132,5 +131,5 @@ const ConfirmWld = () => {
       </section>
     </div>
   );
-}
+};
 export default ConfirmWld;

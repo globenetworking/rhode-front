@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import fig1 from "../../images/fig1.svg";
 import fig2 from "../../images/fig2.svg";
 import fig3 from "../../images/fig3.svg";
-import leaves from "../../images/leaves.svg";
+import leaves from "../../images/bluleaf.png";
 import cb from "../../images/coinbase.jfif";
 import btc from "../../images/bitcoin.jfif";
 import crypto from "../../images/crypto.jpeg";
@@ -27,9 +27,9 @@ const Homex = () => {
     <div className="App">
       <section
         id="nav_and_hero"
-        className="h-screen lg:px-24 overflow-x-hidden bg-black bg-no-repeat bg-cover bg-left-[50%] bg-right-[50%] bg-top-[0] bg-bottom[0]"
+        className="h-screen lg:px-24 overflow-x-hidden overflow-y-hidden bg-black bg-no-repeat bg-cover bg-left-[50%] bg-right-[50%] bg-top-[0] bg-bottom[0]"
         style={{
-          backgroundImage: "url(/bglanding.png)",
+          backgroundImage: "url(/octabg.svg)",
         }}
       >
         <Nav />
@@ -38,22 +38,23 @@ const Homex = () => {
             <div className="flex flex-col md:flex-row md:flex-wrap overflow-y justify-between items-center mx-auto lg:pl-12 lg:pr-8">
               <div className="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-6/12 md:mb-0 xl:mt-0">
                 <span className="hidden md:flex mb-8 text-xs font">{""}</span>
-                <h1 className="mb-8 mt-16 md:mt-2 tracking-wide text-2xl w-9/12 md:w-full md:leading-10 lg:tracking-wide lg:pr-40 font-bold text-black lg:text-5xl">
+                <h1 className="mb-8 mt-16 md:mt-2 tracking-wide text-2xl w-9/12 md:w-full md:leading-10 lg:tracking-wide lg:pr-40 font-semibold text-white lg:text-5xl">
                   Multi-regulated <br className="md:hidden" />
-                  global broker
+                  global financial institution
                 </h1>
                 <p className="text-sm  mb-8 md:text-base leading-relaxed text-left text-gray-500">
-                  A trusted destination for traders worldwide, Authorized by
-                  FCA, ASIC &amp; FSCA
+                  Generating Tomorrow's Diversifying Return Streams by
+                  Challenging Today's Investment Norms. A trusted destination
+                  for investors Worldwide; Authorized by FCA, ASIC & FSCA
                 </p>
                 <div className="flex pl-4 flex-wrap w-7/12 md:w-5/12 mt-2 mx-4 text-left justify-between">
                   <Link className="" to="/public/login">
-                    <button className="border-2 bg-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-black rounded-md">
+                    <button className="border-2 border-[#89a3e3] hover:bg-slate-900 focus:text-blue-300 px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       Login
                     </button>
                   </Link>
                   <Link to="/public/register">
-                    <button className="border-2 bg-[#FC5C40] bg-slate400 hover:bg-slate-200 focus:bg-slate-400 px-3 md:px-6 uppercase text-xs font-medium py-2 text-black rounded-md">
+                    <button className="border-2 border-[#89a3e3] hover:bg-slate-900 focus:text-blue-300 px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       SignUp
                     </button>
                   </Link>
@@ -61,8 +62,8 @@ const Homex = () => {
               </div>
               <div className="w-full lg:max-w-lg lg:w-6/12 rounded-xl">
                 <div>
-                  <div className="relative w-full max-w-lg">
-                    <div className="relative">
+                  <div className="relatie w-full max-w-lg">
+                    <div className="relatve">
                       <img
                         className="object-cover object-center mx-auto rounded-lg"
                         src={landing}
@@ -74,7 +75,7 @@ const Homex = () => {
               </div>
             </div>
           </div>
-          <div className="hidden md:flex justify-around lg:mx-14">
+          {/* <div className="hidden md:flex justify-around lg:mx-14">
             <div className="w-66 flex items-center">
               <div>
                 <img src={alphabet} alt="/alphabet" />
@@ -184,7 +185,7 @@ const Homex = () => {
                 <span className="ml-1">12.443</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
         <div className="absolute bottom-0 left-0 z-10 w-full">
           <Widget />
@@ -195,11 +196,11 @@ const Homex = () => {
         <div className="flex flex-col md:flex-row px-4 justify-between pt-12 default_cursor_cs">
           <div className="text-4xl font-bold tracking-wide default_cursor_cs">
             Save time. Get{" "}
-            <span className="font-semibold text-[#FC5C40]">higher return.</span>{" "}
+            <span className="font-semibold text-blue-300">higher return.</span>{" "}
             <br /> Multiply wealth.
           </div>
           <Link className="" to="/public/register">
-            <button className="border-2 mt-8 text-white md:mt-0 tracking-wide border-[#FC5C40] h-12 px-4 rounded">
+            <button className="border-2 mt-8 text-white md:mt-0 tracking-wide border-[#89a3e3] focus:text-blue-300 h-12 px-4 rounded">
               Join now
             </button>
           </Link>
@@ -266,8 +267,8 @@ const Homex = () => {
         </div>
         <div className="flex flex-col lg:flex-row lg:px-28 my-6 px-3">
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
-            <div className="w-[30px] lg:w-[59px] relative before:w-[1px] before:h-full before:bg-secondary before:content-[''] before:absolute before:top-0 before:left-[7px]">
-              <p className="w-[150px] text-right transform -rotate-90 text-[#fc5b3f] mt-[64px] ml-[-67px]">
+            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-slate-500 before:content-[''] before:absolute before:top-0 before:left-[7px]">
+              <p className="w-[150px] text-right transform -rotate-90 text-[#89a3e3] mt-[64px] ml-[-67px]">
                 <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
@@ -286,8 +287,8 @@ const Homex = () => {
             </div>
           </div>
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
-            <div className="w-[30px] lg:w-[59px] relative before:w-[1px] before:h-full before:bg-secondary before:content-[''] before:absolute before:top-0 before:left-[7px]">
-              <p className="w-[150px] text-right transform -rotate-90 text-[#fc5b3f] mt-[64px] ml-[-67px]">
+            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-slate-500 before:content-[''] before:absolute before:top-0 before:left-[7px]">
+              <p className="w-[150px] text-right transform -rotate-90 text-[#89a3e3] mt-[64px] ml-[-67px]">
                 <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
@@ -306,8 +307,8 @@ const Homex = () => {
             </div>
           </div>
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
-            <div className="w-[30px] lg:w-[59px] relative before:w-[1px] before:h-full before:bg-secondary before:content-[''] before:absolute before:top-0 before:left-[7px]">
-              <p className="w-[150px] text-right transform -rotate-90 text-[#fc5b3f] mt-[64px] ml-[-67px]">
+            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-slate-500 before:content-[''] before:absolute before:top-0 before:left-[7px]">
+              <p className="w-[150px] text-right transform -rotate-90 text-[#89a3e3] mt-[64px] ml-[-67px]">
                 <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
@@ -331,22 +332,22 @@ const Homex = () => {
       <section className="md:px-28 pt-6 md:pt-24 md:pb-16 bg-red-5 default_cursor_cs">
         <div className="flex flex-col md:flex-row justify-between default_cursor_cs">
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} alt="leaves" className="w-16" />
+            <img src={leaves} alt="leaves" className="w-20" />
             <div className="font-bold mt-3">Best CFD Broker</div>
             <div className=" text-sm">TradeON Summit 2020</div>
           </div>
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} alt="leaves" className="w-16" />
+            <img src={leaves} alt="leaves" className="w-20" />
             <div className="font-bold mt-3">Best Execution Broker</div>
             <div className=" text-sm">Forex EXPO Dubai 2020</div>
           </div>
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} alt="leaves" className="w-16" />
+            <img src={leaves} alt="leaves" className="w-20" />
             <div className="font-bold mt-3">Best Trading Platform</div>
             <div className=" text-sm">London Summit 2020</div>
           </div>
           <div className="flex flex-col items-center mb-8 lg:mb-0 first-line:">
-            <img src={leaves} alt="leaves" className="w-16" />
+            <img src={leaves} alt="leaves" className="w-20" />
             <div className="font-bold mt-3">Best Broker Asia</div>
             <div className=" text-sm">iFX EXPO 2020</div>
           </div>

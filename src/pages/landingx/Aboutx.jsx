@@ -13,35 +13,36 @@ const About = () => {
           id="nav_and_hero"
           className="h-28 lg:px-24 flex items-center "
           style={{
-            backgroundImage: "url(/bglanding.png)",
+            backgroundImage: "url(/octabg.svg)",
             backgroundColor: "rgb(33, 34, 36)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            backgroundPosition: "50% 0px"
+            backgroundPosition: "50% 0px",
+            backgroundBlendMode: "darken"
           }}
         >
           <Nav />
         </section>
         <div class="z-10 w-full">
-            <Widget />
+          <Widget />
         </div>
 
         <section class="text-black px-3 md:px-24 lg:px-24 default_cursor_cs">
           <div class="flex flex-col items-center text-centerw-full default_cursor_cs">
             <h1 class="text-lg text-center lg:text-3xl mt-16 font-bold default_cursor_cs">
               Putting our clients first{" "}
-              <span class="text-[#FC5C40] default_cursor_cs">since 2014</span>
+              <span class="text-[#5474c6] default_cursor_cs">since 2014</span>
             </h1>
             <p class="pb-6 text-sm lg:text-xl text-center text-slate-400 tracking-normal lg:tracking-wider lg:w-7/12 font-normal default_cursor_cs">
-              For more than 8 years, we've been empowering clients by helping them
-              take control of their financial lives.
+              For more than 8 years, we've been empowering clients by helping
+              them take control of their financial lives.
             </p>
           </div>
         </section>
 
         <section class="flex flex-col md:flex-row justify-center px-3 md:justify-around lg:px-28 default_cursor_cs">
           <div class="flex flex-row">
-            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-rose-600 flex1">
+            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-slate-600 flex1">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -70,7 +71,7 @@ const About = () => {
             </p>
           </div>
           <div class="flex flex-row default_cursor_cs">
-            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-rose-600 flex1 default_cursor_cs">
+            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-slate-600 flex1 default_cursor_cs">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -92,14 +93,14 @@ const About = () => {
                 High reliability
               </span>
               <span class="text-sm lg:text-base default_cursor_cs">
-                Anonymity and using cryptocurrency as a payment instrument. In the
-                era of electronic money – this is one of the most convenient ways
-                of cooperation.
+                Anonymity and using cryptocurrency as a payment instrument. In
+                the era of electronic money – this is one of the most convenient
+                ways of cooperation.
               </span>
             </p>
           </div>
           <div class="flex flex-row default_cursor_cs">
-            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-rose-600 flex1 default_cursor_cs">
+            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-slate-600 flex1 default_cursor_cs">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -123,8 +124,8 @@ const About = () => {
               <span class="text-sm lg:text-base default_cursor_cs">
                 We focus on user experience and the ease of use. We continue to
                 optimise our services so our users–novice or experienced
-                investors–will be able to grasp trading opportunities through our
-                platform.
+                investors–will be able to grasp trading opportunities through
+                our platform.
               </span>
             </p>
           </div>
@@ -183,7 +184,6 @@ const About = () => {
         <Footer />
       </div>
     </div>
-    
   );
 };
 

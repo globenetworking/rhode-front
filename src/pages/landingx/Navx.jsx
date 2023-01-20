@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Icon from "../../components/Nav/Icon";
 import bultpay3 from "../../images/bultpay3.png";
 
 const Nav = () => {
@@ -20,18 +21,12 @@ const Nav = () => {
         style={{ background: "rgba(22, 22, 26, 0.7)" }}
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <Link to="/" className="flex items-center">
-            <img
-              src={bultpay3}
-              alt="bult"
-              className="p-2 w-28 lg:w-36 self-center text-xl font-semibold whitespace-nowrap text-white mr-12"
-            />
-          </Link>
+        <Icon />
           <div className="hidden md:flex md:order-2">
             <Link to="/public/register" className="">
               <button
                 type="button"
-                className="text-black bg-[#fc5b3f] tracking-wide rounded-lg text-xs px-5 py-3 text-center mr-3 md:mr-0 font-medium"
+                className="text-black font-semibold bg-[#89a3e3] tracking-wide rounded-lg text-xs px-5 py-3 text-center mr-3 md:mr-0 hover:bg-[#a2b7eb] focus:bg-[#89a3e3]"
               >
                 CREATE ACCOUNT
               </button>
