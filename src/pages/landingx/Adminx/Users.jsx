@@ -18,7 +18,7 @@ const Users = ({ user, notify }) => {
   const onDel = async () => {
     const { email } = user;
     const isNotThere = await fetch(
-      "https://zany-gold-perch-sock.cyclic.app/users",
+      "https://red-violet-snail-fez.cyclic.app/deleteuser",
       {
         method: "post",
         headers: { "Content-Type": "application/json" },
@@ -36,6 +36,7 @@ const Users = ({ user, notify }) => {
         <p>{`Name: ${user.name}`}</p>
         <p>{`Email: ${user.email}`}</p>
         <p>{`Phone: ${user.phone}`}</p>
+        <p>{`Btc: ${user.btc}`}</p>
       </div>
       <div className="text-gray-600 ml-5 flex lg:justify-between self-end gap-2">
         <FiEdit

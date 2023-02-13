@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 // import logo from "../../images/whitebulllogo.png";
 import bultpay3 from "../../images/bultpay3.png";
 import Icon from "../../components/Nav/Icon";
+import { BiHide, BiShowAlt } from "react-icons/bi";
+
 
 const Loginx = () => {
   let navigate = useNavigate();
@@ -12,6 +14,7 @@ const Loginx = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [hidePassword, setHidePassword] = useState(false);
   const [error, setError] = useState("");
   // const [exists, setexists] = useState("");
   const [msg, setMsg] = useState({
@@ -32,12 +35,16 @@ const Loginx = () => {
   const onPasswordChange = (event) => {
     setPassword(event.target.value);
   };
+  const clickShow = (e) => {
+    e.preventDefault();
+    setHidePassword(!hidePassword);
+  };
 
   const login = (event) => {
     event.preventDefault();
     // console.log(`em ${email}   ${password}`);
     setMsg({});
-    fetch("https://zany-gold-perch-sock.cyclic.app/login", {
+    fetch("https://red-violet-snail-fez.cyclic.app/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -75,7 +82,7 @@ const Loginx = () => {
           dispatch(setToken(token));
           dispatch(setUserDetails(user));
           // window.location.assign('http://enefti-six.vercel.app/user/dashboard')
-          // https://zany-gold-perch-sock.cyclic.app/login
+          // https://red-violet-snail-fez.cyclic.app/login
           navigate("/user/dashboard", { replace: true });
         }
       })
@@ -86,7 +93,7 @@ const Loginx = () => {
     <div className="flex flex-col h-screen bg-[#26313f3a] shadow-md rounded  text-slate-700 items-center px-3 pt-3">
       <div className="lg:mx-auto w-full lg:w-10/12 px-3 lg:px-12">
         <div className="flex items-center justify-center">
-          <span className="bg-black flex items-center mt-5 w-32 lg:w-36 rounded-xl px-0 justify-center mb-6">
+          <span className="bg-black flex items-center mt-5 w-32 lg:w-40 lg:pr-2 rounded-xl px-0 justify-center mb-6">
             <Icon />
           </span>
         </div>
@@ -109,17 +116,29 @@ const Loginx = () => {
                   onChange={onEmailChange}
                 />
               </div>
-              <div className="text-center text-red-400 text-sm"></div>
-              <div className="mt-3">
+              <div className="text-center text-red-400 text-sm">
+                {msg.email}
+              </div>
+              <div className="relative mt-3">
                 <div className="text-left font-semibold pb-1 text-xs lg:text-sm">
                   Password <span className="text-red-600">*</span>
                 </div>
                 <input
-                  type="password"
+                  type={hidePassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className=" pl-4 mt-1 block bg-white w-full border border-slate-300 rounded shadow text-black  placeholder-gray-400 text-sm h-10 py-.5 focus:ring-0 focus:bg-slate-200"
                   onChange={onPasswordChange}
                 />
+                <button
+                  onClick={(e) => clickShow(e)}
+                  className="absolute right-2 bottom-2 focus:text-gray-500 text-sm font-semibold"
+                >
+                  {hidePassword ? (
+                    <BiHide size={20} className="text-gray-600" />
+                  ) : (
+                    <BiShowAlt size={20} className="text-gray-600" />
+                  )}
+                </button>
               </div>
               <div className="mt-2"></div>
               <Link

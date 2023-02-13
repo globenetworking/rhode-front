@@ -355,7 +355,7 @@ const Homex = () => {
       </section>
 
       <div className="mt-24 flex flex-col justify-center default_cursor_cs">
-        <div className="text-center text-xl text-gray-800 pb-4 font-bold default_cursor_cs">
+        <div className="text-center text-xl pb-4 font-bold default_cursor_cs">
           Where to buy Cryptocurrencies
         </div>
         <div className="flex flex-col mx-auto md:flex-row md:w-8/12 justify-around items-center default_cursor_cs">
@@ -365,8 +365,7 @@ const Homex = () => {
           </div>
           <div className="mt-4">
             <img src={btc} alt="btc" className="mx-auto default_cursor_cs" />
-            <div className="text-center font-bold py-2 default_cursor_cs" />
-            bitcoin.com
+            <div className="text-center font-bold py-2 default_cursor_cs">bitcoin.com</div>
           </div>
           <div className="mt-4">
             <img src={crypto} alt="cry" className="mx-auto default_cursor_cs" />

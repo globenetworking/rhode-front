@@ -15,7 +15,7 @@ const UserDep = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("https://zany-gold-perch-sock.cyclic.app/deposits", {
+    fetch("https://red-violet-snail-fez.cyclic.app/deposits", {
       method: "get",
       headers: { "Content-Type": "application/json" },
     })

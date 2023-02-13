@@ -14,22 +14,22 @@ const Dashboardx = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  const { email } = useSelector((state) => state.auth.user_details);
-  const [user, setUser] = useState({
-    balance: 0,
-    btc: "",
-    deposit: 0,
-    email: "",
-    name: "",
-    phone: "",
-    profits: 0,
-    role: "user",
-    withdrawal: 0,
-  });
+  const user = useSelector((state) => state.auth.user_details);
+  // const [user, setUser] = useState({
+  //   balance: 0,
+  //   btc: "",
+  //   deposit: 0,
+  //   email: "",
+  //   name: "",
+  //   phone: "",
+  //   profits: 0,
+  //   role: "user",
+  //   withdrawal: 0,
+  // });
   //console.log({user});
 
   // useEffect(() => {
-  //   fetch("https://zany-gold-perch-sock.cyclic.app/get-profile", {
+  //   fetch("https://red-violet-snail-fez.cyclic.app/get-profile", {
   //     method: "post",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify({
@@ -460,7 +460,7 @@ const Dashboardx = () => {
                 </span>
               </div>
               <div class="justify-self-center">
-               <WhiteIcon/>
+                <WhiteIcon />
               </div>
               <div class="py-1">
                 <p class="rounded-full w-8 h-8 flex justify-center items-center bg-rose-600">
@@ -599,7 +599,7 @@ const Dashboardx = () => {
                       <path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
                     </svg>
                   </p>
-                  <div class="uppercase text-xs pt-6">This month</div>
+                  {/* <div class="uppercase text-xs pt-6">This month</div> */}
                   <p class="text-2xl font-semibold">${user.profits} USD</p>
                 </div>
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-sky-800 md:w-1/3">
@@ -618,7 +618,7 @@ const Dashboardx = () => {
                       <path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
                     </svg>
                   </p>
-                  <div class="uppercase text-xs pt-6">This month</div>
+                  {/* <div class="uppercase text-xs pt-6">This month</div> */}
                   <p class="text-2xl font-semibold">${user.deposit} USD</p>
                 </div>
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-yellow-400 md:w-1/3">
@@ -637,7 +637,7 @@ const Dashboardx = () => {
                       <path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
                     </svg>
                   </p>
-                  <div class="uppercase text-xs pt-6">This month</div>
+                  {/* <div class="uppercase text-xs pt-6">This month</div> */}
                   <p class="text-2xl font-semibold">${user.withdrawal} USD</p>
                 </div>
               </div>
