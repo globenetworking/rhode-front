@@ -14,7 +14,7 @@ const Withdrawal = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("https://red-violet-snail-fez.cyclic.app/withdrawals", {
+    fetch("https://famous-turtleneck-elk.cyclic.app/withdrawals", {
       method: "get",
       headers: { "Content-Type": "application/json" },
     })

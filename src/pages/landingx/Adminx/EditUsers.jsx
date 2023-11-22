@@ -31,7 +31,7 @@ const EditUsers = () => {
     const { email, accbal, depos, name, wdl, profits, phone } = user;
 
     const iseditUser = await fetch(
-      "https://red-violet-snail-fez.cyclic.app/users/:id",
+      "https://famous-turtleneck-elk.cyclic.app/users/:id",
       {
         method: "put",
         headers: { "Content-Type": "application/json" },
@@ -56,7 +56,7 @@ const EditUsers = () => {
   const onDel = async () => {
     const { email } = user;
     const isNotThere = await fetch(
-      "https://red-violet-snail-fez.cyclic.app/deleteuser",
+      "https://famous-turtleneck-elk.cyclic.app/deleteuser",
       {
         method: "post",
         headers: { "Content-Type": "application/json" },

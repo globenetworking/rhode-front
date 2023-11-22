@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Drawer, Modal } from "antd";
 import bultpay from "../../../images/bultpay3.png";
+import changelly from "../../../images/changelly-light.svg";
+import abra from "../../../images/Abra.png";
+import abra2 from "../../../images/abra2.png";
 import { useNavigate, Link } from "react-router-dom";
 import { setToken, setUserDetails } from "../../../Redux/action";
 import { useDispatch } from "react-redux";
@@ -15,8 +18,9 @@ const Deposit = () => {
   let navigate = useNavigate();
 
   const [barcode, setBarcode] = useState("btc");
-  const [code, setCode] = useState("3782bCuU88ApZPiGPiZRqfVB82hFGSu2B1");
+  
   const [amt, setAmt] = useState("");
+  const [code, setCode] = useState("");
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
@@ -37,20 +41,15 @@ const Deposit = () => {
     const { value } = e.target;
     console.log({ value, a: code });
 
-    if (value == "btc") {
-      setBarcode("btc");
-      setCode("3782bCuU88ApZPiGPiZRqfVB82hFGSu2B1");
-    } else if (value == "eth") {
-      setBarcode("eth");
-      setCode("0x53677e83455a0FAbCE6367983654F8D00B9B03D5");
-    } else if (value == "doge") {
-      setBarcode("dodge");
-      setCode("0xADDd818dea7b4CEdfAA73005c908a8218dD35F10");
-    } else if (value == "bank") {
-      showBank();
-    }
+    // if (value == "btc") {
+    //   setBarcode("btc");
+    //   setCode(btc);
+    // }
   };
   const notifier = () => toast("Copied!");
+
+  const [btc, setBtc] = useState("");
+  
 
   const user = useSelector((state) => state.auth.user_details);
 
@@ -71,7 +70,7 @@ const Deposit = () => {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    fetch("https://zany-gold-perch-sock.cyclic.app/deposit", {
+    fetch("https://famous-turtleneck-elk.cyclic.app/deposit", {
       signal: signal,
     }).then((response) => response.json());
 
@@ -83,18 +82,40 @@ const Deposit = () => {
       return notify("Please provide an amount");
     }
 
-    const res = await fetch("https://zany-gold-perch-sock.cyclic.app/deposit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, deposit: amt }),
-    });
+    const res = await fetch(
+      "https://famous-turtleneck-elk.cyclic.app/deposit",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, deposit: amt }),
+      }
+    );
 
     const result = await res.json();
 
     notify(`${result.msg}`);
   };
 
+  useEffect(() => {
+    // const {btc} = user
+    fetch("https://famous-turtleneck-elk.cyclic.app/get-profile", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: "support@rhodeanalytics.com",
+        btc,
+      }),
+    }).then(async (res) => {
+      const {user: {btc}} = await res.json();
+      console.log(btc, "firsttt")
+      // const btc = ''
+      setBtc(btc);
+      console.log(btc)
+    });
+  });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const showModal = () => {
     if (!amt) {
       return notify("Enter Amount");
@@ -118,6 +139,20 @@ const Deposit = () => {
   const handleClose = () => {
     setOpenBank(false);
   };
+  // const [chModal, setChModal] = useState(false);
+  // const showChangelly = () => {
+  //   setChModal(true);
+  // }
+  // const chCancel = () => {
+  //   setChModal(false);
+  // }
+  // const [ abModal, setAbModal ] = useState (false);
+  // const showAbra = () => {
+  //   setAbModal(true);
+  // }
+  // const abCancel = () => {
+  //   setAbModal(false);
+  // }
 
   return (
     <div>
@@ -600,9 +635,11 @@ const Deposit = () => {
                   class="py-1.5 rounded w-72 md:w-80 font-normal mb-4 border mt-1 border-gray-200  text-base"
                 >
                   <option value="btc">Bitcoin</option>
-                  <option value="eth">Ethereum</option>
-                  <option value="dodge">Dodge</option>
-                  <option value="usdc">USDC</option>
+                  {/* <option value="eth">Ethereum</option> */}
+                  {/* <option value="doge">Dodge</option> */}
+                  {/* <option value="changelly">Make deposit with changelly</option>
+                  <option value="abra">Make deposit with Abra</option> */}
+                  {/* <option value="usdc">USDC</option> */}
                 </select>
                 <p class="flex flex-col w-72 md:w-80 lg:w-96 text-base mb-3">
                   <span class="text-sm pb-2 font-normal">Description</span>
@@ -647,10 +684,19 @@ const Deposit = () => {
                           {barcode}
                         </span>
                       </div>
+
+                      {/* <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm font-normal default_cursor_cs">
+                        <p>Instead, make deposit with:</p>
+                      </div>
+                      <div className="flex justify-between items-center border-b py-2 border-slate-300 text-sm font-normal default_cursor_cs">
+                        <button>CHANGELLY</button>
+                        <button>ABRA</button>
+                      </div> */}
+
                       <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
-                        <span class="flex text-sm">{code.slice(0, 6)}...</span>
+                        <span class="flex text-sm">{btc.slice(0, 6)}..</span>
                         <CopyToClipboard
-                          text={code}
+                          text={btc}
                           onCopy={() => notify("copied")}
                         >
                           <svg
@@ -669,6 +715,9 @@ const Deposit = () => {
                         </CopyToClipboard>
                       </div>
                       <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
+                        <p>Make Deposit via Direct Transfer</p>
+                      </div>
+                      <div class="flex justify-between items-center border-b py-2 border-slate-300 text-sm default_cursor_cs">
                         <span>You will send</span>
                         <span class="uppercase font-medium default_cursor_cs">
                           ${amt}
@@ -684,6 +733,38 @@ const Deposit = () => {
                     >
                       Confirm Pay
                     </button>
+                    <div className="mt-2">
+                      <p className="flex justify-center text-bold text-xl">
+                        OR
+                      </p>
+                      <p className="text-bold text-xl">
+                        Continue to deposit with:
+                      </p>
+                      <div className="flex justify-between my-4">
+                        <a href="https://changelly.com/buy-crypto" className="">
+                          <img
+                            src={changelly}
+                            alt="changelly"
+                            className="bg-black p-2 rounded-lg w-32"
+                          />
+                        </a>
+                        <a
+                          href="https://buy.abra.com/client/#/marketPlace=&amout=500&country=US&crypto=BTC&currencyText=USD&paymentMethod=visa&displaymode=2"
+                          className="flex justify-center border-2 border-purple-600 rounded-lg  ml-h24 shadoyw-lg shajdow-slate-900 shadow-slahte-400"
+                        >
+                          <img
+                            src={abra}
+                            alt="abra"
+                            className="p-2 rounded-lg w-10"
+                          />
+                          <img
+                            src={abra2}
+                            alt="abra2"
+                            className="flex bg-red-500 w-24 h-6 mt-2 mr-2"
+                          />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </Modal>
                 <Modal

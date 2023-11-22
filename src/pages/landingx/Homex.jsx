@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import fig1 from "../../images/fig1.svg";
 import fig2 from "../../images/fig2.svg";
 import fig3 from "../../images/fig3.svg";
-import leaves from "../../images/bluleaf.png";
+import leaves from "../../images/leaves.svg";
 import cb from "../../images/coinbase.jfif";
 import btc from "../../images/bitcoin.jfif";
 import crypto from "../../images/crypto.jpeg";
@@ -29,7 +29,7 @@ const Homex = () => {
         id="nav_and_hero"
         className="h-screen lg:px-24 overflow-x-hidden overflow-y-hidden bg-black bg-no-repeat bg-cover bg-left-[50%] bg-right-[50%] bg-top-[0] bg-bottom[0]"
         style={{
-          backgroundImage: "url(/octabg.svg)",
+          backgroundImage: "url(/bglanding.png)",
         }}
       >
         <Nav />
@@ -49,12 +49,12 @@ const Homex = () => {
                 </p>
                 <div className="flex pl-4 flex-wrap w-7/12 md:w-5/12 mt-2 mx-4 text-left justify-between">
                   <Link className="" to="/public/login">
-                    <button className="border-2 border-[#89a3e3] hover:bg-slate-900 focus:text-blue-300 px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
+                    <button className="border-2 border-[#FC5C40] hover:bg-black focus:text-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       Login
                     </button>
                   </Link>
                   <Link to="/public/register">
-                    <button className="border-2 border-[#89a3e3] hover:bg-slate-900 focus:text-blue-300 px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
+                    <button className="border-2 border-[#FC5C40] hover:bg-black focus:text-[#FC5C40] px-3 md:px-6 uppercase text-xs font-medium py-2 text-white rounded-md">
                       SignUp
                     </button>
                   </Link>
@@ -196,11 +196,11 @@ const Homex = () => {
         <div className="flex flex-col md:flex-row px-4 justify-between pt-12 default_cursor_cs">
           <div className="text-4xl font-bold tracking-wide default_cursor_cs">
             Save time. Get{" "}
-            <span className="font-semibold text-blue-300">higher return.</span>{" "}
+            <span className="font-semibold text-[#FC5C40]">higher return.</span>{" "}
             <br /> Multiply wealth.
           </div>
           <Link className="" to="/public/register">
-            <button className="border-2 mt-8 text-white md:mt-0 tracking-wide border-[#89a3e3] focus:text-blue-300 h-12 px-4 rounded">
+            <button className="border-2 mt-8 text-white md:mt-0 tracking-wide border-[#FC5C40] focus:text-orange-600 h-12 px-4 rounded">
               Join now
             </button>
           </Link>
@@ -267,8 +267,8 @@ const Homex = () => {
         </div>
         <div className="flex flex-col lg:flex-row lg:px-28 my-6 px-3">
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
-            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-slate-500 before:content-[''] before:absolute before:top-0 before:left-[7px]">
-              <p className="w-[150px] text-right transform -rotate-90 text-[#89a3e3] mt-[64px] ml-[-67px]">
+            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-[#FC5C40] before:content-[''] before:absolute before:top-0 before:left-[7px]">
+              <p className="w-[150px] text-right transform -rotate-90 text-[#FC5C40] mt-[64px] ml-[-67px]">
                 <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
@@ -287,8 +287,8 @@ const Homex = () => {
             </div>
           </div>
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
-            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-slate-500 before:content-[''] before:absolute before:top-0 before:left-[7px]">
-              <p className="w-[150px] text-right transform -rotate-90 text-[#89a3e3] mt-[64px] ml-[-67px]">
+            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-[#FC5C40] before:content-[''] before:absolute before:top-0 before:left-[7px]">
+              <p className="w-[150px] text-right transform -rotate-90 text-[#FC5C40] mt-[64px] ml-[-67px]">
                 <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
@@ -307,8 +307,8 @@ const Homex = () => {
             </div>
           </div>
           <div className="flex justify-start lg:pl-[30px] leading-4 mb-12 lg:mb-0">
-            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-slate-500 before:content-[''] before:absolute before:top-0 before:left-[7px]">
-              <p className="w-[150px] text-right transform -rotate-90 text-[#89a3e3] mt-[64px] ml-[-67px]">
+            <div className="w-[30px] lg:w-[59px] relative before:w-[2px] before:h-full before:bg-[#FC5C40] before:content-[''] before:absolute before:top-0 before:left-[7px]">
+              <p className="w-[150px] text-right transform -rotate-90 text-[#FC5C40] mt-[64px] ml-[-67px]">
                 <span className="bg-white text-sm pr-[5px] pl-[14px] uppercase font-semibold">
                   Info
                 </span>
@@ -365,7 +365,9 @@ const Homex = () => {
           </div>
           <div className="mt-4">
             <img src={btc} alt="btc" className="mx-auto default_cursor_cs" />
-            <div className="text-center font-bold py-2 default_cursor_cs">bitcoin.com</div>
+            <div className="text-center font-bold py-2 default_cursor_cs">
+              bitcoin.com
+            </div>
           </div>
           <div className="mt-4">
             <img src={crypto} alt="cry" className="mx-auto default_cursor_cs" />
@@ -381,7 +383,7 @@ const Homex = () => {
         <div className="flex flex-col md:flex-row items-center justify-between px-4">
           <img src={btc1} alt="btc1" className="w-28 md:48" />
           <img src={mscard} alt="mscard" className="w-28 md:48 my-4" />
-          <img src={visa} alt="visa" className="w-28 md:48" />
+          {/* <img src={visa} alt="visa" className=" bg-slate-400 w-28 md:48" /> */}
           <img src={skrill} alt="skrill" className="w-28 md:48 my-4" />
           <img src={paypal} alt="paypal" className="w-28 md:48" />
           <img src={neteller} alt="neteller" className="w-28 md:48 my-4" />

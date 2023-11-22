@@ -7,7 +7,6 @@ import bultpay3 from "../../images/bultpay3.png";
 import Icon from "../../components/Nav/Icon";
 import { BiHide, BiShowAlt } from "react-icons/bi";
 
-
 const Loginx = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -44,7 +43,7 @@ const Loginx = () => {
     event.preventDefault();
     // console.log(`em ${email}   ${password}`);
     setMsg({});
-    fetch("https://red-violet-snail-fez.cyclic.app/login", {
+    fetch("https://famous-turtleneck-elk.cyclic.app/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -82,7 +81,7 @@ const Loginx = () => {
           dispatch(setToken(token));
           dispatch(setUserDetails(user));
           // window.location.assign('http://enefti-six.vercel.app/user/dashboard')
-          // https://red-violet-snail-fez.cyclic.app/login
+          // https://famous-turtleneck-elk.cyclic.app/login
           navigate("/user/dashboard", { replace: true });
         }
       })
@@ -93,9 +92,7 @@ const Loginx = () => {
     <div className="flex flex-col h-screen bg-[#26313f3a] shadow-md rounded  text-slate-700 items-center px-3 pt-3">
       <div className="lg:mx-auto w-full lg:w-10/12 px-3 lg:px-12">
         <div className="flex items-center justify-center">
-          <span className="bg-black flex items-center mt-5 w-32 lg:w-40 lg:pr-2 rounded-xl px-0 justify-center mb-6">
-            <Icon />
-          </span>
+          <Icon />
         </div>
       </div>
       <div className=" w-full mx-auto pt-2 md:pt-0 max-h-screen md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">

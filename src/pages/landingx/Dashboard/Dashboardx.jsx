@@ -29,7 +29,7 @@ const Dashboardx = () => {
   //console.log({user});
 
   // useEffect(() => {
-  //   fetch("https://red-violet-snail-fez.cyclic.app/get-profile", {
+  //   fetch("https://famous-turtleneck-elk.cyclic.app/get-profile", {
   //     method: "post",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify({

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { setUserDetails, setToken } from "../../Redux/action";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import bultpay3 from "../../images/bultpay3.png";
 import Icon from "../../components/Nav/Icon";
@@ -44,6 +46,18 @@ function Registerx() {
   const register = (e) => {
     e.preventDefault();
 
+    const notify = (word) => {
+      toast.info(`${word}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    };
+
     if (!terms) {
       return;
     }
@@ -55,7 +69,7 @@ function Registerx() {
       password,
     });
 
-    fetch("https://red-violet-snail-fez.cyclic.app/sign-up", {
+    fetch("https://famous-turtleneck-elk.cyclic.app/sign-up", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -68,6 +82,7 @@ function Registerx() {
       .then((response) => response.json())
       .then((res) => {
         console.log("res", res);
+        notify("Success");
         const { token } = res;
         const { user } = res;
         dispatch(setToken(token));
@@ -89,9 +104,7 @@ function Registerx() {
     <div className="flex flex-col bg-[#26313f3a] shadow-md rounded  text-slate-700 items-center px-3 justify-center pt-3">
       <div className="lg:mx-auto w-full lg:w-10/12 px-3 lg:px-12">
         <div className="flex items-center justify-center">
-          <span className="flex bg-black items-center lg:pr-2 lg:w-40 rounded-lg text-gray-400 justify-center mb-6">
-            <Icon />
-          </span>
+         <Icon />
         </div>
 
         <div className=" w-full mx-auto pt-2 md:pt-0 max-h-screen x-6  md:h-auto flex flex-col self-center items-center md:mt-6 mb-12">
@@ -158,6 +171,7 @@ function Registerx() {
                     )}
                   </button>
                 </div>
+                <ToastContainer />
                 <div className="text-center text-red-600 text-sm"></div>
                 <div className="text-center text-red-600 text-sm"></div>
                 <div className="mt-7">

@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { setUserDetails, setToken } from "../../Redux/action";
 import Icon from "../../components/Nav/Icon";
@@ -12,11 +12,11 @@ import bultpay from "../../images/bultpay3.png";
 const ResetPassword = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   // const [exists, setexists] = useState("");
-  const [msg, setMsg] = useState({   
-    email: "",  
+  const [msg, setMsg] = useState({
+    email: "",
     error: "",
     exists: "",
   });
@@ -36,23 +36,21 @@ const ResetPassword = () => {
     });
   };
 
-   
-
   const reset = (e) => {
     e.preventDefault();
     if (!email) {
       return notify("Enter your email");
     }
 
-    fetch(`https://red-violet-snail-fez.cyclic.app/forgot-password/${email}`, {
+    fetch(`https://famous-turtleneck-elk.cyclic.app/forgot-password/${email}`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-      }),
+      body: JSON.stringify({}),
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log("eee")
+        console.log("eee");
+        notify("Confirmation code has been delivered");
         if (res.msg) {
           setError("invalid email");
           setTimeout(() => {
@@ -60,7 +58,7 @@ const ResetPassword = () => {
           }, 2000);
           return;
         }
-        
+
         if (res.msg) {
           setMsg(res.msg);
           console.log("msg", msg);
@@ -83,8 +81,7 @@ const ResetPassword = () => {
         }
       })
       .catch((err) => console.log(err));
-  }
-  
+  };
 
   return (
     <div class="px-0 lg:px-0 w-full">
@@ -141,6 +138,6 @@ const ResetPassword = () => {
       </div>
     </div>
   );
-}
+};
 
 export default ResetPassword;

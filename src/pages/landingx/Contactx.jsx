@@ -27,7 +27,7 @@ const Contact = () => {
         <section class="text-black px-3 md:px-24 lg:px-24 default_cursor_cs">
           <div class="flex flex-col items-center text-center w-full default_cursor_cs">
             <h1 class="text-lg text-center lg:text-3xl mt-16 font-bold default_cursor_cs">
-              Do not hesitate to<span class="text-[#5474c6]"> reach out.</span>
+              Do not hesitate to<span class="text-[#FC5C40]"> reach out.</span>
             </h1>
             <p class="pb-6 text-sm lg:text-xl text-center text-slate-400 tracking-normal lg:tracking-wider lg:w-7/12 font-normal default_cursor_cs">
               Just fill in the contact form here and we’ll be sure to reply as
@@ -58,7 +58,7 @@ const Contact = () => {
                 placeholder="message"
                 class="px-3 py-2 border border-gray-400 shadow rounded  w-66 md:w-96 mt-4"
               ></textarea>
-              <button class="bg-[#5474c6] text-white font-medium py-2 my-6">
+              <button class="bg-[#FC5C40] text-white font-medium py-2 my-6">
                 SEND MESSAGE
               </button>
             </form>
@@ -74,7 +74,7 @@ const Contact = () => {
             </div>
             <div class="py-4 bg-bla_ck text-black font-medium flex flex-col P mt-3 px-3 default_cursor_cs">
               <div class="flex py-2 items-center default_cursor_cs">
-                <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#5474c6] mr-4">
+                <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#FC5C40] mr-4">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -91,7 +91,7 @@ const Contact = () => {
                 <span class="text-sm mb-3">support@rhodeanalytics.com</span>
               </div>
               <div class="flex py-2 items-center default_cursor_cs">
-                <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#5474c6] mr-4 default_cursor_cs">
+                <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#FC5C40] mr-4 default_cursor_cs">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -108,7 +108,7 @@ const Contact = () => {
                 <span class="text-sm mb-3">+1 (888) RHODEANALYTICS</span>
               </div>
               <div class="flex py-2 items-center">
-                <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#5474c6] mr-4 default_cursor_cs">
+                <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#FC5C40] mr-4 default_cursor_cs">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -138,7 +138,7 @@ const Contact = () => {
                   </svg>
                 </p>
                 <span class="text-sm mb-3">
-                  11 Av/W 34 St, New York, NY 10001, United States
+                  Level 3, The offices 3, One Central Dubai world - Trade Center, Dubai - United Arab Emirates
                 </span>
               </div>
             </div>

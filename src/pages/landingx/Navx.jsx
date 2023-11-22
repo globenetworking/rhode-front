@@ -21,12 +21,12 @@ const Nav = () => {
         style={{ background: "rgba(22, 22, 26, 0.7)" }}
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <Icon />
+          <Icon />
           <div className="hidden md:flex md:order-2">
             <Link to="/public/register" className="">
               <button
                 type="button"
-                className="text-black font-semibold bg-[#89a3e3] tracking-wide rounded-lg text-xs px-5 py-3 text-center mr-3 md:mr-0 hover:bg-[#a2b7eb] focus:bg-[#89a3e3]"
+                className="text-black font-semibold bg-[#fc5b3f] tracking-wide rounded-lg text-xs px-5 py-3 text-center mr-3 md:mr-0 hover:bg-[#bb3922] focus:bg-[#fc5b3f] "
               >
                 CREATE ACCOUNT
               </button>

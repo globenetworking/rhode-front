@@ -26,7 +26,7 @@ const DepApp = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://red-violet-snail-fez.cyclic.app/deposit/approve", {
+      await fetch("https://famous-turtleneck-elk.cyclic.app/deposit/approve", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
@@ -49,7 +49,7 @@ const DepApp = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://red-violet-snail-fez.cyclic.app/deposit/decline", {
+      await fetch("https://famous-turtleneck-elk.cyclic.app/deposit/decline", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),

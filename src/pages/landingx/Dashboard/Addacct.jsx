@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Icon from "../../../components/Nav/Icon";
 import { Link, useNavigate } from "react-router-dom";
 import { setUserDetails, setToken } from "../../../Redux/action";
@@ -25,18 +25,17 @@ const Addacct = () => {
     setBtc(event.target.value);
   };
 
-
-const notify = (word) => {
-  toast.info(`${word}`, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
-};
+  const notify = (word) => {
+    toast.info(`${word}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   const Addacct = (e) => {
     e.preventDefault();
@@ -44,7 +43,7 @@ const notify = (word) => {
       return notify("Enter your email");
     }
 
-    fetch("https://red-violet-snail-fez.cyclic.app/address", {
+    fetch("https://famous-turtleneck-elk.cyclic.app/address", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -55,7 +54,7 @@ const notify = (word) => {
       .then((response) => response.json())
       .then((res) => {
         console.log("eee");
-        notify(res.msg);
+        notify('success');
         if (res.msg) {
           setError("invalid email");
           setTimeout(() => {
@@ -136,7 +135,10 @@ const notify = (word) => {
                           </div>
                           <ToastContainer />
                           <div class="mt-7">
-                            <button onClick={Addacct} class="font-semibold bg-blue-600 rounded text-white capitalize text-sm w-full btn-sm h-9 default_pointer_cs">
+                            <button
+                              onClick={Addacct}
+                              class="font-semibold bg-blue-600 rounded text-white capitalize text-sm w-full btn-sm h-9 default_pointer_cs"
+                            >
                               ADD ACCOUNT
                             </button>
                           </div>
@@ -152,6 +154,6 @@ const notify = (word) => {
       </div>
     </div>
   );
-}
+};
 
 export default Addacct;

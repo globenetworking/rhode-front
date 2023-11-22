@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Icon from "../../components/Nav/Icon";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -6,8 +6,6 @@ import { setUserDetails, setToken } from "../../Redux/action";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
 
 const Newpwd = () => {
   let { email } = useParams();
@@ -28,51 +26,49 @@ const Newpwd = () => {
     setPassword(event.target.value);
   };
 
-
   const nwpsd = (e) => {
     e.preventDefault();
 
-     const notify = (word) => {
-       toast.info(`${word}`, {
-         position: "top-right",
-         autoClose: 5000,
-         hideProgressBar: false,
-         closeOnClick: true,
-         pauseOnHover: true,
-         draggable: true,
-         progress: undefined,
-       });
-     };
+    const notify = (word) => {
+      toast.info(`${word}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    };
 
-     fetch("https://red-violet-snail-fez.cyclic.app/changePassword", {
-       method: "post",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
-         email,
-         pwd:password,
-       }),
-     })
-       .then((response) => response.json())
-       .then((res) => {
-         console.log("res", res);
-         const { token } = res;
-         const { user } = res;
-         dispatch(setToken(token));
-         notify("Successful!");
+    fetch("https://famous-turtleneck-elk.cyclic.app/changePassword", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        pwd: password,
+      }),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log("res", res);
+        const { token } = res;
+        const { user } = res;
+        dispatch(setToken(token));
+        notify("Successful!");
 
-         if (res.msg) {
-           setMsg(res.msg);
-           console.log("msg", msg);
-         }
+        if (res.msg) {
+          setMsg(res.msg);
+          console.log("msg", msg);
+        }
 
-         if (token != undefined) {
-           dispatch(setUserDetails(user));
-           navigate("/", { replace: true });
-         }
-       })
-       .catch((err) => console.log(err));
+        if (token != undefined) {
+          dispatch(setUserDetails(user));
+          navigate("/", { replace: true });
+        }
+      })
+      .catch((err) => console.log(err));
   };
-
 
   return (
     <div class="px-0 lg:px-0 w-full">
@@ -129,7 +125,7 @@ const Newpwd = () => {
                             />
                           </div>
                           <div className="text-center text-red-400 text-xs"></div>
-                          <ToastContainer/>
+                          <ToastContainer />
                           <div class="mt-7">
                             <button
                               onClick={nwpsd}
@@ -150,6 +146,6 @@ const Newpwd = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Newpwd;

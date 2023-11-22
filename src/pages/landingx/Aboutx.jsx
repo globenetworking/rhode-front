@@ -18,7 +18,7 @@ const About = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "50% 0px",
-            backgroundBlendMode: "darken"
+            backgroundBlendMode: "darken",
           }}
         >
           <Nav />
@@ -31,7 +31,7 @@ const About = () => {
           <div class="flex flex-col items-center text-centerw-full default_cursor_cs">
             <h1 class="text-lg text-center lg:text-3xl mt-16 font-bold default_cursor_cs">
               Putting our clients first{" "}
-              <span class="text-[#5474c6] default_cursor_cs">since 2014</span>
+              <span class="text-[#FC5C40] default_cursor_cs">since 2014</span>
             </h1>
             <p class="pb-6 text-sm lg:text-xl text-center text-slate-400 tracking-normal lg:tracking-wider lg:w-7/12 font-normal default_cursor_cs">
               For more than 8 years, we've been empowering clients by helping
@@ -42,7 +42,7 @@ const About = () => {
 
         <section class="flex flex-col md:flex-row justify-center px-3 md:justify-around lg:px-28 default_cursor_cs">
           <div class="flex flex-row">
-            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-slate-600 flex1">
+            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#FC5C40] flex1">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -71,7 +71,7 @@ const About = () => {
             </p>
           </div>
           <div class="flex flex-row default_cursor_cs">
-            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-slate-600 flex1 default_cursor_cs">
+            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#FC5C40] flex1 default_cursor_cs">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -100,7 +100,7 @@ const About = () => {
             </p>
           </div>
           <div class="flex flex-row default_cursor_cs">
-            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-slate-600 flex1 default_cursor_cs">
+            <p class="rounded-full w-10 h-10 flex justify-center items-center bg-[#FC5C40] flex1 default_cursor_cs">
               <svg
                 stroke="currentColor"
                 fill="currentColor"

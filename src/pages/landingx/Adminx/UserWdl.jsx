@@ -20,7 +20,7 @@ const UserWdl = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://red-violet-snail-fez.cyclic.app/withdraw/approve", {
+      await fetch("https://famous-turtleneck-elk.cyclic.app/withdraw/approve", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
@@ -43,7 +43,7 @@ const UserWdl = ({ user }) => {
     notify();
     const { email } = user;
     const isNotThere = await (
-      await fetch("https://red-violet-snail-fez.cyclic.app/withdraw/decline", {
+      await fetch("https://famous-turtleneck-elk.cyclic.app/withdraw/decline", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, pdgwdl: user.pdgwdl }),
