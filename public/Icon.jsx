@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { TbTrademark } from "react-icons/tb";
+import { FaTrademark } from "react-icons/fa";
 const Icon = () => {
   return (
     <>
@@ -15,7 +15,7 @@ const Icon = () => {
           className=" text-white bdg-white absolute left-32 righv] pt-1 top-0.5"
           style={{ fodntSize: "3px" }}
         >
-          <TbTrademark />
+          <FaTrademark />
         </span>
       </Link>
     </>
