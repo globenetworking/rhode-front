@@ -138,7 +138,7 @@ const EditUsers = () => {
         </div>
 
         <div class="mb-2 pt-0">
-          <label className="text-lg font-semibold">Earnings:</label>
+          <label className="text-lg font-semibold">Outstanding Payments:</label>
           <input
             name="profits"
             onChange={onChange}
