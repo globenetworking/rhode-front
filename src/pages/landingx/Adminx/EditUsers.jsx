@@ -140,17 +140,17 @@ const EditUsers = () => {
         </div>
 
         <div class="mb-2 pt-0">
-          <label className="text-lg font-semibold">Outstanding Payments:</label>
+          <label className="text-lg font-semibold">Earnings:</label>
           <input
-            name="outstanding"
+            name="profits"
             onChange={onChange}
-            value={user.outstanding}
+            value={user.profits}
             type="number"
-            placeholder={`${user.outstanding}`}
+            placeholder={`${user.profits}`}
             className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:bg-slate-200"
           />
         </div>
-
+{/* 
         <div class="mb-2 pt-0">
           <label className="text-lg font-semibold">Available Balance:</label>
           <input
@@ -161,7 +161,7 @@ const EditUsers = () => {
             placeholder={`${user.profits}`}
             className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:bg-slate-200"
           />
-        </div>
+        </div> */}
 
         <div class="mb-2 pt-0">
           <label className="text-lg font-semibold">Phone:</label>
