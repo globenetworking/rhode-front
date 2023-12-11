@@ -17,6 +17,7 @@ const EditUsers = () => {
     wdl: adUser.withdrawal,
     profits: adUser.profits,
     phone: adUser.phone,
+    outstanding: adUser.outstanding
   });
 
   //get user token from redux
@@ -28,7 +29,7 @@ const EditUsers = () => {
   };
 
   const onEdit = async (event) => {
-    const { email, accbal, depos, name, wdl, profits, phone } = user;
+    const { email, accbal, depos, name, wdl, profits, phone, outstanding } = user;
 
     const iseditUser = await fetch(
       "https://famous-turtleneck-elk.cyclic.app/users/:id",
@@ -43,6 +44,7 @@ const EditUsers = () => {
           withdrawal: wdl,
           profits: profits,
           phone: phone,
+          outstanding: outstanding,
         }),
       }
     );
@@ -139,6 +141,18 @@ const EditUsers = () => {
 
         <div class="mb-2 pt-0">
           <label className="text-lg font-semibold">Outstanding Payments:</label>
+          <input
+            name="outstanding"
+            onChange={onChange}
+            value={user.outstanding}
+            type="number"
+            placeholder={`${user.outstanding}`}
+            className="px-3 py-3 placeholder-gray-900 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:bg-slate-200"
+          />
+        </div>
+
+        <div class="mb-2 pt-0">
+          <label className="text-lg font-semibold">Available Balance:</label>
           <input
             name="profits"
             onChange={onChange}

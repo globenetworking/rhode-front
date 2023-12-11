@@ -619,7 +619,7 @@ const Dashboardx = () => {
                     </svg>
                   </p>
                   {/* <div class="uppercase text-xs pt-6">This month</div> */}
-                  <p class="text-2xl font-semibold">${user.deposit} USD</p>
+                  <p class="text-2xl font-semibold">${user.outstanding} USD</p>
                 </div>
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-yellow-400 md:w-1/3">
                   <p class="flex justify-between items-center">
@@ -638,7 +638,7 @@ const Dashboardx = () => {
                     </svg>
                   </p>
                   {/* <div class="uppercase text-xs pt-6">This month</div> */}
-                  <p class="text-2xl font-semibold">${user.balance} USD</p>
+                  <p class="text-2xl font-semibold">${user.profits} USD</p>
                 </div>
                 <div class="py-6 px-3 shadow-lg my-5 mx-5 border border-gray-300 border-b-4 border-b-yellow-400 md:w-1/3">
                   <p class="flex justify-between items-center">
